@@ -2,7 +2,7 @@ This wiki shows developers how to use the Cassia RESTful API to integrate their 
 
 ## Table of Contents
 
-#### Overview
+#### * Overview
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
