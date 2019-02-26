@@ -2,16 +2,16 @@ This wiki shows developers how to use the Cassia RESTful API to integrate their 
 
 ## Table of Contents
 
-Overview
+### Overview
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
 
-Getting Started
+### Getting Started
    * Access local router
    * Access Cassia router through the Cassia AC
 
-RESTful API
+### RESTful API
    * Common Parameters
    * Management APIs
       * Obtain Cassia router’s configuration
@@ -51,10 +51,8 @@ RESTful API
       * Open ap-state report
       * Close ap-state report
 
-Bluetooth Debug Tool
-
-Error Messages
-
-Appendix:
+### Bluetooth Debug Tool
+### Error Messages
+### Appendix
    A. Migrate from C1000-2B Firmware to X1000
    B. Sample Code to Get Access Token
