@@ -2,12 +2,12 @@ This wiki shows developers how to use the Cassia RESTful API to integrate their 
 
 ##Table of Contents
 1. Overview
-   1. Two Set of RESTful APIs
-   2. Architecture Diagram
-   3. Server Sent Events
+   * Two Set of RESTful APIs
+   * Architecture Diagram
+   * Server Sent Events
 2. Getting Started
-   1. Access local router
-   2. Access Cassia router through the Cassia AC
+   * Access local router
+   * Access Cassia router through the Cassia AC
 3 RESTful API
    1. Common Parameters
    2. Management APIs
