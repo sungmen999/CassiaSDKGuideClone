@@ -1,13 +1,16 @@
 This wiki shows developers how to use the Cassia RESTful API to integrate their Bluetooth devices with the Cassia IoT Access Controller (AC) and the Cassia Bluetooth routers.
 
 ## Table of Contents
+
 Overview
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
+
 Getting Started
    * Access local router
    * Access Cassia router through the Cassia AC
+
 RESTful API
    * Common Parameters
    * Management APIs
@@ -47,8 +50,10 @@ RESTful API
       * Close connection-state report
       * Open ap-state report
       * Close ap-state report
-* Bluetooth Debug Tool
-* Error Messages
+
+Bluetooth Debug Tool
+
+Error Messages
 
 Appendix:
    A. Migrate from C1000-2B Firmware to X1000
