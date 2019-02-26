@@ -54,5 +54,5 @@ This wiki shows developers how to use the Cassia RESTful API to integrate their 
 * #### Bluetooth Debug Tool
 * #### Error Messages
 * #### Appendix
-   a. Migrate from C1000-2B Firmware to X1000
-   b. Sample Code to Get Access Token
+   * Migrate from C1000-2B Firmware to X1000
+   * Sample Code to Get Access Token
