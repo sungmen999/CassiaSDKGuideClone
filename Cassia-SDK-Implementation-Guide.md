@@ -1,9 +1,9 @@
-[comment]: # (Change the release date after this guide is completed.)
-Release date: Nov 12th, 2018
-
 [comment]: # (Comments in this Markdown file are based on this: https://stackoverflow.com/questions/4823468/comments-in-markdown)
 
 This wiki shows developers how to use the Cassia RESTful API to integrate their Bluetooth devices with the Cassia IoT Access Controller (AC) and the Cassia Bluetooth routers.
+
+[comment]: # (Change the release date after this guide is completed.)
+Release date: Nov 12th, 2018
 
 ## Table of Contents
 
