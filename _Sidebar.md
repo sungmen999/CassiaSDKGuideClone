@@ -73,8 +73,8 @@ __Home__
    * Close AP-State Report
    </details>
 </details>
-<p><strong>Bluetooth Debug Tool</strong></p>
-<p><strong>Error Messages</strong></p>
+<span><strong>Bluetooth Debug Tool</strong></span><br />
+<span><strong>Error Messages</strong></span>
 <details><summary><strong>Appendix</strong></summary>
    
    * Migrate from C1000-2B Firmware to X1000
