@@ -2,10 +2,10 @@
 
 <details><summary><strong>Overview</strong></summary>
 
-   * __Overview__
-   * Two Set of RESTful APIs
-   * Architecture Diagram
-   * Server Sent Events
+* __Overview__
+* Two Set of RESTful APIs
+* Architecture Diagram
+* Server Sent Events
 
 </details>
 
