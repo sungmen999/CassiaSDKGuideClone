@@ -50,15 +50,13 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Just Works Example
      * Passkey Entry Example: Initiator Inputs
      * LE Legacy Pairing OOB Example
-
-   </details>
+     </details>
    * <details><summary><strong>Router Auto-Selection API</strong></summary>
    
      * Overview of Router Auto-Selection API
      * Connect a Device
      * Disconnect a Device
-
-   </details>
+     </details>
    * <details><summary><strong>SSE Combination API</strong></summary>
    
      * Overview of SSE Combination API
@@ -71,8 +69,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Close Connection-State Report
      * Open AP-State Report
      * Close AP-State Report
-   
-   </details>
+     </details>
 </details>
 <br />
 
