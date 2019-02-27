@@ -10,7 +10,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <br />
 <details><summary><strong>Getting Started</strong></summary>
 
-* __[How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
+* [How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)
 * Access Local Router
 * Access Cassia Router through the Cassia AC
 
@@ -18,7 +18,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <br />
 <details><summary><strong>RESTful API</strong></summary>
 
-   * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
+   * [Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)
    * <div><a href="">Common Parameters</a></div>
    * <details><summary><strong>Management API</strong></summary>
 
