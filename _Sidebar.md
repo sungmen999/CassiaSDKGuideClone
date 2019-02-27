@@ -73,7 +73,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Close AP-State Report
    
    </details>
-
 </details>
 <br />
 
