@@ -8,6 +8,7 @@ __Home__
    * Server Sent Events
 
 </details>
+
 <details><summary><strong>Getting Started</strong></summary>
 
 * __[How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
@@ -15,6 +16,7 @@ __Home__
 * Access Cassia Router through the Cassia AC
 
 </details>
+
 <details><summary><strong>RESTful API</strong></summary>
 
 * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
@@ -74,7 +76,9 @@ __Home__
 </details>
 
 __Bluetooth Debug Tool__
+
 __Error Messages__
+
 <details><summary><strong>Appendix</strong></summary>
    
    * Migrate from C1000-2B Firmware to X1000
