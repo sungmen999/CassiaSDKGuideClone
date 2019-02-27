@@ -29,7 +29,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      </details>
    
    * <details><summary><strong>Traffic Related API</strong></summary>
-
      * Scan Bluetooth Devices
      * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
      * Connect/Disconnect to a Target Device
