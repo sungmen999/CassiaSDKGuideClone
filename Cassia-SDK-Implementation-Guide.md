@@ -13,48 +13,48 @@ Release date: Nov 12th, 2018
    * Server Sent Events
 
 * #### Getting Started
-   * Access local router
-   * Access Cassia router through the Cassia AC
+   * Access Local Router
+   * Access Cassia Router through the Cassia AC
 
 * #### RESTful API
    * Common Parameters
    * Management APIs
-      * Obtain Cassia router’s configuration
-      * Obtain Cassia router’s status
-      * Monitor Cassia router’s status
-      * Obtain all online routers’ status
-      * Reboot a router remotely
+      * Obtain Cassia Router’s Configuration
+      * Obtain Cassia Router’s Status
+      * Monitor Cassia Router’s Status
+      * Obtain All Online Routers’ Status
+      * Reboot a Router Remotely
    * Traffic Related APIs
-      * Scan Bluetooth devices
-      * Filter scanned data based on device MAC, RSSI, name, and UUID
-      * Connect/disconnect to a target device
-      * Discover GATT services and characteristics
-      * Read/write the value of a specific characteristic
-      * Get advertise data
-      * Get device connection status
-      * Receive notification and indication
+      * Scan Bluetooth Devices
+      * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+      * Connect/Disconnect to a Target Device
+      * Discover GATT Services and Characteristics
+      * Read/Write the Value of a Specific Characteristic
+      * Get Advertise Data
+      * Get Device Connection Status
+      * Receive Notification and Indication
    * Positioning APIs
    * Secure Pairing APIs
       * Pair Request
-      * Pair-input Request
-      * Un-pair Request
+      * Pair-Input Request
+      * Unpair Request
       * Just Works Example
       * Passkey Entry Example: Initiator Inputs
       * LE Legacy Pairing OOB Example
    * Router Auto-Selection APIs
-      * Router auto-selection
-      * Connect a device
-      * Disconnect a device
+      * Router Auto-Selection
+      * Connect a Device
+      * Disconnect a Device
    * SSE Combination APIs
-      * Create combined SSE
-      * Open scan
-      * Close scan
-      * Open notify
-      * Close notify
-      * Open connection-state report
-      * Close connection-state report
-      * Open ap-state report
-      * Close ap-state report
+      * Create Combined SSE
+      * Open Scan
+      * Close Scan
+      * Open Notify
+      * Close Notify
+      * Open Connection-State Report
+      * Close Connection-State Report
+      * Open AP-State Report
+      * Close AP-State Report
 
 * #### Bluetooth Debug Tool
 * #### Error Messages
