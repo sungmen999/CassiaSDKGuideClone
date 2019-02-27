@@ -16,6 +16,7 @@
 
 </details>
 <details><summary><strong>RESTful API</strong></summary>
+
 * __[RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
 * Common Parameters
 * <details><summary><strong>Management APIs</strong></summary>
@@ -25,7 +26,6 @@
    * Obtain All Online Routers’ Status
    * Reboot a Router Remotely
    </details>
-
 * Traffic Related APIs
    * Scan Bluetooth Devices
    * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
