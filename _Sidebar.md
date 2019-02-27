@@ -74,6 +74,7 @@ __Home__
    </details>
 </details>
 <br />
+
 __Bluetooth Debug Tool__
 
 __Error Messages__
