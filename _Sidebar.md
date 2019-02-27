@@ -30,14 +30,14 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    </details>
    * <details><summary><strong>Traffic Related API</strong></summary>
 
-     * Scan Bluetooth Devices
-     * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
-     * Connect/Disconnect to a Target Device
-     * Discover GATT Services and Characteristics
-     * Read/Write the Value of a Specific Characteristic
-     * Get Advertise Data
-     * Get Device Connection Status
-     * Receive Notification and Indication
+      * Scan Bluetooth Devices
+      * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+      * Connect/Disconnect to a Target Device
+      * Discover GATT Services and Characteristics
+      * Read/Write the Value of a Specific Characteristic
+      * Get Advertise Data
+      * Get Device Connection Status
+      * Receive Notification and Indication
    </details>
    * Positioning API
    * <details><summary><strong>Secure Pairing API</strong></summary>
