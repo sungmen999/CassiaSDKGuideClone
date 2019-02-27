@@ -26,8 +26,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Obtain Cassia Router’s Status
      * Monitor Cassia Router’s Status
      * Obtain All Online Routers’ Status
-     * Reboot a Router Remotely
-   </details>
+     * Reboot a Router Remotely </details>
    * <details><summary><strong>Traffic Related API</strong></summary>
 
      * Scan Bluetooth Devices
