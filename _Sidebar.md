@@ -1,6 +1,6 @@
 * __Home__
 
-<details><summary>__Overview__</summary>
+<details><summary><strong>Overview</strong></summary>
 * __Overview__
    * Two Set of RESTful APIs
    * Architecture Diagram
