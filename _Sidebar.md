@@ -39,7 +39,6 @@ __Home__
    * Get Advertise Data
    * Get Device Connection Status
    * Receive Notification and Indication
-
    </details>
 * Positioning APIs
 * <details><summary><strong>Secure Pairing APIs</strong></summary>
