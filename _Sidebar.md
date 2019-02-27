@@ -73,7 +73,9 @@ __Home__
    * Close AP-State Report
    </details>
 </details>
+
 __Bluetooth Debug Tool__
+
 __Error Messages__
 <details><summary><strong>Appendix</strong></summary>
    
