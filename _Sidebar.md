@@ -1,10 +1,12 @@
 * __Home__
 
 <details><summary><strong>Overview</strong></summary>
+
 * __Overview__
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
+
 </details>
 
 * __Getting Started__
