@@ -20,13 +20,16 @@
 * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
 * Common Parameters
 * <details><summary><strong>Management APIs</strong></summary>
+
    * Obtain Cassia Router’s Configuration
    * Obtain Cassia Router’s Status
    * Monitor Cassia Router’s Status
    * Obtain All Online Routers’ Status
    * Reboot a Router Remotely
+
    </details>
 * <details><summary><strong>Traffic Related APIs</strong></summary>
+
    * Scan Bluetooth Devices
    * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
    * Connect/Disconnect to a Target Device
@@ -35,9 +38,11 @@
    * Get Advertise Data
    * Get Device Connection Status
    * Receive Notification and Indication
+
    </details>
 * Positioning APIs
 * <details><summary><strong>Secure Pairing APIs</strong></summary>
+
    * Overview of Secure Pairing APIs
    * Pair Request
    * Pair-Input Request
@@ -45,11 +50,14 @@
    * Just Works Example
    * Passkey Entry Example: Initiator Inputs
    * LE Legacy Pairing OOB Example
+
    </details>
 * <details><summary><strong>Router Auto-Selection APIs</strong></summary>
+   
    * Overview of Router Auto-Selection
    * Connect a Device
    * Disconnect a Device
+
    </details>
 * <details><summary><strong>SSE Combination APIs</strong></summary>
    * Overview of SSE Combination APIs
@@ -68,6 +76,8 @@
 * __Bluetooth Debug Tool__
 * __Error Messages__
 * <details><summary><strong>Appendix</strong></summary>
+   
    * Migrate from C1000-2B Firmware to X1000
    * Sample Code to Get Access Token
+   
    </details>
