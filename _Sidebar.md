@@ -8,6 +8,13 @@
 * Server Sent Events
 
 </details>
+<details><summary><strong>Getting Started</strong></summary>
+
+* __Getting Started__
+* Access Local Router
+* Access Cassia Router through the Cassia AC
+
+</details>
 
 * __Getting Started__
    * Access Local Router
