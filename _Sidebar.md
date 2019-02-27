@@ -20,57 +20,57 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
    * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
    * Common Parameters
-   <details><summary><strong>Management API</strong></summary>
+   * <details><summary><strong>Management API</strong></summary>
 
-   * Obtain Cassia Router’s Configuration
-   * Obtain Cassia Router’s Status
-   * Monitor Cassia Router’s Status
-   * Obtain All Online Routers’ Status
-   * Reboot a Router Remotely
-
-   </details>
-   <details><summary><strong>Traffic Related API</strong></summary>
-
-   * Scan Bluetooth Devices
-   * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
-   * Connect/Disconnect to a Target Device
-   * Discover GATT Services and Characteristics
-   * Read/Write the Value of a Specific Characteristic
-   * Get Advertise Data
-   * Get Device Connection Status
-   * Receive Notification and Indication
-   </details>
-   Positioning API
-   <details><summary><strong>Secure Pairing API</strong></summary>
-
-   * Overview of Secure Pairing API
-   * Pair Request
-   * Pair-Input Request
-   * Unpair Request
-   * Just Works Example
-   * Passkey Entry Example: Initiator Inputs
-   * LE Legacy Pairing OOB Example
+     * Obtain Cassia Router’s Configuration
+     * Obtain Cassia Router’s Status
+     * Monitor Cassia Router’s Status
+     * Obtain All Online Routers’ Status
+     * Reboot a Router Remotely
 
    </details>
-   <details><summary><strong>Router Auto-Selection API</strong></summary>
+   * <details><summary><strong>Traffic Related API</strong></summary>
+
+     * Scan Bluetooth Devices
+     * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+     * Connect/Disconnect to a Target Device
+     * Discover GATT Services and Characteristics
+     * Read/Write the Value of a Specific Characteristic
+     * Get Advertise Data
+     * Get Device Connection Status
+     * Receive Notification and Indication
+   </details>
+   * Positioning API
+   * <details><summary><strong>Secure Pairing API</strong></summary>
+
+     * Overview of Secure Pairing API
+     * Pair Request
+     * Pair-Input Request
+     * Unpair Request
+     * Just Works Example
+     * Passkey Entry Example: Initiator Inputs
+     * LE Legacy Pairing OOB Example
+
+   </details>
+   * <details><summary><strong>Router Auto-Selection API</strong></summary>
    
-   * Overview of Router Auto-Selection API
-   * Connect a Device
-   * Disconnect a Device
+     * Overview of Router Auto-Selection API
+     * Connect a Device
+     * Disconnect a Device
 
    </details>
-   <details><summary><strong>SSE Combination API</strong></summary>
+   * <details><summary><strong>SSE Combination API</strong></summary>
    
-   * Overview of SSE Combination API
-   * Create Combined SSE
-   * Open Scan
-   * Close Scan
-   * Open Notify
-   * Close Notify
-   * Open Connection-State Report
-   * Close Connection-State Report
-   * Open AP-State Report
-   * Close AP-State Report
+     * Overview of SSE Combination API
+     * Create Combined SSE
+     * Open Scan
+     * Close Scan
+     * Open Notify
+     * Close Notify
+     * Open Connection-State Report
+     * Close Connection-State Report
+     * Open AP-State Report
+     * Close AP-State Report
    
    </details>
 
