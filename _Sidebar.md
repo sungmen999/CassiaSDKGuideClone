@@ -29,7 +29,7 @@ __Home__
    * Reboot a Router Remotely
 
    </details>
-* <details><summary><strong>Traffic Related APIs</strong></summary>
+   <details><summary><strong>Traffic Related APIs</strong></summary>
 
    * Scan Bluetooth Devices
    * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
@@ -40,8 +40,8 @@ __Home__
    * Get Device Connection Status
    * Receive Notification and Indication
    </details>
-* Positioning APIs
-* <details><summary><strong>Secure Pairing APIs</strong></summary>
+   Positioning APIs
+   <details><summary><strong>Secure Pairing APIs</strong></summary>
 
    * Overview of Secure Pairing APIs
    * Pair Request
@@ -52,14 +52,15 @@ __Home__
    * LE Legacy Pairing OOB Example
 
    </details>
-* <details><summary><strong>Router Auto-Selection APIs</strong></summary>
+   <details><summary><strong>Router Auto-Selection APIs</strong></summary>
    
    * Overview of Router Auto-Selection
    * Connect a Device
    * Disconnect a Device
 
    </details>
-* <details><summary><strong>SSE Combination APIs</strong></summary>
+   <details><summary><strong>SSE Combination APIs</strong></summary>
+   
    * Overview of SSE Combination APIs
    * Create Combined SSE
    * Open Scan
