@@ -40,7 +40,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Get Device Connection Status
      * Receive Notification and Indication 
      </details>
-   * <a href="">Positioning API</a>
+   * <div><a href="">Positioning API</a></div>
    * <details><summary><strong>Secure Pairing API</strong></summary>
 
      * Overview of Secure Pairing API
