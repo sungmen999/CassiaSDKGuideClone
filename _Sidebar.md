@@ -74,8 +74,7 @@ __Home__
    </details>
 </details>
 <span>__Bluetooth Debug Tool__</span>
-
-__Error Messages__
+<span>__Error Messages__</span>
 <details><summary><strong>Appendix</strong></summary>
    
    * Migrate from C1000-2B Firmware to X1000
