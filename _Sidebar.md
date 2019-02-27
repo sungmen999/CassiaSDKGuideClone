@@ -1,8 +1,10 @@
 * __Home__
+<details><summary>__Overview__</summary>
 * __Overview__
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
+</details>
 * __Getting Started__
    * Access Local Router
    * Access Cassia Router through the Cassia AC
