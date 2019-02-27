@@ -46,11 +46,13 @@
    * Passkey Entry Example: Initiator Inputs
    * LE Legacy Pairing OOB Example
    </details>
-* Router Auto-Selection APIs
-   * Router Auto-Selection
+* <details><summary><strong>Router Auto-Selection APIs</strong></summary>
+   * Overview of Router Auto-Selection
    * Connect a Device
    * Disconnect a Device
-* SSE Combination APIs
+   </details>
+* <details><summary><strong>SSE Combination APIs</strong></summary>
+   * Overview of SSE Combination APIs
    * Create Combined SSE
    * Open Scan
    * Close Scan
@@ -60,11 +62,12 @@
    * Close Connection-State Report
    * Open AP-State Report
    * Close AP-State Report
-
+   </details>
 </details>
 
 * __Bluetooth Debug Tool__
 * __Error Messages__
-* __Appendix__
+* <details><summary><strong>Appendix</strong></summary>
    * Migrate from C1000-2B Firmware to X1000
    * Sample Code to Get Access Token
+   </details>
