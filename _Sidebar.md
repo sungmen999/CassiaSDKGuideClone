@@ -1,3 +1,3 @@
-### Table of Contents
+### Home
 ### Overview
 ### Getting Started
