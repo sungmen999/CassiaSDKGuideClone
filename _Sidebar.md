@@ -27,7 +27,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Monitor Cassia Router’s Status
      * Obtain All Online Routers’ Status
      * Reboot a Router Remotely 
-   </details>
+     </details>
    
    * <details><summary><strong>Traffic Related API</strong></summary>
 
@@ -39,7 +39,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Get Advertise Data
      * Get Device Connection Status
      * Receive Notification and Indication 
-   </details>
+     </details>
    * Positioning API
    * <details><summary><strong>Secure Pairing API</strong></summary>
 
