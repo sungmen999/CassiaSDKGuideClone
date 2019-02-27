@@ -2,7 +2,7 @@
 
 <details><summary><strong>Overview</strong></summary>
 
-   * __[Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview)__
+   * __[Cassia SDK Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)__
    * Two Set of RESTful APIs
    * Architecture Diagram
    * Server Sent Events
@@ -10,14 +10,14 @@
 </details>
 <details><summary><strong>Getting Started</strong></summary>
 
-* __[Getting Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
+* __[How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
 * Access Local Router
 * Access Cassia Router through the Cassia AC
 
 </details>
 <details><summary><strong>RESTful API</strong></summary>
 
-* __[RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
+* __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
 * Common Parameters
 * <details><summary><strong>Management APIs</strong></summary>
    * Obtain Cassia Router’s Configuration
@@ -26,7 +26,7 @@
    * Obtain All Online Routers’ Status
    * Reboot a Router Remotely
    </details>
-* Traffic Related APIs
+* <details><summary><strong>Traffic Related APIs</strong></summary>
    * Scan Bluetooth Devices
    * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
    * Connect/Disconnect to a Target Device
@@ -35,14 +35,17 @@
    * Get Advertise Data
    * Get Device Connection Status
    * Receive Notification and Indication
+   </details>
 * Positioning APIs
-* Secure Pairing APIs
+* <details><summary><strong>Secure Pairing APIs</strong></summary>
+   * Overview of Secure Pairing APIs
    * Pair Request
    * Pair-Input Request
    * Unpair Request
    * Just Works Example
    * Passkey Entry Example: Initiator Inputs
    * LE Legacy Pairing OOB Example
+   </details>
 * Router Auto-Selection APIs
    * Router Auto-Selection
    * Connect a Device
