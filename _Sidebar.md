@@ -1,5 +1,4 @@
 __Home__
-
 <details><summary><strong>Overview</strong></summary>
 
    * __[Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)__
