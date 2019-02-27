@@ -21,6 +21,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
    * Common Parameters
    * <details><summary><strong>Management API</strong></summary>
+
      * Obtain Cassia Router’s Configuration
      * Obtain Cassia Router’s Status
      * Monitor Cassia Router’s Status
@@ -29,6 +30,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      </details>
    
    * <details><summary><strong>Traffic Related API</strong></summary>
+
      * Scan Bluetooth Devices
      * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
      * Connect/Disconnect to a Target Device
