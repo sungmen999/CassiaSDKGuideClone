@@ -18,7 +18,7 @@ __Home__
 <br />
 <details><summary><strong>RESTful API</strong></summary>
 
-* **[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)**
+* __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
 * Common Parameters
 * <details><summary><strong>Management APIs</strong></summary>
 
@@ -39,6 +39,7 @@ __Home__
    * Get Advertise Data
    * Get Device Connection Status
    * Receive Notification and Indication
+
    </details>
 * Positioning APIs
 * <details><summary><strong>Secure Pairing APIs</strong></summary>
@@ -70,7 +71,9 @@ __Home__
    * Close Connection-State Report
    * Open AP-State Report
    * Close AP-State Report
+   
    </details>
+
 </details>
 <br />
 
