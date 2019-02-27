@@ -1,14 +1,11 @@
 * __Home__
 
-<details><summary>
-<strong>
-[Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview)
-</strong></summary>
+<details><summary><strong>Overview</strong></summary>
 
-* __Overview__
-* Two Set of RESTful APIs
-* Architecture Diagram
-* Server Sent Events
+   * __[Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview)__
+   * Two Set of RESTful APIs
+   * Architecture Diagram
+   * Server Sent Events
 
 </details>
 <details><summary><strong>Getting Started</strong></summary>
