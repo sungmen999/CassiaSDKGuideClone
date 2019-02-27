@@ -21,7 +21,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
    * Common Parameters
    * <details><summary><strong>Management API</strong></summary>
-
      * Obtain Cassia Router’s Configuration
      * Obtain Cassia Router’s Status
      * Monitor Cassia Router’s Status
