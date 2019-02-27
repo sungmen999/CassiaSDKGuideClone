@@ -7,7 +7,7 @@ __Home__
    * Server Sent Events
 
 </details>
-
+<br />
 <details><summary><strong>Getting Started</strong></summary>
 
 * __[How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
@@ -15,7 +15,7 @@ __Home__
 * Access Cassia Router through the Cassia AC
 
 </details>
-
+<br />
 <details><summary><strong>RESTful API</strong></summary>
 
 * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
@@ -73,7 +73,7 @@ __Home__
    * Close AP-State Report
    </details>
 </details>
-
+<br />
 __Bluetooth Debug Tool__
 
 __Error Messages__
