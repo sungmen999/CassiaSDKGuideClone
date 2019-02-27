@@ -10,7 +10,7 @@
 </details>
 <details><summary><strong>Getting Started</strong></summary>
 
-* __Getting Started__
+* __[Getting Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
 * Access Local Router
 * Access Cassia Router through the Cassia AC
 
