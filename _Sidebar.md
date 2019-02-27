@@ -20,7 +20,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
    * __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
    * Common Parameters
-   <details><summary><strong>Management APIs</strong></summary>
+   <details><summary><strong>Management API</strong></summary>
 
    * Obtain Cassia Router’s Configuration
    * Obtain Cassia Router’s Status
@@ -29,7 +29,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * Reboot a Router Remotely
 
    </details>
-   <details><summary><strong>Traffic Related APIs</strong></summary>
+   <details><summary><strong>Traffic Related API</strong></summary>
 
    * Scan Bluetooth Devices
    * Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
@@ -40,10 +40,10 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * Get Device Connection Status
    * Receive Notification and Indication
    </details>
-   Positioning APIs
-   <details><summary><strong>Secure Pairing APIs</strong></summary>
+   Positioning API
+   <details><summary><strong>Secure Pairing API</strong></summary>
 
-   * Overview of Secure Pairing APIs
+   * Overview of Secure Pairing API
    * Pair Request
    * Pair-Input Request
    * Unpair Request
@@ -52,16 +52,16 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * LE Legacy Pairing OOB Example
 
    </details>
-   <details><summary><strong>Router Auto-Selection APIs</strong></summary>
+   <details><summary><strong>Router Auto-Selection API</strong></summary>
    
-   * Overview of Router Auto-Selection
+   * Overview of Router Auto-Selection API
    * Connect a Device
    * Disconnect a Device
 
    </details>
-   <details><summary><strong>SSE Combination APIs</strong></summary>
+   <details><summary><strong>SSE Combination API</strong></summary>
    
-   * Overview of SSE Combination APIs
+   * Overview of SSE Combination API
    * Create Combined SSE
    * Open Scan
    * Close Scan
