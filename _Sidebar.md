@@ -81,7 +81,7 @@ __Bluetooth Debug Tool__
 
 __Error Messages__
 
-<details><summary><strong>Appendix</strong></summary>
+<details><summary><strong>Extras</strong></summary>
    
    * Migrate from C1000-2B Firmware to X1000
    * Sample Code to Get Access Token
