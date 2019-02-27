@@ -17,7 +17,8 @@ __Home__
 </details>
 <br />
 <details><summary><strong>RESTful API</strong></summary>
-* __[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)__
+
+* **[Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)**
 * Common Parameters
 * <details><summary><strong>Management APIs</strong></summary>
 
