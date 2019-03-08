@@ -19,7 +19,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>RESTful API</strong></summary>
 
    * [Overview of RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API)
-   * [Common Parameters](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Common-Parameters)
+   * <a href="https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Common-Parameters">Common Parameters</a>
    * <details><summary><strong>Management API</strong></summary>
 
      * Obtain Cassia Router’s Configuration
