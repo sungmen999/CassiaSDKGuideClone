@@ -52,7 +52,7 @@ access_token:
 expires_in: 3600 }
 ```
   * Now you can use access_token to access the other RESTful APIs by appending an
-access_token parameter. For example:
+access_token parameter. For example:<br/>
 ```http://demo.cassia.pro/api/gap/nodes?event=1&mac=<routermac>&access_token=xxx```
 Or, you can add {Authorization : 'Bearer ' + access_token } in HTTP headers.
 
