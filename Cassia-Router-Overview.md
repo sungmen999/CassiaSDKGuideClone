@@ -29,15 +29,15 @@ used. It is not needed for the RESTful APIs on the local router.
 need to turn on Local RESTful API in AC console or router console. Please see below
 screenshots.
 
-Figure 1: (v1.2) Turn on Local RESTful API in AC Console
+**Figure 1: (v1.2) Turn on Local RESTful API in AC Console**
 
-Figure 2: (v1.2) Turn on Local RESTful API in Router Console
+**Figure 2: (v1.2) Turn on Local RESTful API in Router Console**
 
 In firmware 1.3, local RESTful API will be automatically turned on, if the router is
 configured as Standalone Mode. If the router is configured as AC Managed, the local
 RESTful API will be turned off. Please see below screenshots.
 
-Figure 3: (v1.3) Configuration of Router Mode on Router Console
+**Figure 3: (v1.3) Configuration of Router Mode on Router Console**
 
 ### [Architecture Diagram](#architecture-diagram)
 The Cassia IoT Access Controller (AC) is a powerful IoT network management solution. It
@@ -47,7 +47,7 @@ You can operate your BLE devices using a set of RESTful APIs, via the Cassia AC 
 Cassia routers. Please see below figure for the Cassia RESTful APIs Working Diagram, using
 X1000 as an example.
 
-Figure 4: Cassia RESTful APIs Working Diagram
+**Figure 4: Cassia RESTful APIs Working Diagram**
 
 First, the business application initiates an OAuth authentication request (generated using
 developer credentials) to the Cassia AC. Once the authentication succeeds, it will send an
