@@ -34,6 +34,6 @@ request(options, function(error, req, body) {
 });
 
 request(options, function(error, request, body) {
- console.log(body);
+  console.log(body);
 });
 ```
