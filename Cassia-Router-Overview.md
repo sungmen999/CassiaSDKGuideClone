@@ -20,7 +20,7 @@ APIs through Cassia AC as examples.
   * Router auto-selection (chapter 5.6, introduced in firmware 1.3)
   * SSE Combination (chapter 5.7, introduced in firmware 1.3)
 
-NOTE:
+**NOTE**:
   * The RESTful APIs through Cassia AC includes “/api” after {your AC domain}. It is not
 needed for the RESTful APIs on the local router.
   * The RESTful APIs through Cassia AC includes “mac=<mac>” to identify which router is
