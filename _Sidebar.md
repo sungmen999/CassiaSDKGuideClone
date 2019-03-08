@@ -2,9 +2,9 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>Overview</strong></summary>
 
    * [Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)
-   * [Two Set of RESTful APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Two-Set-of-RESTful-APIs)
-   * [Architecture Diagram](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Architecture-Diagram)
-   * [Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Server-Sent-Events)
+   * [Two Set of RESTful APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview#two-sets-of-restful-apis)
+   * [Architecture Diagram](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview#architecture-diagram)
+   * [Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Overview#server-sent-events)
 
 </details>
 <br />
