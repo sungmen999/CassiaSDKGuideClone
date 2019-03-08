@@ -6,3 +6,10 @@ Cassia routers. Please see below figure for the Cassia RESTful APIs Working Diag
 X1000 as an example.
 
 Figure 4: Cassia RESTful APIs Working Diagram
+
+First, the business application initiates an OAuth authentication request (generated using
+developer credentials) to the Cassia AC. Once the authentication succeeds, it will send an
+HTTP query to the Cassia AC based on RESTful. Next, the Cassia AC dispatches the query to a
+corresponding Bluetooth router via encrypted CAPWAP. The router then executes the query
+upon the BLE devices, and passes the result back to the Cassia AC, and then to the business
+application.
