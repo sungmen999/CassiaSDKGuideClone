@@ -11,7 +11,7 @@ var options = {
   method : 'POST',
   form : {'grant_type' : 'client_credentials'},
   headers : {
-    Authorization : 'Basic ' + new Buffer(credentials.id + ':' + credentials.secret, 'ascii').toString('base64'),
+  Authorization : 'Basic ' + new Buffer(credentials.id + ':' + credentials.secret, 'ascii').toString('base64'),
   }
 };
 
@@ -32,8 +32,9 @@ request(options, function(error, req, body) {
     }
   };
 });
-
-request(options, function(error, request, body) {
-  console.log(body);
 });
+ request(options, function(error, request, body) {
+ console.log(body);
+ });
+}); 
 ```
