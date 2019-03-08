@@ -4,7 +4,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * __[Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)__
    * __[Two Set of RESTful APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Two-Set-of-RESTful-APIs)__
    * __[Architecture Diagram](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Architecture-Diagram)__
-   * Server-Sent Events
+   * __[Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Server-Sent-Events)__
 
 </details>
 <br />
