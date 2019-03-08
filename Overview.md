@@ -1,0 +1,85 @@
+The Cassia Bluetooth Router is the world’s first long-range Bluetooth router designed for
+enterprise deployments, enabling seamless coverage of any size and scale. It extends
+Bluetooth range up to 1,000 feet (open space, line-of-sight), and enables remote control of
+multiple Bluetooth Low Energy (BLE) devices without requiring any changes to the Bluetooth
+devices.
+
+### [Two Sets of RESTful APIs](#two-sets-of-restful-apis)
+Cassia provides two sets of RESTful APIs that enable BLE device interaction with Cassia
+routers:
+  * APIs on the local router (where the application is usually on the same network as the
+router)
+  * APIs through Cassia’s IoT Access Controller (Cassia AC).
+The APIs below are only available through the Cassia AC. Except for these APIs, the two set
+of RESTful APIs are the same and will give the same result. In this document, we use the
+APIs through Cassia AC as examples.
+  * Positioning APIs (chapter 5.4)
+  * Obtain Cassia router’s status (chapter 5.2.2)
+  * Monitor Cassia router’s status APIs (chapter 5.2.3)
+  * Obtain all online routers’ status (chapter 5.2.4)
+  * Router auto-selection (chapter 5.6, introduced in firmware 1.3)
+  * SSE Combination (chapter 5.7, introduced in firmware 1.3)
+
+NOTE:
+  * The RESTful APIs through Cassia AC includes “/api” after {your AC domain}. It is not
+needed for the RESTful APIs on the local router.
+  * The RESTful APIs through Cassia AC includes “mac=<mac>” to identify which router is
+used. It is not needed for the RESTful APIs on the local router.
+  * For firmware 1.2 or below, if you want to use RESTful APIs on the local routers, you
+need to turn on Local RESTful API in AC console or router console. Please see below
+screenshots.
+
+Figure 1: (v1.2) Turn on Local RESTful API in AC Console
+
+Figure 2: (v1.2) Turn on Local RESTful API in Router Console
+
+In firmware 1.3, local RESTful API will be automatically turned on, if the router is
+configured as Standalone Mode. If the router is configured as AC Managed, the local
+RESTful API will be turned off. Please see below screenshots.
+
+Figure 3: (v1.3) Configuration of Router Mode on Router Console
+
+### [Architecture Diagram](#architecture-diagram)
+The Cassia IoT Access Controller (AC) is a powerful IoT network management solution. It
+provides RESTful APIs for the business to do data collection, positioning, and security policy
+management, enabling the remote control of Cassia Bluetooth routers across the Internet.
+You can operate your BLE devices using a set of RESTful APIs, via the Cassia AC and the
+Cassia routers. Please see below figure for the Cassia RESTful APIs Working Diagram, using
+X1000 as an example.
+
+Figure 4: Cassia RESTful APIs Working Diagram
+
+First, the business application initiates an OAuth authentication request (generated using
+developer credentials) to the Cassia AC. Once the authentication succeeds, it will send an
+HTTP query to the Cassia AC based on RESTful. Next, the Cassia AC dispatches the query to a
+corresponding Bluetooth router via encrypted CAPWAP. The router then executes the query
+upon the BLE devices, and passes the result back to the Cassia AC, and then to the business
+application.
+
+### [Server Sent Events](#server-sent-events)
+SSE is a technology where a browser receives automatic updates from a server via an HTTP
+connection. The SSE API is standardized as a part of HTML5 by the W3C. SSE is used to send
+message updates or continuous data streams to a browser client. It needs to be manually
+terminated, otherwise, it will keep on running until an error occurs.
+Five of the RESTful APIs are using SSE: they are scan (chapter 5.3.1), get device connection
+status (chapter 5.3.7), receive indication and notification (chapter 5.3.8), monitor Cassia
+router’s status (chapter 5.2.3) and create combined SSE (chapter 5.6.1, firmware 1.3).
+Each SSE response starts with “data:”. When debugging, you can input the URL of an SSE
+into a web browser, then you will see the SSE output from the web browser.
+In the program, an SSE request won’t return any data if you call the interface like a normal
+HTTP request, because a normal HTTP request only returns output when it finishes. In
+addition, when calling an SSE, you should monitor this thread. If it is interrupted by an error
+or any unexpected incident, you can restart it.
+
+**NOTE**: If you use tools like CURL for HTTP request, the tool will return data when the HTTP
+request ends. However, SSE API which NEVER ends and sends data in a stream, so it will
+hang the page. You should add the following snippet (use scan as an example):
+
+#### PHP
+```php
+if ($stream = fopen($url_for_scan, 'r')) {
+  while(($line=fgets($stream))!== false){
+    echo $line;
+  }
+}
+```
