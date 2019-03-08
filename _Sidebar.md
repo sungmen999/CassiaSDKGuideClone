@@ -1,18 +1,18 @@
 __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>Overview</strong></summary>
 
-   * __[Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)__
-   * __[Two Set of RESTful APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Two-Set-of-RESTful-APIs)__
-   * __[Architecture Diagram](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Architecture-Diagram)__
-   * __[Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Server-Sent-Events)__
+   * [Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)
+   * [Two Set of RESTful APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Two-Set-of-RESTful-APIs)
+   * [Architecture Diagram](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Architecture-Diagram)
+   * [Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Server-Sent-Events)
 
 </details>
 <br />
 <details><summary><strong>Getting Started</strong></summary>
 
-* __[How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)__
-* __[Access Local Router](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Access-Local-Router)__
-* __[Access Cassia Router through the Cassia AC](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Access-Cassia-Router-through-the-Cassia-AC)__
+* [How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)
+* [Access Local Router](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Access-Local-Router)
+* [Access Cassia Router through the Cassia AC](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Access-Cassia-Router-through-the-Cassia-AC)
 
 </details>
 <br />
