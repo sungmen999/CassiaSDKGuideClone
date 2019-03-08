@@ -79,7 +79,7 @@ __Error Messages__
 
 <details><summary><strong>Extras</strong></summary>
    
-   * Migrate from C1000-2B Firmware to X1000
+   * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
    * [Sample Code to Get Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Get-Access-Token)
    
 </details>
