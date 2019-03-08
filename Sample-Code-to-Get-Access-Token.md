@@ -16,21 +16,21 @@ var options = {
 };
 
 request(options, function(error, req, body) {
- if (error) {
-   console.log(error);
-   return;
- }
- var data = JSON.parse(body);
- access_token = data.access_token;
- console.log(data);
- var options = {
-   url : 'http://demo.cassia.pro/api/client', //you can change this to the IP address and port your Router is using.
-   method : 'GET',
-   // form : {'grant_type' : 'client_credentials'},
-   headers : {
-     Authorization : 'Bearer ' + access_token,
-   }
- };
+  if (error) {
+    console.log(error);
+    return;
+  }
+  var data = JSON.parse(body);
+  access_token = data.access_token;
+  console.log(data);
+  var options = {
+    url : 'http://demo.cassia.pro/api/client', //you can change this to the IP address and port your Router is using.
+    method : 'GET',
+    // form : {'grant_type' : 'client_credentials'},
+    headers : {
+      Authorization : 'Bearer ' + access_token,
+    }
+  };
 });
 
 request(options, function(error, request, body) {
