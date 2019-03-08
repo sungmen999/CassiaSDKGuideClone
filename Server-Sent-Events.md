@@ -16,6 +16,7 @@ or any unexpected incident, you can restart it.
 request ends. However, SSE API which NEVER ends and sends data in a stream, so it will
 hang the page. You should add the following snippet (use scan as an example):
 
+#### PHP
 ```php
 if ($stream = fopen($url_for_scan, 'r')) {
   while(($line=fgets($stream))!== false){
