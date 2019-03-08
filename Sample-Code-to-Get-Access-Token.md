@@ -1,5 +1,6 @@
 #### JavaScript
 ```javascript
+...
 var credentials = {
  id: 'tester',
  secret: '816213f8b5c2877d'
