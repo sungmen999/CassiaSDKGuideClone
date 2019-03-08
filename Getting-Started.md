@@ -12,7 +12,7 @@ Your application can access local Cassia routers directly (usually in the same n
 
 Figure 5: Access local Cassia router
 
-### [Access Cassia Router through the Cassia AC](#access-cassia-router-through-the-ac)
+### [Access Cassia Router through the Cassia AC](#access-cassia-router-through-the-cassia-ac)
 Before starting to use RESTful API’s through the Cassia AC, you will need developer
 credentials (a Developer Key and a Developer Secret). It is not needed for a RESTful API on a
 local router. These developer credentials authorize the remote control of the Cassia
