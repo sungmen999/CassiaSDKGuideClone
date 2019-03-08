@@ -28,6 +28,5 @@ POST api/oauth2/token HTTP/1.1
 Host: demo.cassia.pro
 Headers: {Authorization: Basic dGVzdGVyOjEwYjgzZjlhMmU4MjNjNDc=
 Content-Type: application/x-www-form-urlencoded}
-Body:
-{grant_type=client_credentials}
+Body: {grant_type=client_credentials}
 ```
