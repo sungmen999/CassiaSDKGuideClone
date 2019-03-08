@@ -1,4 +1,3 @@
-# [Getting Started](#getting-started)
 Please setup the Cassia router, connect the router to Cassia AC or run the router in
 standalone mode.
 
