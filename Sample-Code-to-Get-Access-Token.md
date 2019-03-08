@@ -1,4 +1,4 @@
-### JavaScript
+#### JavaScript
 ```javascript
 var credentials = {
  id: 'tester',
