@@ -4,7 +4,7 @@ changes: change host and add “/api” to the beginning of the URL. See below f
 Example code on C1000-2B
 ```javascript
 var host = "http://api.cassianetworks.com";
-// Get token here.
+// <- Get token here.
 $.ajax({url: host+"/oauth2/token", headers: headers, type:"post", success: function(data){
 // ...
 }});
