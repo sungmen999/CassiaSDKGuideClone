@@ -12,7 +12,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
 * [How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)
 * [Access Local Router](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started#access-local-router)
-* [Access Cassia Router through the Cassia AC](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started#access-cassia-router-through-ac)
+* [Access Cassia Router through the Cassia AC](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started#access-cassia-router-through-the-ac)
 
 </details>
 <br />
