@@ -14,6 +14,7 @@ connect. By default, the router will pick up the chip automatically based on an 
 algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1.
 <br />
 <br />
+
 ## Management API
 ### Obtain Cassia Router’s Configuration
 You can use below API to obtain the configuration of a router, including its IP address,
@@ -429,4 +430,5 @@ GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 ```
 <br />
 <br />
+
 ## Traffic Related API
