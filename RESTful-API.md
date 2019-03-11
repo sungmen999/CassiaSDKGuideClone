@@ -22,6 +22,7 @@ GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
 ```
 Response example:
 <details><summary><strong>Configuration Response Example</strong></summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -230,6 +231,7 @@ Message-body: application/json
     "model": "X1000"
 }
 ```
+
 </details>
 
 ### Obtain Cassia Router’s Status (Through AC)
