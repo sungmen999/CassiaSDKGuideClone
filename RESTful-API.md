@@ -2,7 +2,7 @@ Most of the Bluetooth GAP/GATT operations are exposed in RESTful APIs. The signa
 those APIs are fully compliant with Bluetooth SIG’s Internet Working Group RESTful API
 specification.
 
-### Common Parameters
+## Common Parameters
 Here are common parameters for RESTful API:
   * mac: the mac address of a Cassia router (e.g. CC:1B:E0:E0:24:B4)
   * node: the mac address of a BLE device (e.g. EF:F3:CF:F0:8B:81)
@@ -13,8 +13,8 @@ can identify its corresponding handle index in the UUID (e.g. 37)
 connect. By default, the router will pick up the chip automatically based on an internal
 algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1.
 
-### Management API
-#### Obtain Cassia Router’s Configuration
+## Management API
+### Obtain Cassia Router’s Configuration
 You can use below API to obtain the configuration of a router, including its IP address,
 model, version, etc.
 ```GET http://{your AC domain}/api/cassia/info?mac=<hubmac>```
@@ -119,7 +119,7 @@ Message-body: application/json
 data: {"mac":" CC:1B:E0:E0:98:50","status":"offline"}
 ```
 
-#### Obtain All Online Routers’ Status (Through AC)
+### Obtain All Online Routers’ Status (Through AC)
 **NOTE**: This API is only available through Cassia AC.
 ```GET http://{your AC domain}/api/cassia/hubs```
 The return result is an array of JSON objects.
@@ -175,5 +175,5 @@ Message-body: application/json
     }
 ]
 ```
-#### Reboot a Router Remotely
+### Reboot a Router Remotely
 
