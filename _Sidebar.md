@@ -73,7 +73,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 </details>
 <br />
 
-__Bluetooth Debug Tool__
+__[Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)__
 
 __Error Messages__
 
