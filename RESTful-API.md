@@ -245,7 +245,6 @@ Message-body: application/json
 You might use below API to obtain the status of a router, either online or offline.
 **NOTE**: This API is only available through Cassia AC.
 ```
-AC Managed:
 GET http://{your AC domain}/api/cassia/hubs/<hubmac>
 ```
 The return result is a JSON object.
