@@ -235,6 +235,7 @@ Message-body: application/json
 
 ### Obtain Cassia Router’s Status (Through AC)
 You might use below API to obtain the status of a router, either online or offline. The return result is a JSON object.
+
 **NOTE**: This API is only available through Cassia AC.
 ```
 GET http://{your AC domain}/api/cassia/hubs/<hubmac>
@@ -271,7 +272,7 @@ Message-body: application/json
 ```
 
 </details>
-<details><summary><strong>[Offline]Status Response Example</strong></summary>
+<details><summary><strong>[Offline] Status Response Example</strong></summary>
 
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
@@ -305,6 +306,7 @@ Message-body: application/json
 
 #### Monitor Cassia Router’s Status (Through AC)
 You can use this API to monitor the status of a router continuously.
+
 **NOTE**: This API is a Server-Sent Events (SSE) API and is only available through Cassia AC.
 ```
 GET http://{your AC domain}/api/cassia/hubStatus
