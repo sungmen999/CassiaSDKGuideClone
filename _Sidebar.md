@@ -24,8 +24,8 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
      * Obtain Cassia Router’s Configuration
      * Obtain Cassia Router’s Status
-     * Monitor Cassia Router’s Status
-     * Obtain All Online Routers’ Status
+     * Monitor Cassia Router’s Status (Through AC)
+     * Obtain All Online Routers’ Status (Through AC)
      * Reboot a Router Remotely 
      </details>
    
