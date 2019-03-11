@@ -242,7 +242,7 @@ Message-body: application/json
 <br />
 
 ### Obtain Cassia Router’s Status (Through AC)
-You might use below API to obtain the status of a router, either online or offline.
+You might use below API to obtain the status of a router, either online or offline.<br />
 **NOTE**: This API is only available through Cassia AC.
 ```
 GET http://{your AC domain}/api/cassia/hubs/<hubmac>
