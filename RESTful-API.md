@@ -421,7 +421,8 @@ Message-body: application/json
 </details>
 <br />
 
-### Reboot a Router Remotely (Through AC)
+### Reboot a Router Remotely
+AC Managed:
 ```
 GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 ```
