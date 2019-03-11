@@ -13,7 +13,6 @@ can identify its corresponding handle index in the UUID (e.g. 37)
 connect. By default, the router will pick up the chip automatically based on an internal
 algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1.
 <br />
-<br />
 
 ## Management API
 ### Obtain Cassia Router’s Configuration
@@ -428,7 +427,6 @@ AC Managed:
 ```
 GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 ```
-<br />
 <br />
 
 ## Traffic Related API
