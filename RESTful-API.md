@@ -306,7 +306,7 @@ Message-body: application/json
 </details>
 <br />
 
-#### Monitor Cassia Router’s Status (Through AC)
+### Monitor Cassia Router’s Status (Through AC)
 You can use this API to monitor the status of a router continuously.
 
 **NOTE**: This API is a Server-Sent Events (SSE) API and is only available through Cassia AC.
