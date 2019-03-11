@@ -349,7 +349,8 @@ data:
 ```
 
 </details>
-
+<br />
+<br />
 
 ### Obtain All Online Routers’ Status (Through AC)
 **NOTE**: This API is only available through Cassia AC.
@@ -413,7 +414,6 @@ Message-body: application/json
 </details>
 <br />
 <br />
-<br />
-<br />
+
 ### Reboot a Router Remotely
 
