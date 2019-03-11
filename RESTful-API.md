@@ -17,11 +17,13 @@ algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 an
 ### Obtain Cassia Router’s Configuration
 You can use below API to obtain the configuration of a router, including its IP address,
 model, version, etc.
-```
-AC Managed:
-GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
 
+AC Managed:
+```
+GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
+```
 Local:
+```
 GET http://{your domain}/cassia/info
 ```
 The return result is a JSON object.
