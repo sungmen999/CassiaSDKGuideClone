@@ -19,7 +19,7 @@ You can use below API to obtain the configuration of a router, including its IP 
 model, version, etc.
 ```
 AC Managed:
-GET http://{your domain}/api/cassia/info?mac=<hubmac>
+GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
 
 Local:
 GET http://{your domain}/cassia/info
