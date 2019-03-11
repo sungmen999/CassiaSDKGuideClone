@@ -427,3 +427,4 @@ AC Managed:
 GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 ```
 
+## Traffic Related API
