@@ -300,31 +300,35 @@ Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
 
-data:
-{"model":"X1000","ip":"96.64.240.30","mac":"CC:1B:E0:E0:98:50",
-"version":"1.1.1.1710261111","uptime":0,"user":"tester","locali
-GET http://{your AC domain}/api/cassia/hubs/<hubmac>
-{"_id":"5a9497eeadc22500524e27e5","id":"CC:1B:E0:E0:DF:80","mac":"CC:1B:E0:E0:DF:80","name":"New
-Bootloader","group":"SJCLab","status":"online","model":"E1000","version":"1.2.1.1803121427","position":""
-,"time":1519687662258,"ip":"96.64.240.30","localip":"192.168.0.106","uptime":807183,"offline_time":1523
-468797,"online_time":1523468804,"update_status":"update_ok","update_reason":"","update_version":"1.2.
-1.1803121427","update_progress":100,"groupcolor":"undefined"}
-{"_id":"5a9f5bb26d48ab005290b45f","id":"CC:1B:E0:E0:61:9C","mac":"CC:1B:E0:E0:61:9C","name":"Cassia
-Router","group":"","status":"offline","model":"C1000","version":"1.2.2.1801101456","position":"","time":15
-20393138130,"ip":"73.202.248.99","localip":"192.168.1.106","uptime":1708,"offline_time":1520893570,"onl
-ine_time":1520891832,"update_status":"update_ok","update_reason":"","update_version":"","update_prog
-ress":0}
-GET http://{your AC domain}/api/cassia/hubStatus
-10 Copyright © 2018 Cassia Networks, Inc.
-p":"192.168.0.105","whitelist":true,"status":"online"}
-```
-Response example for offline:
-```
+Response example for online:
+```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
 
-data: {"mac":" CC:1B:E0:E0:98:50","status":"offline"}
+{
+    "model": "X1000",
+    "ip": "96.64.240.30",
+    "mac": "CC:1B:E0:E0:98:50",
+    "version": "1.1.1.1710261111",
+    "uptime": 0,
+    "user": "tester",
+    "localip": "192.168.0.105",
+    "whitelist": true,
+    "status": "online"
+}
+```
+Response example for offline:
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+data:
+{
+    "mac": " CC:1B:E0:E0:98:50",
+    "status": "offline"
+}
 ```
 
 ### Obtain All Online Routers’ Status (Through AC)
