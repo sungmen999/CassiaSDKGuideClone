@@ -232,7 +232,7 @@ Message-body: application/json
 ```
 
 </details>
-
+<br />
 
 ### Obtain Cassia Router’s Status (Through AC)
 You might use below API to obtain the status of a router, either online or offline. The return result is a JSON object.
@@ -304,7 +304,7 @@ Message-body: application/json
 ```
 
 </details>
-
+<br />
 
 #### Monitor Cassia Router’s Status (Through AC)
 You can use this API to monitor the status of a router continuously.
@@ -349,7 +349,6 @@ data:
 ```
 
 </details>
-<br />
 <br />
 
 ### Obtain All Online Routers’ Status (Through AC)
@@ -412,7 +411,6 @@ Message-body: application/json
 ]
 ```
 </details>
-<br />
 <br />
 
 ### Reboot a Router Remotely
