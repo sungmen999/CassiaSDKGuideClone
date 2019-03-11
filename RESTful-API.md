@@ -410,12 +410,10 @@ Message-body: application/json
     }
 ]
 ```
-<br />
-<br />
-<br />
-<br />
 </details>
-
-
+<br />
+<br />
+<br />
+<br />
 ### Reboot a Router Remotely
 
