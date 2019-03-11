@@ -1,6 +1,6 @@
 For HTTP 500 error, the following are the common error messages:
 
-| Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description   | 
+| Message &nbsp; &nbsp; &nbsp; &nbsp;| Description   | 
 | --------------- |------------------|
 | `parameter invalid` | Wrong parameter value, such as chip ID, MAC address or advertise type is wrong. |
 | `device not found`   | It is possible that this device is disconnected. A GATT call to query the attribute of a disconnected device will return this error. |
