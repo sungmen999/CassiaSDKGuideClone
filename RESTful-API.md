@@ -12,7 +12,8 @@ can identify its corresponding handle index in the UUID (e.g. 37)
   * chip (optional): 0 or 1, indicates which chip of the Cassia router is used for scan and
 connect. By default, the router will pick up the chip automatically based on an internal
 algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1.
-
+<br />
+<br />
 ## Management API
 ### Obtain Cassia Router’s Configuration
 You can use below API to obtain the configuration of a router, including its IP address,
@@ -426,5 +427,6 @@ AC Managed:
 ```
 GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 ```
-
+<br />
+<br />
 ## Traffic Related API
