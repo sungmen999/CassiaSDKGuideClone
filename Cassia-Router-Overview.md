@@ -10,6 +10,7 @@ routers:
   * APIs on the local router (where the application is usually on the same network as the
 router)
   * APIs through Cassia’s IoT Access Controller (Cassia AC).
+
 The APIs below are only available through the Cassia AC. Except for these APIs, the two set
 of RESTful APIs are the same and will give the same result. In this document, we use the
 APIs through Cassia AC as examples.
