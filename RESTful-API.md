@@ -430,3 +430,17 @@ GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
 <br />
 
 ## Traffic Related API
+### Scan Bluetooth Devices
+### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+### Connect/Disconnect to a Target Device
+### Discover GATT Services and Characteristics
+### Read/Write the Value of a Specific Characteristic
+### Get Advertise Data
+### Get Device Connection Status
+### Receive Notification and Indication
+<br />
+
+## Positioning API
+## Secure Pairing API
+## Router Auto-Selection API
+## SSE Combination API
