@@ -25,7 +25,7 @@ GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
 ```
 Local:
 ```
-GET http://{your domain}/cassia/info
+GET http://{router ip}/cassia/info
 ```
 The return result is a JSON object.
 <details><summary><strong>Configuration Response Example</strong></summary>
@@ -426,6 +426,10 @@ Message-body: application/json
 AC Managed:
 ```
 GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/cassia/reboot
 ```
 <br />
 
