@@ -134,7 +134,7 @@ Message-body: application/json
         "id": "CC:1B:E0:E0:DF:80",
         "mac": "CC:1B:E0:E0:DF:80",
         "name": "New Bootloader",
-        "group": "ExampleLabs",
+        "group": "ExampleLab",
         "status": "online",
         "model": "E1000",
         "version": "1.4.0.1901300130",
@@ -151,7 +151,28 @@ Message-body: application/json
         "update_progress": 100,
         "groupcolor": "undefined"
     },
-    ...
+    {
+        "_id": "1a3447egadc24570524a27d1",
+        "id": "CC:1B:E0:E0:FA:52",
+        "mac": "CC:1B:E0:E0:FA:52",
+        "name": "New Bootloader",
+        "group": "AnotherLab",
+        "status": "online",
+        "model": "X1000",
+        "version": "1.4.0.1901300130",
+        "position": "",
+        "time": "1519687662258",
+        "ip": "62.134.231.112",
+        "localip": "192.168.0.96",
+        "uptime": 800215,
+        "offline_time": 1523461324,
+        "online_time": 1523467810,
+        "update_status": "update_ok",
+        "update_reason": "",
+        "update_version": "1.4.0.1901300130",
+        "update_progress": 100,
+        "groupcolor": "undefined"
+    }
 ]
 ```
 #### Reboot a Router Remotely
