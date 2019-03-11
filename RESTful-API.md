@@ -17,8 +17,11 @@ algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 an
 ### Obtain Cassia Router’s Configuration
 You can use below API to obtain the configuration of a router, including its IP address,
 model, version, etc.
-```GET http://{your AC domain}/api/cassia/info?mac=<hubmac>```
+```
+GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
+```
 Response example:
+<details><summary><strong>Configuration Response Example</strong></summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -227,12 +230,15 @@ Message-body: application/json
     "model": "X1000"
 }
 ```
+</details>
 
 ### Obtain Cassia Router’s Status (Through AC)
 You might use below API to obtain the status of a router, either online or offline. The return result is a JSON object.
 **NOTE**: This API is only available through Cassia AC.
-```GET http://{your AC domain}/api/cassia/hubs/<hubmac>```
-Response example for online:
+```
+GET http://{your AC domain}/api/cassia/hubs/<hubmac>
+```
+<details><summary>ONLINE Status Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -261,7 +267,8 @@ Message-body: application/json
     "groupcolor": "undefined"
 }
 ```
-Response example for offline:
+</details>
+<details><summary>OFFLINE Status Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -289,18 +296,15 @@ Message-body: application/json
     "update_progress": 0
 }
 ```
+</details>
 
 #### Monitor Cassia Router’s Status (Through AC)
 You can use this API to monitor the status of a router continuously.
 **NOTE**: This API is a Server-Sent Events (SSE) API and is only available through Cassia AC.
-```GET http://{your AC domain}/api/cassia/hubStatus```
-Response example for online:
 ```
-Status-Line : HTTP/1.1 200 OK/r/n
-Header : (general-header)
-Message-body: application/json
-
-Response example for online:
+GET http://{your AC domain}/api/cassia/hubStatus
+```
+<details><summary>ONLINE Monitor Status Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -318,7 +322,8 @@ Message-body: application/json
     "status": "online"
 }
 ```
-Response example for offline:
+</details>
+<details><summary>OFFLINE Monitor Status Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -330,12 +335,15 @@ data:
     "status": "offline"
 }
 ```
+</details>
 
 ### Obtain All Online Routers’ Status (Through AC)
 **NOTE**: This API is only available through Cassia AC.
-```GET http://{your AC domain}/api/cassia/hubs```
+```
+GET http://{your AC domain}/api/cassia/hubs
+```
 The return result is an array of JSON objects.
-Response example:
+<details><summary>Status Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -387,5 +395,7 @@ Message-body: application/json
     }
 ]
 ```
+</details>
+
 ### Reboot a Router Remotely
 
