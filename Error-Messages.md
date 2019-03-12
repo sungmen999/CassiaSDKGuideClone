@@ -1,7 +1,8 @@
 For HTTP 500 error, the following are the common error messages:
 
-| <img width="500px" /> Message | Description | 
+| Message | Description | 
 | --------------- |------------------|
+|<img width="500px" />||
 | `parameter invalid` | Wrong parameter value, such as chip ID, MAC address or advertise type is wrong. |
 | `device not found`   | It is possible that this device is disconnected. A GATT call to query the attribute of a disconnected device will return this error. |
 | `memory alloc error` | When the Bluetooth chip does not have enough memory to complete the operation it will return this error. |
