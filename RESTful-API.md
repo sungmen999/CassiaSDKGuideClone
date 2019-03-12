@@ -3,7 +3,7 @@ those APIs are fully compliant with Bluetooth SIG’s Internet Working Group RES
 specification.
 
 ## Common Parameters
-Here are common parameters for RESTful API:
+Here are common parameters for the RESTful API:
 
 | Parameter | Description |
 |-----------|-------------|
