@@ -7,7 +7,7 @@ Here are common parameters for the RESTful API:
 
 | Parameter | Description |
 |-----------|-------------|
-| `mac` |  The MACaddress of a Cassia router (e.g. CC:1B:E0:E0:24:B4). |
+| `mac` |  The MAC address of a Cassia router (e.g. CC:1B:E0:E0:24:B4). |
 | `node` | The MAC address of a BLE device (e.g. EF:F3:CF:F0:8B:81). |
 | `handle` | After you find the device services, based on the device’s Bluetooth profile, you can identify its corresponding handle index in the UUID (e.g. 37). |
 | `value` | The value written into the handle. |
