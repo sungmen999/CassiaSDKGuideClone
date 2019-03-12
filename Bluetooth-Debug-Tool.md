@@ -20,5 +20,5 @@ of raw data flowing in the Notify List window.
 **Figure 8: Cassia Bluetooth Debug Tool Example**
 
 From firmware 1.4, Cassia AC integrates with Bluetooth debug tool. For more information, please
-check Cassia AC Bluetooth Debug Tool User Guide at
+check Cassia AC Bluetooth Debug Tool User Guide at: <br />
 [https://www.cassianetworks.com/knowledge-base/general-documents](https://www.cassianetworks.com/knowledge-base/general-documents/)
