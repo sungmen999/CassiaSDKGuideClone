@@ -16,7 +16,7 @@ algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 an
 
 ## Management API
 ### Obtain Cassia Router’s Configuration
-You can use below API to obtain the configuration of a router, including its IP address,
+You can use the API below to obtain the configuration of a router, including its IP address,
 model, version, etc.
 
 AC Managed:
@@ -243,7 +243,7 @@ Message-body: application/json
 <br />
 
 ### Obtain Cassia Router’s Status (Through AC)
-You might use below API to obtain the status of a router, either online or offline.<br />
+You might use the API below to obtain the status of a router, either online or offline.<br />
 **NOTE**: This API is only available through Cassia AC.
 ```
 GET http://{your AC domain}/api/cassia/hubs/<hubmac>
