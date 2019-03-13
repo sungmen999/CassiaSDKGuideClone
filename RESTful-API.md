@@ -782,6 +782,63 @@ Message-body: application/json
 <br />
 
 ### Read/Write the Value of a Specific Characteristic
+The read/write operations are based on the handle (found in the discover result) of a specific characteristic.
+To read by the handle:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+{
+    "handle": "36",
+    "value": "56312e362e31"
+}
+```
+</details>
+<br />
+
+To write by the handle:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<hubmac>
+```
+
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+
+OK
+```
+</details>
+<br />
+
+Below is an example for opening and closing a specific characteristic’s notification and indication by Write API.
+
+First, you need to call the Discover API to find the corresponding descriptors of the
+specified characteristic. Then, open the descriptors, find the UUID and its corresponding
+handle, e.g. “37”. Now, you can use this handle in the Write API. To open the notification,
+set the value to "0100"; to open the indication, set the value to "0200"; to close the
+notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are examples).
+```
+GET http://{your AC
+domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+
+OK
+```
+</details>
+<br />
+
 ### Get Advertise Data
 ### Get Device Connection Status
 ### Receive Notification and Indication
