@@ -469,10 +469,10 @@ nodes?event=1&mac=<hubmac>&filter_rssi=<rssi1>,<rssi2>, … , <rssiX>
 
 In addition, customer can filter out a device based on its service UUID and name inside its advertise packet.
 ```
-GET http://{your AC domain}/api/gap/
-nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
-GET http://{your AC domain}/api/gap/
-nodes?event=1&mac=<hubmac>&filter_name=<name1>,<name2>, … , <nameX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+```
+```
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_name=<name1>,<name2>, … , <nameX>
 ```
 
 **NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
