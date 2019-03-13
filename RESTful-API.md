@@ -731,7 +731,7 @@ Message-body: application/json
 Discover all services, characteristics, and descriptors all at once:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<hubmac>
-```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -772,6 +772,8 @@ Message-body: application/json
 ```
 
 </details>
+
+```
 
 ### Read/Write the Value of a Specific Characteristic
 ### Get Advertise Data
