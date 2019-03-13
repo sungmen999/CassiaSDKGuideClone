@@ -502,9 +502,7 @@ We have added a few parameters in release 1.2 for this API:
 
 Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
 ```
-curl -X POST -H "content-type: application/json" -d
-'{"timeout":"1000","type":"public","auto":"1"}'
-'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
+curl -X POST -H "content-type: application/json" -d '{"timeout":"1000","type":"public","auto":"1"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
 ```
 <details><summary>Response Example</summary>
 
