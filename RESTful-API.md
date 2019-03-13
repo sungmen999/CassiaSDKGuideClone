@@ -444,9 +444,11 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>
 This API is a Server-Sent Events (SSE) which will be running continuously. Please check
 figure 5 for response example.
 Here are more optional parameters.
-• active (optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't
-specify, by default Cassia routers will perform passive scanning.
-• filter_duplicates (optional): 0 or 1, turn on/off to filter duplicated records. Default is 0.
+| Parameter | Description |
+|-----------|-------------|
+| `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't
+specify, by default Cassia routers will perform passive scanning. |
+| `filter_duplicates` | (Optional): 0 or 1, turn on/off to filter duplicated records. Default is 0. |
 
 ### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
 ### Connect/Disconnect to a Target Device
