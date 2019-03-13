@@ -497,7 +497,7 @@ We have added a few parameters in release 1.2 for this API:
 |-----------|-------------|
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. |
 | `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is set to 20,000ms. For S Series, the timeout value can’t be configured, while for X1000/E1000/C1000, this parameter is configurable, the minimum value is 200ms. |
-| `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0.
+| `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0. |
 
 Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
 ```
