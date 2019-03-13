@@ -443,7 +443,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>
 
 This API is a Server-Sent Events (SSE) which will be running continuously. Please check
 figure 5 for response example.
-Here are more optional parameters.
+Here are more optional parameters:
 
 | Parameter | Description |
 |-----------|-------------|
@@ -451,6 +451,36 @@ Here are more optional parameters.
 | `filter_duplicates` | (Optional): 0 or 1, turn on/off to filter duplicated records. Default is 0. |
 
 ### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+**NOTE**: Customer can add several filters with format (<filter1>,< filter2>, … , < filterX>). Wildcards are not supported.
+
+This is a useful API which can significantly reduce the amount of traffic sent from the router to the server.
+
+```
+GET http://{your AC domain}/api/gap/
+nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
+```
+
+Customer can also filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
+
+```
+GET http://{your AC domain}/api/gap/
+nodes?event=1&mac=<hubmac>&filter_rssi=<rssi1>,<rssi2>, … , <rssiX>
+```
+
+In addition, customer can filter out a device based on its service UUID and name inside its advertise packet.
+
+**NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
+```
+#define EIR_UUID16_SOME 0x02 /* 16-bit UUID, more available */
+#define EIR_UUID16_ALL 0x03 /* 16-bit UUID, all listed */
+#define EIR_UUID32_SOME 0x04 /* 32-bit UUID, more available */
+#define EIR_UUID32_ALL 0x05 /* 32-bit UUID, all listed */
+#define EIR_UUID128_SOME 0x06 /* 128-bit UUID, more available */
+#define EIR_UUID128_ALL 0x07 /* 128-bit UUID, all listed */
+#define EIR_NAME_SHORT 0x08 /* shortened local name */
+#define EIR_NAME_COMPLETE 0x09 /* complete local name */
+```
+
 ### Connect/Disconnect to a Target Device
 ### Discover GATT Services and Characteristics
 ### Read/Write the Value of a Specific Characteristic
