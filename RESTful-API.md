@@ -529,7 +529,7 @@ Get the device list connected to a router:
 GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
 ```
 <details><summary>Response Example</summary>
-```json
+* ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
