@@ -562,6 +562,217 @@ Message-body: application/json
 
 
 ### Discover GATT Services and Characteristics
+Discover all services:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+[{
+    "uuid": "00001800-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 1
+}, {
+    "uuid": "00001801-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 8
+}, {
+    "uuid": "0000fd00-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 9
+}, {
+    "uuid": "0000180d-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 20
+}, {
+    "uuid": "0000180f-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 26
+}, {
+    "uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 30
+}, {
+    "uuid": "00001802-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 43
+}, {
+    "uuid": "00001803-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 46
+}]
+```
+
+</details>
+
+Discover all characteristics:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+[{
+    "handle": 3,
+    "properties": 10,
+    "uuid": "00002a00-0000-1000-8000-00805f9b34fb"
+}, {
+    "handle": 5,
+    "properties": 2,
+    "uuid": "00002a01-0000-1000-8000-00805f9b34fb"
+}, {
+    "handle": 7,
+    "properties": 2,
+    "uuid": "00002a04-0000-1000-8000-00805f9b34fb"
+}, {
+    "handle": 11,
+    "properties": 16,
+    "uuid": "0000fd09-0000-1000-8000-00805f9b34fb"
+}, {
+    "handle": 14,
+    "properties": 4,
+    "uuid": "0000fd0a-0000-1000-8000-00805f9b34fb"
+}]
+```
+
+</details>
+
+Discover all characteristics in one service:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+[{
+    "handle": 48,
+    "properties": 10,
+    "uuid": "00002a06-0000-1000-8000-00805f9b34fb"
+}]
+```
+
+</details>
+
+Discover all descriptors in one characteristic:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+[{
+    "handle": 48,
+    "properties": 10,
+    "uuid": "00002a06-0000-1000-8000-00805f9b34fb"
+}]
+```
+
+</details>
+
+Discover a specific service by service UUID:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>&uuid=<uuid>
+```
+<details><summary>Response Example</summary>
+
+```
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+{
+    "uuid": "00001801-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "handle": 8
+}
+```
+
+</details>
+
+Discover a specific characteristic by characteristics UUID:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>&uuid=<uuid>
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+{
+    "handle": 45,
+    "properties": 4,
+    "uuid": "00002a06-0000-1000-8000-00805f9b34fb"
+}
+```
+
+</details>
+
+Discover all services, characteristics, and descriptors all at once:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+[{
+    "uuid": "00001800-0000-1000-8000-00805f9b34fb",
+    "primary": true,
+    "characteristics": [{
+        "descriptors": [{
+            "handle": 3,
+            "uuid": "00002a00-0000-1000-8000-00805f9b34fb"
+        }],
+        "handle": 3,
+        "properties": 10,
+        "uuid": "00002a00-0000-1000-8000-00805f9b34fb"
+    }, {
+        "descriptors": [{
+            "handle": 5,
+            "uuid": "00002a01-0000-1000-8000-00805f9b34fb"
+        }],
+        "handle": 5,
+        "properties": 2,
+        "uuid": "00002a01-0000-1000-8000-00805f9b34fb"
+    }, {
+        "descriptors": [{
+            "handle": 7,
+            "uuid": "00002a04-0000-1000-8000-00805f9b34fb"
+        }],
+        "handle": 7,
+        "properties": 2,
+        "uuid": "00002a04-0000-1000-8000-00805f9b34fb"
+    }],
+    "handle": 1
+}]
+```
+
+</details>
+
 ### Read/Write the Value of a Specific Characteristic
 ### Get Advertise Data
 ### Get Device Connection Status
