@@ -493,6 +493,7 @@ To use the router to connect to specific BLE devices using Cassia AC:
 POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 ```
 We have added a few parameters in release 1.2 for this API:
+
 | Parameter | Description |
 |-----------|-------------|
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. |
