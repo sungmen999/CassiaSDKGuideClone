@@ -505,30 +505,33 @@ curl -X POST -H "content-type: application/json" -d
 '{"timeout":"1000","type":"public","auto":"1"}'
 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
 ```
-Response example:
+<details><summary>Response Example</summary>
 ```
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: text/plain
 OK
 ```
+</details>
+
 To disconnect:
 ```
 DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 ```
-Response example:
+<details><summary>Response Example</summary>
 ```
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: text/plain
 OK
 ```
+</details>
 
 Get the device list connected to a router:
 ```
 GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
 ```
-* <details><summary>Response Example</summary>
+<details><summary>Response Example</summary>
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
