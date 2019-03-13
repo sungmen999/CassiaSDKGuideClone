@@ -488,6 +488,71 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_name=<name
 ```
 
 ### Connect/Disconnect to a Target Device
+To use the router to connect to specific BLE devices using Cassia AC:
+```
+POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
+```
+We have added a few parameters in release 1.2 for this API:
+| Parameter | Description |
+|-----------|-------------|
+| `type`    | (Mandatory): the BLE device’s address type, either public or random. |
+| `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is set to 20,000ms. For S Series, the timeout value can’t be configured, while for X1000/E1000/C1000, this parameter is configurable, the minimum value is 200ms. |
+| `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0.
+
+Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
+```
+curl -X POST -H "content-type: application/json" -d
+'{"timeout":"1000","type":"public","auto":"1"}'
+'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
+```
+Response example:
+```
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+To disconnect:
+```
+DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
+```
+Response example:
+```
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+
+Get the device list connected to a router:
+```
+GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+{
+    "nodes": [{
+        "type": "random",
+        "bdaddrs": {
+            "bdaddr": "EF:A3:E6:94:CD:2D",
+            "bdaddType": "random"
+        },
+        "chipId": 0,
+        "handle": "",
+        "name": "",
+        "connectionState": "connected",
+        "id": "EF:A3:E6:94:CD:2D"
+    }]
+}
+```
+</details>
+
+
+
 ### Discover GATT Services and Characteristics
 ### Read/Write the Value of a Specific Characteristic
 ### Get Advertise Data
