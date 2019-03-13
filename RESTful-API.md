@@ -514,7 +514,7 @@ OK
 ```
 
 </details>
-
+<br />
 To disconnect:
 ```
 DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
@@ -529,6 +529,7 @@ OK
 ```
 
 </details>
+<br />
 
 Get the device list connected to a router:
 ```
@@ -558,7 +559,7 @@ Message-body: application/json
 ```
 
 </details>
-
+<br />
 
 
 ### Discover GATT Services and Characteristics
@@ -610,6 +611,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover all characteristics:
 ```
@@ -646,6 +648,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover all characteristics in one service:
 ```
@@ -666,6 +669,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover all descriptors in one characteristic:
 ```
@@ -686,6 +690,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover a specific service by service UUID:
 ```
@@ -706,6 +711,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover a specific characteristic by characteristics UUID:
 ```
@@ -727,6 +733,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 #### Discover all services, characteristics, and descriptors all at once:
 ```
@@ -772,6 +779,7 @@ Message-body: application/json
 ```
 
 </details>
+<br />
 
 ### Read/Write the Value of a Specific Characteristic
 ### Get Advertise Data
