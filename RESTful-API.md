@@ -807,6 +807,7 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?
 ```
 
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -814,6 +815,7 @@ Message-body: text/plain
 
 OK
 ```
+
 </details>
 <br />
 
@@ -824,11 +826,13 @@ specified characteristic. Then, open the descriptors, find the UUID and its corr
 handle, e.g. “37”. Now, you can use this handle in the Write API. To open the notification,
 set the value to "0100"; to open the indication, set the value to "0200"; to close the
 notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are examples).
+
 ```
 GET http://{your AC
 domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
 ```
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
