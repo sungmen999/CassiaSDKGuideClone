@@ -562,7 +562,7 @@ Message-body: application/json
 
 
 ### Discover GATT Services and Characteristics
-Discover all services:
+#### Discover all services:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>
 ```
@@ -611,7 +611,7 @@ Message-body: application/json
 
 </details>
 
-Discover all characteristics:
+#### Discover all characteristics:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>
 ```
@@ -647,7 +647,7 @@ Message-body: application/json
 
 </details>
 
-Discover all characteristics in one service:
+#### Discover all characteristics in one service:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
 ```
@@ -667,7 +667,7 @@ Message-body: application/json
 
 </details>
 
-Discover all descriptors in one characteristic:
+#### Discover all descriptors in one characteristic:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<hubmac>
 ```
@@ -687,7 +687,7 @@ Message-body: application/json
 
 </details>
 
-Discover a specific service by service UUID:
+#### Discover a specific service by service UUID:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>&uuid=<uuid>
 ```
@@ -707,7 +707,7 @@ Message-body: application/json
 
 </details>
 
-Discover a specific characteristic by characteristics UUID:
+#### Discover a specific characteristic by characteristics UUID:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>&uuid=<uuid>
 ```
@@ -728,7 +728,7 @@ Message-body: application/json
 
 </details>
 
-Discover all services, characteristics, and descriptors all at once:
+#### Discover all services, characteristics, and descriptors all at once:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<hubmac>
 ```
