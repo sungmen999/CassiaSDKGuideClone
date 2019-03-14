@@ -1031,6 +1031,7 @@ IO Capability:
 Response Parameters:
 
 | Name | Optional/Mandatory | Description |
+| -- | -- | -- |
 | HTTP 500 error | Optional | Please check the [Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages) section. |
 | `pairingStatusCode` | Optional | See below table |
 | `pairingStatus` | Optional | Description of pairing status code |
@@ -1039,6 +1040,7 @@ Response Parameters:
 Pairing Status Codes:
 
 | Status Code | Status Description |
+| -- | -- |
 | 0 | Pairing Failed |
 | 1 | Pairing Successful |
 | 2 | Pairing Aborted |
