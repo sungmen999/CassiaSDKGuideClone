@@ -935,7 +935,7 @@ It will return a list:
 }
 
 For example:
-```json
+```
 {
     "11: 22: 33: 44: 55: 66": {
         "hubMac": "CC: 1 B: E0: E0: 01: 47"
@@ -953,9 +953,10 @@ GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 It will return ["device1", "device2","device3", ...]. 
 
 For example:
-```json
+```
 ["11:22:33:44:55:66","11:22:33:44:55:AA",...].
 ```
+
 <br />
 
 To get the list of BLE devices for all the routers within the AC:
@@ -970,13 +971,15 @@ It will return:
 }
 
 For example:
-```json
+```
 {
     "CC:1B:E0:E0:11:22": ["11:22:33:44:55:66", "11:22:33:44:55:AA"…],
     …
 }
 ```
+
 <br />
+
 ## Secure Pairing API
 ## Router Auto-Selection API
 ## SSE Combination API
