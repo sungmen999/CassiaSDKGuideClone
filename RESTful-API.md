@@ -1125,6 +1125,8 @@ Message-body: application/json
 { "pairingStatusCode": 5, "pairingStatus": "Passkey Input Expected" }
 ```
 
+</details>
+
 Step #2
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
@@ -1134,6 +1136,7 @@ Body example (application/json):
 { "passkey": "123456" }
 ```
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
