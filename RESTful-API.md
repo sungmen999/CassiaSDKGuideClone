@@ -513,6 +513,7 @@ OK
 
 </details>
 <br />
+
 To disconnect:
 ```
 DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
