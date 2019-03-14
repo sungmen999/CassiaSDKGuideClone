@@ -923,6 +923,7 @@ To obtain the closest router list for all the BLE devices that the AC can detect
 GET http://{your AC domain}/api/middleware/position/by-device/*
 ```
 It will return a list:
+```
 {
     "device1": {
         "hubMac": "hubMac1"
@@ -932,6 +933,7 @@ It will return a list:
     },
     ...
 }
+```
 
 <details><summary>Example</summary>
 
@@ -953,7 +955,10 @@ To get the list of BLE devices around a Cassia router:
 ```
 GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 ```
-It will return ["device1", "device2","device3", ...]. 
+It will return:
+```
+["device1", "device2","device3", ...]. 
+```
 
 <details><summary>Example</summary>
 
