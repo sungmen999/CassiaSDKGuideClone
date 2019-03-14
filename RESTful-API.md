@@ -934,7 +934,7 @@ It will return a list:
     ...
 }
 
-For example:
+<details><summary>Example</summary>
 ```
 {
     "11: 22: 33: 44: 55: 66": {
@@ -945,18 +945,20 @@ For example:
     },
 }
 ```
+</details>
 <br />
+
 To get the list of BLE devices around a Cassia router:
 ```
 GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 ```
 It will return ["device1", "device2","device3", ...]. 
 
-For example:
+<details><summary>Example</summary>
 ```
 ["11:22:33:44:55:66","11:22:33:44:55:AA",...].
 ```
-
+</details>
 <br />
 
 To get the list of BLE devices for all the routers within the AC:
@@ -969,15 +971,14 @@ It will return:
     "hubMac2": ["device1", "device2", "device3"…],
     ...
 }
-
-For example:
+<details><summary>Example</summary>
 ```
 {
     "CC:1B:E0:E0:11:22": ["11:22:33:44:55:66", "11:22:33:44:55:AA"…],
     …
 }
 ```
-
+</details>
 <br />
 
 ## Secure Pairing API
