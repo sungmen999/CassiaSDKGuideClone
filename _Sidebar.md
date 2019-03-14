@@ -14,7 +14,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 * [Access Cassia Router through the Cassia AC](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started#access-cassia-router-through-the-cassia-ac)
 
 </details>
-<br />
 <details><summary><strong>RESTful API</strong></summary>
 
    * <div><a href="https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API">Overview of RESTful API</a></div>
