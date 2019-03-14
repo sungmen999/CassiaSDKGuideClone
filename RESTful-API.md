@@ -844,6 +844,46 @@ OK
 <br />
 
 ### Get Advertise Data
+Begin advertising data:
+```
+GET http://{your AC domain}/api/advertise/start?mac=<mac>&interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
+```
+Here are the parameters:
+
+| Parameter | Description |
+|-----------|-------------|
+| `interval` | (Mandatory): advertise interval in ms. |
+| `ad_data` | (Mandatory): advertise package, the data type is string. |
+| `resp_data` | (Mandatory): advertise response package, the data type is string. |
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+
+</details>
+<br />
+
+Stop advertise data:
+```
+GET http://{your AC domain}/api/advertise/stop?mac=<mac>
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+
+</details>
+<br />
 ### Get Device Connection Status
 ### Receive Notification and Indication
 <br />
