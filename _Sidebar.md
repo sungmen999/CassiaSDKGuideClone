@@ -7,7 +7,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * [Server-Sent Events](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview#server-sent-events)
 
 </details>
-<br />
 <details><summary><strong>Getting Started</strong></summary>
 
 * [How to Get Started](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Started)
