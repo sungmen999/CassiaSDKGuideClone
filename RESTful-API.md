@@ -886,8 +886,25 @@ OK
 
 </details>
 <br />
+
 ### Get Device Connection Status
+SSE API to get the connection status of all the devices that have connected to a router:
+```
+GET http://{your AC domain}/api/management/nodes/connectionstate?mac=<hubmac>
+```
+When a device status is changed from disconnected to connected, or from connected to
+disconnected, you will get a response. For example:
+```json
+data: {"handle":"CC:1B:E0:E8:0D:F2","connectionState":"connected"}
+data: {"handle":"88:C6:26:92:58:77","connectionState":"disconnected"}
+```
+
 ### Receive Notification and Indication
+SSE API to continues receive notification and indication:
+```
+GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<hubmac>
+```
+
 <br />
 
 ## Positioning API
