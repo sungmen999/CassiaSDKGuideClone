@@ -908,6 +908,75 @@ GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<hubmac>
 <br />
 
 ## Positioning API
+Cassia supports room-based Bluetooth location tracking. Below are the related APIs.
+
+**NOTE**: Before calling any positioning APIs, please call scan API for the related routers.
+Positioning APIs are only available through Cassia AC.
+
+To identify the closest router a BLE device is located:
+```
+GET http://{your AC domain}/api/middleware/position/by-device/<device_mac>
+```
+It will return {“hubMac”:”hubMac1”}, e.g. {“hubMac”:”CC:1B:E0:E0:01:47”}.
+
+To obtain the closest router list for all the BLE devices that the AC can detect:
+```
+GET http://{your AC domain}/api/middleware/position/by-device/*
+```
+It will return a list:
+{
+    "device1": {
+        "hubMac": "hubMac1"
+    },
+    "device2": {
+        "hubMac": "hubMac2"
+    },
+    ...
+}
+
+For example:
+```json
+{
+    "11: 22: 33: 44: 55: 66": {
+        "hubMac": "CC: 1 B: E0: E0: 01: 47"
+    },
+    "11: 22: 33: 44: 55: 77": {
+        "hubMac": "CC: 1 B: E0: E0: 01: 48"
+    },
+}
+```
+<br />
+To get the list of BLE devices around a Cassia router:
+```
+GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
+```
+It will return ["device1", "device2","device3", ...]. 
+
+For example:
+```json
+["11:22:33:44:55:66","11:22:33:44:55:AA",...].
+```
+<br />
+
+To get the list of BLE devices for all the routers within the AC:
+```
+GET http://{your AC domain}/api/middleware/position/by-ap/*
+```
+It will return:
+{
+    "hubMac1": ["device1", "device2", "device3"…],
+    "hubMac2": ["device1", "device2", "device3"…],
+    ...
+}
+
+For example:
+```json
+{
+    "CC:1B:E0:E0:11:22": ["11:22:33:44:55:66", "11:22:33:44:55:AA"…],
+    …
+}
+```
+<br />
 ## Secure Pairing API
 ## Router Auto-Selection API
 ## SSE Combination API
