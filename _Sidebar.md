@@ -69,7 +69,6 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * Close AP-State Report
      </details>
 </details>
-<br />
 
 __[Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)__
 
