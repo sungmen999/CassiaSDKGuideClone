@@ -788,6 +788,7 @@ To read by the handle:
 GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
 ```
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
@@ -798,6 +799,7 @@ Message-body: application/json
     "value": "56312e362e31"
 }
 ```
+
 </details>
 <br />
 
