@@ -995,5 +995,57 @@ It will return:
 <br />
 
 ## Secure Pairing API
+Starting from 1.2 release, Cassia supports Bluetooth 4.1 Secure Simple Pairing, namely
+Just Works, Passkey Entry and Legacy OOB.
+
+Here are the mapping between pair modes, APIs and typical responses:
+| Pair Mode | Step 1: API Pair Request | Step 2: API Pair-input Request |
+| --- | --- | --- |
+| **Just Works** | Return 0 for pairing failed or 1 for successful. | N/A |
+| **Passkey Entry** | Return 5 for using passkey entry (initiator inputs). | Return 0 for pairing failed or 1 for successful. |
+| **Legacy OOB** | Return 3 for using legacy OOB. | Return 0 for pairing failed or 1 for successful. |
+
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+```
+Body parameters:
+| Parameter | Description |
+| ---- | ---- |
+| `bond` | Bond to the node. Default value is 1. |
+| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If Legacy OOB is needed, please set it to 1. |
+| `io-capability` | (Optional): See below table. Default value is KeyboardDisplay. |
+
+IO Capability:
+
+| Value | Comments |
+| ---- | ---- |
+| DisplayOnly | Check BLE specification version 4.2 |
+| DisplayYesNo | Check BLE specification version 4.2 |
+| KeyboardOnly | Check BLE specification version 4.2 |
+| NoInputNoOutput | Check BLE specification version 4.2 |
+| KeyboardDisplay | Default value |
+
+Response Parameters:
+
+| Name | Optional/Mandatory | Description |
+| HTTP 500 error | Optional | Please check the [Error Messages]() section. |
+| `pairingStatusCode` | Optional | See below table |
+| `pairingStatus` | Optional | Description of pairing status code |
+| `display` | Optional | Display for pairing status code 6 |
+
+Pairing status codes
+Status Code Status Description
+0 Pairing Failed
+1 Pairing Successful
+2 Pairing Aborted
+3 LE Legacy Pairing OOB Expected
+4 LE Secure Connections Pairing OOB Expected
+5 Passkey Input Expected
+6 Passkey Display Expected
+7 Numeric Comparison Expected (LE Secure Connections Pairing only)
+
+<br />
+
 ## Router Auto-Selection API
 ## SSE Combination API
+
