@@ -897,6 +897,7 @@ disconnected, you will get a response. For example:
 data: {"handle":"CC:1B:E0:E8:0D:F2","connectionState":"connected"}
 data: {"handle":"88:C6:26:92:58:77","connectionState":"disconnected"}
 ```
+<br />
 
 ### Receive Notification and Indication
 SSE API to continues receive notification and indication:
