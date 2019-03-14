@@ -1051,6 +1051,7 @@ Pairing Status Codes:
 | 7 | Numeric Comparison Expected (LE Secure Connections Pairing only) |
 
 <br />
+
 ### Pair-Input Request
 **NOTE**: This API is not needed for Just Works.
 ```
@@ -1151,6 +1152,7 @@ Body example (application/json):
 { "bond": 1, "legacy-oob": 1 }
 ```
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
