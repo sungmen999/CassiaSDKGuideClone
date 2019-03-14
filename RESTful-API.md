@@ -974,11 +974,14 @@ To get the list of BLE devices for all the routers within the AC:
 GET http://{your AC domain}/api/middleware/position/by-ap/*
 ```
 It will return:
+```
 {
     "hubMac1": ["device1", "device2", "device3"…],
     "hubMac2": ["device1", "device2", "device3"…],
     ...
 }
+```
+
 <details><summary>Example</summary>
 
 ```
