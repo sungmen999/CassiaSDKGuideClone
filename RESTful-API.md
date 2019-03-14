@@ -957,7 +957,7 @@ GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 ```
 It will return:
 ```
-["device1", "device2","device3", ...]. 
+["device1", "device2","device3", ...]
 ```
 
 <details><summary>Example</summary>
