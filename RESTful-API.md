@@ -1106,6 +1106,7 @@ Message-body: application/json
 ```
 
 </details>
+
 ### Passkey Entry Example: Initiator Inputs
 Step #1
 ```
