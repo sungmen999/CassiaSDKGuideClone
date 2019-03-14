@@ -935,6 +935,7 @@ It will return a list:
 }
 
 <details><summary>Example</summary>
+
 ```
 {
     "11: 22: 33: 44: 55: 66": {
@@ -945,6 +946,7 @@ It will return a list:
     },
 }
 ```
+
 </details>
 <br />
 
@@ -955,9 +957,11 @@ GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 It will return ["device1", "device2","device3", ...]. 
 
 <details><summary>Example</summary>
+
 ```
 ["11:22:33:44:55:66","11:22:33:44:55:AA",...].
 ```
+
 </details>
 <br />
 
@@ -972,12 +976,14 @@ It will return:
     ...
 }
 <details><summary>Example</summary>
+
 ```
 {
     "CC:1B:E0:E0:11:22": ["11:22:33:44:55:66", "11:22:33:44:55:AA"…],
     …
 }
 ```
+
 </details>
 <br />
 
