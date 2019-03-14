@@ -1005,10 +1005,13 @@ Here are the mapping between pair modes, APIs and typical responses:
 | **Passkey Entry** | Return 5 for using passkey entry (initiator inputs). | Return 0 for pairing failed or 1 for successful. |
 | **Legacy OOB** | Return 3 for using legacy OOB. | Return 0 for pairing failed or 1 for successful. |
 
+### Pair Request
+
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
 ```
 Body parameters:
+
 | Parameter | Description |
 | ---- | ---- |
 | `bond` | Bond to the node. Default value is 1. |
@@ -1028,23 +1031,152 @@ IO Capability:
 Response Parameters:
 
 | Name | Optional/Mandatory | Description |
-| HTTP 500 error | Optional | Please check the [Error Messages]() section. |
+| HTTP 500 error | Optional | Please check the [Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages) section. |
 | `pairingStatusCode` | Optional | See below table |
 | `pairingStatus` | Optional | Description of pairing status code |
 | `display` | Optional | Display for pairing status code 6 |
 
-Pairing status codes
-Status Code Status Description
-0 Pairing Failed
-1 Pairing Successful
-2 Pairing Aborted
-3 LE Legacy Pairing OOB Expected
-4 LE Secure Connections Pairing OOB Expected
-5 Passkey Input Expected
-6 Passkey Display Expected
-7 Numeric Comparison Expected (LE Secure Connections Pairing only)
+Pairing Status Codes:
+
+| Status Code | Status Description |
+| 0 | Pairing Failed |
+| 1 | Pairing Successful |
+| 2 | Pairing Aborted |
+| 3 | LE Legacy Pairing OOB Expected |
+| 4 | LE Secure Connections Pairing OOB Expected |
+| 5 | Passkey Input Expected |
+| 6 | Passkey Display Expected |
+| 7 | Numeric Comparison Expected (LE Secure Connections Pairing only) |
 
 <br />
+### Pair-Input Request
+**NOTE**: This API is not needed for Just Works.
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+```
+
+Body example for Passkey Entry (application/json):
+```json
+{ "passkey": "123456" }
+```
+
+Body example for Legacy OOB (application/json):
+```json
+{ "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
+```
+
+The response format is same as pair request API.
+
+<br />
+
+### Unpair Request
+```
+DELETE http://<your AC domain>/api/management/nodes/<node>/bond?mac=<hubmac>
+```
+<details><summary>Response Example</summary>
+
+```
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+
+</details>
+<br />
+
+### Just Works Example
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+```
+Body example (application/json):
+```json
+{ "bond": 1, "io-capability": "NoInputNoOutput"}
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "pairingStatusCode": 1, "pairingStatus": "Pairing Successful" }
+```
+
+</details>
+### Passkey Entry Example: Initiator Inputs
+Step #1
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+```
+Body example (application/json):
+```json
+{ "bond": 1, "io-capability": "KeyboardDisplay" }
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "pairingStatusCode": 5, "pairingStatus": "Passkey Input Expected" }
+```
+
+Step #2
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+```
+Body example (application/json):
+```json
+{ "passkey": "123456" }
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "pairingStatusCode": 1, "pairingStatus": "Pairing Successful" }
+```
+
+</details>
+
+### LE Legacy Pairing OOB Example
+Step #1
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+```
+Body example (application/json):
+```json
+{ "bond": 1, "legacy-oob": 1 }
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "pairingStatusCode": 3, "pairingStatus": "LE Legacy Pairing OOB Expected" }
+```
+
+</details>
+
+Step #2
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+```
+Body example (application/json):
+```json
+{ "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
+```
+<details><summary>Response Example</summary>
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "pairingStatusCode": 1, "pairingStatus": "Pairing Successful" }
+```
+
+</details>
+<br />
+
 
 ## Router Auto-Selection API
 ## SSE Combination API
