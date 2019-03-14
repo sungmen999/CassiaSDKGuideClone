@@ -1175,6 +1175,7 @@ Body example (application/json):
 { "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
 ```
 <details><summary>Response Example</summary>
+
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
