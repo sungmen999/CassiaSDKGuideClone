@@ -830,8 +830,7 @@ set the value to "0100"; to open the indication, set the value to "0200"; to clo
 notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are examples).
 
 ```
-GET http://{your AC
-domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
 ```
 <details><summary>Response Example</summary>
 
