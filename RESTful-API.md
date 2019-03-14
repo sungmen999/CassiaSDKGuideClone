@@ -456,15 +456,13 @@ Here are more optional parameters:
 This is a useful API which can significantly reduce the amount of traffic sent from the router to the server.
 
 ```
-GET http://{your AC domain}/api/gap/
-nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
 
 Customer can also filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
 
 ```
-GET http://{your AC domain}/api/gap/
-nodes?event=1&mac=<hubmac>&filter_rssi=<rssi1>,<rssi2>, … , <rssiX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_rssi=<rssi1>,<rssi2>, … , <rssiX>
 ```
 
 In addition, customer can filter out a device based on its service UUID and name inside its advertise packet.
