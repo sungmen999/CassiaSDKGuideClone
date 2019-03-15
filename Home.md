@@ -12,7 +12,6 @@ If you have any edit suggestions or corrections, please contact us at: <br />
 
 ## Table of Contents
 
-__[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>Overview</strong></summary>
 
    * [Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)
