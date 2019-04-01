@@ -21,7 +21,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * <details><summary><strong>Management API</strong></summary>
 
      * [Obtain Cassia Router’s Configuration](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-cassia-routers-configuration)
-     * Obtain Cassia Router’s Status (Through AC)
+     * [Obtain Cassia Router’s Status (Through AC)]()
      * Monitor Cassia Router’s Status (Through AC)
      * Obtain All Online Routers’ Status (Through AC)
      * Reboot a Router Remotely 
