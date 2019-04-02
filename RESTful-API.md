@@ -999,6 +999,7 @@ Starting from 1.2 release, Cassia supports Bluetooth 4.1 Secure Simple Pairing, 
 Just Works, Passkey Entry and Legacy OOB.
 
 Here are the mapping between pair modes, APIs and typical responses:
+
 | Pair Mode | Step 1: API Pair Request | Step 2: API Pair-input Request |
 | --- | --- | --- |
 | **Just Works** | Return 0 for pairing failed or 1 for successful. | N/A |
