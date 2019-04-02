@@ -1002,9 +1002,9 @@ Here are the mapping between pair modes, APIs and typical responses:
 
 | Pair Mode | Step 1: API Pair Request | Step 2: API Pair-input Request |
 | --- | --- | --- |
-| **Just Works** | Return 0 for pairing failed or 1 for successful. | N/A |
-| **Passkey Entry** | Return 5 for using passkey entry (initiator inputs). | Return 0 for pairing failed or 1 for successful. |
-| **Legacy OOB** | Return 3 for using legacy OOB. | Return 0 for pairing failed or 1 for successful. |
+| Just Works | Return 0 for pairing failed or 1 for successful. | N/A |
+| Passkey Entry | Return 5 for using passkey entry (initiator inputs). | Return 0 for pairing failed or 1 for successful. |
+| Legacy OOB | Return 3 for using legacy OOB. | Return 0 for pairing failed or 1 for successful. |
 
 ### Pair Request
 
