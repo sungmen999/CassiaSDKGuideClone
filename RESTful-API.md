@@ -1253,6 +1253,7 @@ OK
 ### Disconnect a Device
 This API will disconnect a device. In json Body, only one device’ MAC address can be
 added in “devices”.
+
 ```POST http://{your AC domain}/api/aps/connections/disconnect```
 
 Body example (application/json):
@@ -1288,6 +1289,7 @@ for all routers controlled by this AC.
 This API will create one combined SSE connection with AC. This SSE connection can
 receive scan data, notification/indication data, and connected device status for all the
 routers controlled by this AC.
+
 ```GET http://{your AC domain}/api/aps/events```
 
 When invoke this API, AC will return a message immediately which include all router’s
