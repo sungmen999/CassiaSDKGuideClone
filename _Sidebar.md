@@ -52,6 +52,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
    * <details><summary><strong>Router Auto-Selection API</strong></summary>
    
      * Overview of Router Auto-Selection API
+     * Router Auto-Selection
      * Connect a Device
      * Disconnect a Device
      </details>
