@@ -12,12 +12,6 @@ If you have any edit suggestions or corrections, please contact us at: <br />
 
 ## Table of Contents
 
-# Cassia SDK Implementation Guide
-
-[comment]: # (Comments in this Markdown file are based on this: https://stackoverflow.com/questions/4823468/comments-in-markdown)
-
-## Table of Contents
-
   __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>Overview</strong></summary>
 
