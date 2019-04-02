@@ -1188,5 +1188,86 @@ Message-body: application/json
 
 
 ## Router Auto-Selection API
+From firmware 1.3, Cassia AC can select one router automatically from a list of
+candidates, and then connect the BLE device by using this router. The selection is based
+on RSSI, router load, and router capabilities.
+If a customer wants to connect a BLE device with a specific router, or he wants to use a
+customized router selection algorithm, he should use the APIs in chapter 5.3.3.
+**NOTE**: these APIs are only available through Cassia AC.
+
+### Router Auto-Selection
+This API will enable/disable router auto-selection function. If the flag is 1, the router
+auto-selection function will be enabled. If the flag is 0, the router auto-selection function
+will be disabled.
+
+**NOTE**: This API should be called before using any other router auto-selection APIs. The
+user can also switch on/off router auto-selection function in Cassia AC settings, like below
+snapshot.
+
+**Figure 6: Router auto-selection configuration in AC**
+
+```POST http://{your AC domain}/api/aps/ap-select-switch```
+
+Body example (application/json):
+```json
+{"flag": 1}
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{ "status": "success", "flag": 1 }
+```
+</details>
+
+### Connect a Device
+This API will automatically select one router from a list of candidates, and use it to
+connected the device.
+```POST http://{your AC domain}/api/aps/connections/connect```
+
+Parameters for JSON body:
+| Parameter | Description |
+| ----      | ----        |
+| `aps` |  The list of routers which will be used for this auto-select connect request. The user can use one or multiple router’s MAC or * for “aps”. If the user uses *, it means all the online routers that controlled by the AC should be included. |
+| `devices` | Only one device MAC address can be added in "devices". |
+
+Body example (application/json):
+```json
+{ "aps": ["CC:1B:E0:E7:FE:F8","CC:1B:E0:E7:FE:F9","CC:1B:E0:E7:FE:FA"], "devices": ["F7:1
+8:BC:18:F0:3A"] }
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+</details>
+
+### Disconnect a Device
+This API will disconnect a device. In json Body, only one device’ MAC address can be
+added in “devices”.
+```POST http://{your AC domain}/api/aps/connections/disconnect```
+
+Body example (application/json):
+```json
+{ "devices": ["F7:18:BC:18:F0:3A"] }
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: text/plain
+OK
+```
+</details>
+
 ## SSE Combination API
 
