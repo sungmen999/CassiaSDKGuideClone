@@ -1228,6 +1228,7 @@ connected the device.
 ```POST http://{your AC domain}/api/aps/connections/connect```
 
 Parameters for JSON body:
+
 | Parameter | Description |
 | ----      | ----        |
 | `aps` |  The list of routers which will be used for this auto-select connect request. The user can use one or multiple router’s MAC or * for “aps”. If the user uses *, it means all the online routers that controlled by the AC should be included. |
