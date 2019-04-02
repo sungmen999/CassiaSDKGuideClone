@@ -12,6 +12,20 @@ If you have any edit suggestions or corrections, please contact us at: <br />
 
 ## Table of Contents
 
+# Cassia SDK Implementation Guide
+
+[comment]: # (Comments in this Markdown file are based on this: https://stackoverflow.com/questions/4823468/comments-in-markdown)
+
+This guide shows developers how to use the Cassia RESTful API to integrate their Bluetooth devices with the Cassia IoT Access Controller (AC) and the Cassia Bluetooth routers.
+
+[comment]: # (Change the release date after this guide is completed.)
+Release date: March 14th, 2019
+
+If you have any edit suggestions or corrections, please contact us at: <br />
+[https://www.cassianetworks.com/support](https://www.cassianetworks.com/support/)
+
+## Table of Contents
+
   <details><summary><strong>Overview</strong></summary>
 
    * [Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)
