@@ -1194,6 +1194,7 @@ candidates, and then connect the BLE device by using this router. The selection 
 on RSSI, router load, and router capabilities.
 If a customer wants to connect a BLE device with a specific router, or he wants to use a
 customized router selection algorithm, he should use the APIs in chapter 5.3.3.
+
 **NOTE**: these APIs are only available through Cassia AC.
 
 ### Router Auto-Selection
