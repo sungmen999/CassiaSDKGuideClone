@@ -1271,4 +1271,73 @@ OK
 </details>
 
 ## SSE Combination API
+These APIs simplify the handling of multiple routers. They also improve the scalability of
+AC in terms of the number of routers supported in given hardware resources.
 
+**NOTE**: these APIs are only available through Cassia AC.
+
+Before firmware 1.3, if an application wants to control routers with RESTful APIs through
+AC, the application has to create three SSE tunnels for each router: one for scan data, one
+for notification/indication data, and one for connected device status.
+
+From firmware 1.3, the application only needs to create one SSE tunnel with AC. This SSE
+tunnel can receive scan data, notification/indication data, and connected device status
+for all routers controlled by this AC.
+
+### Create Combined SSE
+This API will create one combined SSE connection with AC. This SSE connection can
+receive scan data, notification/indication data, and connected device status for all the
+routers controlled by this AC.
+```GET http://{your AC domain}/api/aps/events```
+
+When invoke this API, AC will return a message immediately which include all router’s
+information, for example:
+<details><summary>Response Example</summary>
+
+```json
+data: {
+    "dataType": "state",
+    "aps": {
+        "CC:1B:E0:E7:FE:F8": {
+            "_id": "5a93755b028e6c00519ce1dc",
+            "id": "CC:1B:E0:E7:FE:F8",
+            "mac": "CC:1B:E0:E7:FE:F8",
+            "name": "Cassia Router",
+            "group": "",
+            "status": "online",
+            "model": "X1000",
+            "version": "1.2.0.1803131043",
+            "position": "",
+            "time": 1519613275655,
+            "ip": "192.168.1.202",
+            "localip": "192.168.1.202",
+            "uptime": 14873,
+            "offline_time": 0,
+            "online_time": 1522052125,
+            "update_status": "update_ok",
+            "update_reason": "",
+            "update_version": "",
+            "update_progress": 0,
+            "notify": true,
+            "connectionstate": true
+        },
+        "CA:79:F5:B6:1F:04": {
+            "devices": {
+                "CA:79:F5:B6:1F:04": {
+                    "type": "random",
+                    "bdaddrs": {
+                        "bdaddr": "CA:79:F5:B6:1F:04",
+                        "bdaddrType": "random"
+                    },
+                    "chipId": 0,
+                    "handle": "",
+                    "name": "",
+                    "connectionState": "connected",
+                    "id": "CA:79:F5:B6:1F:04"
+                }
+            }
+        }
+    }
+}
+```
+</details>
