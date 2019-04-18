@@ -1442,12 +1442,12 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 |--|--|
-| `aps` | (mandatory): one or multiple router’s MAC address |
-| `chip` | (optional): 0 or 1. It means which chip to scan |
-| `active` | (optional): 0 or 1. 0 means enable passive scanning; 1 means enable active scanning |
-| `filter_name` | (optional): filter for device name |
-| `filter_mac` | (optional): filter for device MAC |
-| `filter_uuid` | (optional): filter for device UUID |
+| `aps` | (Mandatory): one or multiple router’s MAC address |
+| `chip` | (Optional): 0 or 1. It means which chip to scan |
+| `active` | (Optional): 0 or 1. 0 means enable passive scanning; 1 means enable active scanning |
+| `filter_name` | (Optional): filter for device name |
+| `filter_mac` | (Optional): filter for device MAC |
+| `filter_uuid` | (Optional): filter for device UUID |
 
 Response example:
 
@@ -1467,7 +1467,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | one or multiple router’s MAC address |
+| `aps` | One or multiple router’s MAC address |
 
 Body example (application/json):
 
@@ -1497,7 +1497,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | one or multiple router’s MAC address |
+| `aps` | One or multiple router’s MAC address |
 
 Body example (application/json):
 
@@ -1528,7 +1528,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | one or multiple router’s MAC address |
+| `aps` | One or multiple router’s MAC address |
 
 Body example (application/json):
 
@@ -1559,7 +1559,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | one or multiple router’s MAC address |
+| `aps` | One or multiple router’s MAC address |
 
 Body example (application/json):
 
@@ -1590,7 +1590,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| aps | one or multiple router’s MAC address |
+| aps | One or multiple router’s MAC address |
 
 Body example (application/json):
 ```json
