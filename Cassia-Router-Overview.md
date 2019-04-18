@@ -14,13 +14,12 @@ router)
 The APIs below are only available through the Cassia AC. Except for these APIs, the two set
 of RESTful APIs are the same and will give the same result. In this document, we use the
 APIs through Cassia AC as examples.
-  * Positioning APIs (chapter 5.4)
-  * Obtain Cassia router’s status (chapter 5.2.2)
-  * Monitor Cassia router’s status APIs (chapter 5.2.3)
-  * Obtain all online routers’ status (chapter 5.2.4)
-  * Router auto-selection (chapter 5.6, introduced in firmware 1.3)
-  * SSE Combination (chapter 5.7, introduced in firmware 1.3)
-
+  * [Positioning APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#positioning-api)
+  * [Obtain Cassia Router’s Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-cassia-routers-status-through-ac)
+  * [Monitor Cassia Router’s Status APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#monitor-cassia-routers-status-through-ac)
+  * [Obtain All Online Routers’ Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-all-online-routers-status-through-ac)
+  * [Router Auto-Selection](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#router-auto-selection-api)
+  * [SSE Combination](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#sse-combination-api)
 **NOTE**:
   * The RESTful APIs through Cassia AC includes “/api” after {your AC domain}. It is not
 needed for the RESTful APIs on the local router.
