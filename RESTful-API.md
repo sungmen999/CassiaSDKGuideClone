@@ -1422,7 +1422,7 @@ This API will open router scanning for all the routers in the router list. The S
 
 ```POST http://{your AC domain}/api/aps/scan/open```
 
-<details><summary>Body Example (application/json)</summary>
+Body example (application/json):
 
 ```json
 {
@@ -1438,9 +1438,7 @@ This API will open router scanning for all the routers in the router list. The S
 }
 ```
 
-</details>
-
-Parameters for json Body:
+Parameters for JSON Body:
 | Parameter | Description |
 |--|--|
 | `aps` | (mandatory): one or multiple router’s MAC address |
@@ -1453,9 +1451,9 @@ Parameters for json Body:
 Response example:
 
 ```json
-Status-Line : HTTP/1.1 200 OK/r/n
-Header      : (general-header)
-Message-body: text/plain
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
 OK
 ```
 
@@ -1464,7 +1462,7 @@ This API will close the router scanning for all the routers in the router list. 
 
 ```POST http://{your AC domain}/api/aps/scan/close```
 
-Parameters for json Body:
+Parameters for JSON Body:
 | Parameter | Description |
 | -- | -- |
 | `aps` | one or multiple router’s MAC address |
@@ -1483,9 +1481,153 @@ Body example (application/json):
 Response example:
 
 ```json
-Status-Line      : HTTP/1.1 200 OK/r/n
-Header             : (general-header)
-Message-body: text/plain
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
 ```
 
+### Open Notify
+This API will open the notification messages on SSE tunnel. The notification data will be sent to the user application on this SSE tunnel.
 
+```POST http://{your AC domain}/api/aps/notify/open```
+
+Parameters for JSON Body:
+| Parameter | Description |
+| -- | -- |
+| `aps` | one or multiple router’s MAC address |
+
+Body example (application/json):
+
+```json
+{
+  "aps": [
+    "CC:1B:E0:E7:FE:F8",
+    "CC:1B:E0:E7:FE:F8"
+  ]
+}
+```
+
+Response example:
+
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
+
+### Close Notify
+This API will close the notification messages on SSE tunnel. The notification data will not be sent to the user application on this SSE tunnel anymore.
+
+```POST http://{your AC domain}/api/aps/notify/close```
+
+Parameters for JSON Body:
+| Parameter | Description |
+| -- | -- |
+| `aps` | one or multiple router’s MAC address |
+
+Body example (application/json):
+
+```json
+{
+    "aps": [
+        "CC:1B:E0:E7:FE:F8",
+        "CC:1B:E0:E7:FE:F8"
+    ]
+}
+```
+
+Response example:
+
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
+
+### Open Connection-State Report
+This API will open the connection-state monitoring on SSE tunnel. The connection-state data will be sent to the user application on this SSE tunnel when the state of the connected device changed.
+
+```POST http://{your AC domain}/api/aps/connection-state/open```
+
+Parameters for JSON Body:
+| Parameter | Description |
+| -- | -- |
+| `aps` | one or multiple router’s MAC address |
+
+Body example (application/json):
+
+```json
+{
+    "aps": [
+        "CC:1B:E0:E7:FE:F8",
+        "CC:1B:E0:E7:FE:F8"
+    ]
+}
+```
+
+Response example:
+
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
+
+### Close Connection-State Report
+This API will close the connection-state monitoring on SSE tunnel. The connection-state data will not be sent to the user application on this SSE tunnel anymore. 
+
+ ```POST http://{your AC domain}/api/aps/connection-state/close```
+
+Parameters for JSON Body:
+| Parameter | Description |
+| -- | -- |
+| aps | one or multiple router’s MAC address |
+
+Body example (application/json):
+```json
+{
+    "aps": [
+        "CC:1B:E0:E7:FE:F8",
+        "CC:1B:E0:E7:FE:F8"
+    ]
+}
+```
+
+Response example:
+
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
+
+### Open AP-State Report
+This API will open the ap-state monitoring for all routers on SSE tunnel. The data of ap-state will be sent to the user application on this SSE tunnel when the router state changed between online and offline.
+
+```GET http://{your AC domain}/api/aps/ap-state/open```
+
+Response example:
+
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
+
+### Close AP-State Report
+This API will close the ap-state monitoring for all routers on SSE tunnel. The data of ap-state will not be sent to the user application on this SSE tunnel anymore.
+
+```GET http://{your AC domain}/api/aps/ap-state/close```
+
+Response example:
+```json
+Status-Line  : HTTP/1.1 200 OK/r/n
+Header       : (general-header)
+Message-body : text/plain
+OK
+```
