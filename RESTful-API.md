@@ -1416,3 +1416,76 @@ data:
 ```
 
 </details>
+
+### Open Scan
+This API will open router scanning for all the routers in the router list. The SSE tunnel will receive scan data.
+
+```POST http://{your AC domain}/api/aps/scan/open```
+
+<details><summary>Body Example (application/json)</summary>
+
+```json
+{
+  "aps": [
+    "CC:1B:E0:E7:FE:F8",
+    "CC:1B:E0:E7:FE:F8",
+    "CC:1B:E0:E7:FE:F8",
+    "CC:1B:E0:E7:FE:F8"
+  ],
+  "chip": 0,
+  "active": 0,
+  "filter_name": "cassia"
+}
+```
+
+</details>
+
+Parameters for json Body:
+| Parameter | Description |
+|--|--|
+| `aps` | (mandatory): one or multiple router’s MAC address |
+| `chip` | (optional): 0 or 1. It means which chip to scan |
+| `active` | (optional): 0 or 1. 0 means enable passive scanning; 1 means enable active scanning |
+| `filter_name` | (optional): filter for device name |
+| `filter_mac` | (optional): filter for device MAC |
+| `filter_uuid` | (optional): filter for device UUID |
+
+Response example:
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header      : (general-header)
+Message-body: text/plain
+OK
+```
+
+### Close Scan
+This API will close the router scanning for all the routers in the router list. The user application will not receive scan data anymore.
+
+```POST http://{your AC domain}/api/aps/scan/close```
+
+Parameters for json Body:
+| Parameter | Description |
+| -- | -- |
+| `aps` | one or multiple router’s MAC address |
+
+Body example (application/json):
+
+```json
+{
+    "aps": [
+        "CC:1B:E0:E7:FE:F8",
+        "CC:1B:E0:E7:FE:F8"
+    ]
+}
+```
+
+Response example:
+
+```json
+Status-Line      : HTTP/1.1 200 OK/r/n
+Header             : (general-header)
+Message-body: text/plain
+```
+
+
