@@ -1,4 +1,6 @@
-For HTTP 500 error, the following are the common error messages:
+**NOTE**: For Connect and Pair APIs, avoid calling a new API before the previous API call has finished, otherwise the router will respond with a “chip is busy” error.
+
+For HTTP 500 error, the following are the common error codes:
 
 | <img width="1580"><div>Message</div> | <img><div>Description</div> | 
 | --------------- |------------------|
@@ -7,7 +9,7 @@ For HTTP 500 error, the following are the common error messages:
 | `memory alloc error` | When the Bluetooth chip does not have enough memory to complete the operation it will return this error. |
 | `operation timeout` | Each operation has a time-out value, especially those timeconsuming operations, such as connection. When connecting to a device that does not exist, the operation will timeout after the 20s. |
 | `chip is not ready` | This error will be reported when sending commands to the chip fails. |
-| `chip is busy` | All the GATT commands are mutually exclusive. The continuous call will return this busy error. For example, when calling a connect request before the previous connect request finished, the system will return "chip is busy". |
+| `chip is busy` | The Connect and Pair API are mutually exclusive. If calling a connect request before the previous connect request finishes, the system will return "chip is busy". |
 | `incorrect mode` | Our S Series only supports one role, either master or slave (due to the memory limit). These two roles are different, mainly reflected in the broadcast and scanning. When the router is a slave, it cannot conduct scanning; when the router is the master, it cannot send advertise which is connectable. If you set the unsupported parameters to the chip, the system will return this error. |
 | `device not connect` | Same as "device not found" error. |
 | `operation not supported` | Reserved for future use. |
