@@ -1375,6 +1375,7 @@ data:
 If notification is open (default configuration), this SSE tunnel will return the notification messages to user application when any router has notification messages to AC.
 
 <details><summary>Notification Message Example</summary>
+
 ```json
 data:
 {
