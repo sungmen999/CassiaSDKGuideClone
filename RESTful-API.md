@@ -1350,7 +1350,7 @@ One keep-alive message will be returned every 30 seconds to make sure the SSE li
 
 If scanning is open, this SSE tunnel will send scanning data to user application through AC. For example:
 
-<details><summary>Data Example</summary>
+<details><summary>Scanning Data Example</summary>
 
 ```json
 data:
@@ -1368,7 +1368,50 @@ data:
   "rssi": -34,
   "evt_type": 3
 }
+```
 
 </details>
 
+If notification is open (default configuration), this SSE tunnel will return the notification messages to user application when any router has notification messages to AC.
 
+<details><summary>Notification Message Example</summary>
+```json
+data:
+{
+    "dataType": "notification",
+    "ap": "CC:1B:E0:E7:FE:F8",
+    "value": "FF000C000205100101010126",
+    "device": "CA:79:F5:B6:1F:04",
+    "handle": 16
+}
+```
+
+</details>
+
+If connection-state is open (default configuration), this SSE tunnel will return the device’s connection status to user application when any device’s status changes. For example:
+
+<details><summary>Connection Status Example</summary>
+
+```json
+data: {"handle":"CA:79:F5:B6:1F:04","connectionState":"disconnected","dataType":"connection_state","ap":"CC:1B:E0:E7:FE:F8"}
+data: {"handle":"CA:79:F5:B6:1F:04","connectionState":"connected","dataType":"connection_state","ap":"CC:1B:E0:E7:FE:F8"}
+```
+
+</details>
+
+If ap-state is open (default configuration), this SSE tunnel will return the ap-state information when router’s status is changed between online and offline. For example:
+
+<details><summary>AP-State Information Example</summary>
+
+```json
+data:
+{
+    "dataType": "ap_state",
+    "ap": "CC:1B:E0:E7:FE:F8",
+    "mac": "CC:1B:E0:E7:FE:F8",
+    "status": "offline",
+    "offline_time": 1522067273296
+}
+```
+
+</details>
