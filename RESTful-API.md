@@ -1439,6 +1439,7 @@ Body example (application/json):
 ```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 |--|--|
 | `aps` | (mandatory): one or multiple router’s MAC address |
@@ -1463,6 +1464,7 @@ This API will close the router scanning for all the routers in the router list. 
 ```POST http://{your AC domain}/api/aps/scan/close```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 | -- | -- |
 | `aps` | one or multiple router’s MAC address |
@@ -1492,6 +1494,7 @@ This API will open the notification messages on SSE tunnel. The notification dat
 ```POST http://{your AC domain}/api/aps/notify/open```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 | -- | -- |
 | `aps` | one or multiple router’s MAC address |
@@ -1522,6 +1525,7 @@ This API will close the notification messages on SSE tunnel. The notification da
 ```POST http://{your AC domain}/api/aps/notify/close```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 | -- | -- |
 | `aps` | one or multiple router’s MAC address |
@@ -1552,6 +1556,7 @@ This API will open the connection-state monitoring on SSE tunnel. The connection
 ```POST http://{your AC domain}/api/aps/connection-state/open```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 | -- | -- |
 | `aps` | one or multiple router’s MAC address |
@@ -1582,6 +1587,7 @@ This API will close the connection-state monitoring on SSE tunnel. The connectio
  ```POST http://{your AC domain}/api/aps/connection-state/close```
 
 Parameters for JSON Body:
+
 | Parameter | Description |
 | -- | -- |
 | aps | one or multiple router’s MAC address |
