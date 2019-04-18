@@ -1345,3 +1345,30 @@ data: {
 }
 ```
 </details>
+
+One keep-alive message will be returned every 30 seconds to make sure the SSE link is up and running.
+
+If scanning is open, this SSE tunnel will send scanning data to user application through AC. For example:
+
+<details><summary>Data Example</summary>
+
+```json
+data:
+{
+  "dataType": "scan",
+  "ap": "CC:1B:E0:E7:FE:F8",
+  "bdaddrs": [
+    {
+      "bdad": "CC:1B:E0:E0:98:16",
+      "bdaddrType": "public"
+    }
+  ],
+  "adData": "0201060D084361737369615F5331303030",
+  "name": "Cassia_S1000",
+  "rssi": -34,
+  "evt_type": 3
+}
+
+</details>
+
+
