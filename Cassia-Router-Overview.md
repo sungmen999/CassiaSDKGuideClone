@@ -20,6 +20,7 @@ APIs through Cassia AC as examples.
   * [Obtain All Online Routers’ Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-all-online-routers-status-through-ac)
   * [Router Auto-Selection](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#router-auto-selection-api)
   * [SSE Combination](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#sse-combination-api)
+
 **NOTE**:
   * The RESTful APIs through Cassia AC includes “/api” after {your AC domain}. It is not
 needed for the RESTful APIs on the local router.
