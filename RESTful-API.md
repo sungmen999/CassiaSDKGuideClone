@@ -843,7 +843,7 @@ OK
 </details>
 <br />
 
-### Get Advertise Data
+### Send Advertise Data
 Begin advertising data:
 ```
 GET http://{your AC domain}/api/advertise/start?mac=<mac>&interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
@@ -852,9 +852,19 @@ Here are the parameters:
 
 | Parameter | Description |
 |-----------|-------------|
-| `interval` | (Mandatory): advertise interval in ms. |
+| `interval` | (Mandatory): advertising interval in ms. Default value 500ms. |
+| `ad_type` | (Optional): advertising type (see below table). Default value 3. |
 | `ad_data` | (Mandatory): advertise package, the data type is string. |
-| `resp_data` | (Mandatory): advertise response package, the data type is string. |
+| `resp_data` | (Mandatory): scan response package. The data type is string. When you want to send resp_data, please set ad_type=0. |
+
+| Value	| ad_type | Comments |
+| -- | -- | -- |
+| 0 | ADV_IND | Connectable undirected advertising |
+| 1 | ADV_DIRECT_IND | Connectable directed advertising |
+| 2 | ADV_SCAN_IND | Scannable undirected advertising |
+| 3 | ADV_NONCONN_IND | Non connectable undirected advertising |
+|4 | SCAN_RSP | Scan Response |
+
 
 <details><summary>Response Example</summary>
 
@@ -868,7 +878,7 @@ OK
 </details>
 <br />
 
-Stop advertise data:
+Stop sending advertise data:
 ```
 GET http://{your AC domain}/api/advertise/stop?mac=<mac>
 ```
