@@ -30,6 +30,7 @@ used. It is not needed for the RESTful APIs on the local router.
 need to turn on Local RESTful API in AC console or router console. Please see below
 screenshots.
 
+![Figure 1](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f1.png)
 **Figure 1: (v1.2) Turn on Local RESTful API in AC Console**
 
 **Figure 2: (v1.2) Turn on Local RESTful API in Router Console**
