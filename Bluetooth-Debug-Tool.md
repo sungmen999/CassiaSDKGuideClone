@@ -3,7 +3,13 @@ RESTful API call, the debug tool will show the response messages. It will help d
 integrate business applications and Bluetooth devices with the Cassia Bluetooth router and
 AC. This tool is available at: [http://www.bluetooth.tech/nativeHubControl/index.html](http://www.bluetooth.tech/nativeHubControl/index.html)
 
+<br />
+
+![Figure 7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f7.jpg)
+
 **Figure 7: Cassia Bluetooth Debug Tool**
+
+<br />
 
 **API Info**: This area contains the user's most commonly used commands. When you click on
 the buttons, the parameters and descriptions related to that command will pop up.
@@ -17,7 +23,13 @@ device’s Bluetooth profile, you can write value or turn on the notifications.
 **Notify List**: If you have turned on the notification of the correct handle, you will see a stream
 of raw data flowing in the Notify List window.
 
+<br />
+
+![Figure 8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f8.png)
+
 **Figure 8: Cassia Bluetooth Debug Tool Example**
+
+<br />
 
 From firmware 1.4, Cassia AC integrates with Bluetooth debug tool. For more information, please
 check Cassia AC Bluetooth Debug Tool User Guide at: <br />
