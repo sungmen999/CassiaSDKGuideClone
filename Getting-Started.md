@@ -10,7 +10,13 @@ Now you can operate your router to do certain tasks with your Bluetooth devices 
 ### [Access Local Router](#access-local-router)
 Your application can access local Cassia routers directly (usually in the same network), instead of through Cassia AC. Below is an example of running RESTful API in a web browser to access Cassia router in local network (for debug purpose).
 
-Figure 5: Access local Cassia router
+<br />
+
+![Figure 5](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f5.jpg)
+
+**Figure 5: Access local Cassia router**
+
+<br />
 
 ### [Access Cassia Router through the Cassia AC](#access-cassia-router-through-the-cassia-ac)
 Before starting to use RESTful API’s through the Cassia AC, you will need developer
