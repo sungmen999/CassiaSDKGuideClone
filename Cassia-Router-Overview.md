@@ -42,6 +42,8 @@ screenshots.
 
 **Figure 2: (v1.2) Turn on Local RESTful API in Router Console**
 
+<br />
+
 In firmware 1.3, local RESTful API will be automatically turned on, if the router is
 configured as Standalone Mode. If the router is configured as AC Managed, the local
 RESTful API will be turned off. Please see below screenshots.
@@ -51,6 +53,8 @@ RESTful API will be turned off. Please see below screenshots.
 ![Figure 3](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f3.png)
 
 **Figure 3: (v1.3) Configuration of Router Mode on Router Console**
+
+<br />
 
 ### [Architecture Diagram](#architecture-diagram)
 The Cassia IoT Access Controller (AC) is a powerful IoT network management solution. It
@@ -65,6 +69,8 @@ X1000 as an example.
 ![Figure 4](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f4.png)
 
 **Figure 4: Cassia RESTful APIs Working Diagram**
+
+<br />
 
 First, the business application initiates an OAuth authentication request (generated using
 developer credentials) to the Cassia AC. Once the authentication succeeds, it will send an
