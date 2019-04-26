@@ -1216,7 +1216,13 @@ will be disabled.
 user can also switch on/off router auto-selection function in Cassia AC settings, like below
 snapshot.
 
+<br />
+
+![Figure 6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f6.png)
+
 **Figure 6: Router auto-selection configuration in AC**
+
+<br />
 
 ```POST http://{your AC domain}/api/aps/ap-select-switch```
 
