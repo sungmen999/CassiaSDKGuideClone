@@ -44,9 +44,10 @@ screenshots.
 
 <br />
 
-In firmware 1.3, local RESTful API will be automatically turned on, if the router is
-configured as Standalone Mode. If the router is configured as AC Managed, the local
-RESTful API will be turned off. Please see below screenshots.
+In firmware 1.3, if the router is configured as Standalone Mode, the local RESTful API
+will be automatically turned on. If the router is configured as AC Managed Mode, the
+local RESTful API will be turned off by default (customer can enable the local RESTful
+API from AC console). Please see below screenshots.
 
 <br />
 
