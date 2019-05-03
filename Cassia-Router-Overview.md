@@ -84,6 +84,7 @@ SSE is a technology where a browser receives automatic updates from a server via
 connection. The SSE API is standardized as a part of HTML5 by the W3C. SSE is used to send
 message updates or continuous data streams to a browser client. It needs to be manually
 terminated, otherwise, it will keep on running until an error occurs.
+
 Five of the RESTful APIs are using SSE: they are scan (chapter 5.3.1), get device connection
 status (chapter 5.3.7), receive indication and notification (chapter 5.3.8), monitor Cassia
 router’s status (chapter 5.2.3) and create combined SSE (chapter 5.6.1, firmware 1.3).
