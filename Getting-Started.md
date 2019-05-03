@@ -15,7 +15,9 @@ Your application can access local Cassia routers directly (usually in the same n
 ![Figure 5](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f5.jpg)
 
 <p style="text-align:center">
+
 **Figure 5: Access local Cassia router**
+
 </p>
 
 <br />
