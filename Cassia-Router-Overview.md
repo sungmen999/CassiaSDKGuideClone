@@ -90,7 +90,7 @@ Five of the RESTful APIs are using SSE
   - [get device connection status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status)
   - [receive indication and notification](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
   - [monitor Cassia router’s status (through AC)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#monitor-cassia-routers-status-through-ac)
-  - [create combined SSE (firmware 1.3 and above)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#create-combined-sse).
+  - [create combined SSE](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#create-combined-sse) (firmware 1.3 and above).
 
 Each SSE response starts with “data:”. When debugging, you can input the URL of an SSE
 into a web browser, then you will see the SSE output from the web browser.
