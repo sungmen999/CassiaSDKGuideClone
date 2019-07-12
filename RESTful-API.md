@@ -2,6 +2,7 @@ Most of the Bluetooth GAP/GATT operations are exposed in RESTful APIs. The signa
 those APIs are fully compliant with Bluetooth SIG’s Internet Working Group RESTful API
 specification.
 
+*NOTE*: If you are accessing the RESTful API from the container, use the container static address: 10.10.10.254
 ## Common Parameters
 Here are common parameters for the RESTful API:
 
