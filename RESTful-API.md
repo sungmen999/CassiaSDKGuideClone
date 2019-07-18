@@ -438,8 +438,13 @@ GET http://{router ip}/cassia/reboot
 ### Scan Bluetooth Devices
 To use the router to scan Bluetooth Low Energy (BLE) devices through your AC:
 
+AC Managed:
 ```
 GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1
 ```
 
 This API is a Server-Sent Events (SSE) which will be running continuously. Please check
@@ -456,23 +461,39 @@ This API can significantly reduce the amount of packets sent from the router to 
 
 **NOTE**: Customer can enable several filters at the same time. Only the packets which match all the filters will be sent to the customer application. Wildcard is not supported yet.
 
+AC Managed:
 ```
 GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
 
 Customers can filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
 
+AC Managed:
 ```
 GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_rssi=<rssi>
 ```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1&filter_rssi=<rssi>
 
 In addition, customers can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
+
+AC Managed:
 ```
-GET http://{your AC domain}/api/gap/ nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
 ```
 ```
-GET http://{your AC domain}/api/gap/ nodes?event=1&mac=<hubmac>&filter_name=<name1>,<name2>, … , <nameX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_name=<name1>,<name2>, … , <nameX>
 ```
+Local:
+```
+GET http://{router ip}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+```
+```
+GET http://{router ip}/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 
 **NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
 ```
@@ -488,9 +509,15 @@ GET http://{your AC domain}/api/gap/ nodes?event=1&mac=<hubmac>&filter_name=<nam
 
 ### Connect/Disconnect to a Target Device
 To use the router to connect to specific BLE devices using Cassia AC:
+
+AC Managed:
 ```
 POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/gap/nodes/<node>/connection
+
 We have added a few parameters in release 1.2 for this API:
 
 | Parameter | Description |
@@ -516,9 +543,15 @@ OK
 <br />
 
 To disconnect:
+AC Managed:
 ```
 DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 ```
+Local:
+```
+DELETE http://{router ip}/gap/nodes/<node>/connection
+```
+
 <details><summary>Response Example</summary>
 
 ```
@@ -532,8 +565,13 @@ OK
 <br />
 
 Get the device list connected to a router:
+AC Managed:
 ```
 GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?connection_state=connected
 ```
 <details><summary>Response Example</summary>
 
