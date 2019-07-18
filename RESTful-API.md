@@ -468,6 +468,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_mac=<mac1>
 Local:
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
+```
 
 Customers can filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
 
@@ -478,6 +479,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_rssi=<rssi
 Local:
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_rssi=<rssi>
+```
 
 In addition, customers can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
 
@@ -494,6 +496,7 @@ GET http://{router ip}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<u
 ```
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
+```
 
 **NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
 ```
@@ -517,6 +520,7 @@ POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 Local:
 ```
 POST http://{router ip}/gap/nodes/<node>/connection
+```
 
 We have added a few parameters in release 1.2 for this API:
 
