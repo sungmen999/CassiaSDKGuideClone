@@ -547,6 +547,7 @@ OK
 <br />
 
 To disconnect:
+
 AC Managed:
 ```
 DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
@@ -656,9 +657,16 @@ Message-body: application/json
 <br />
 
 #### Discover all characteristics:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>
 ```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/characteristics
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -693,9 +701,16 @@ Message-body: application/json
 <br />
 
 #### Discover all characteristics in one service:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
 ```
+Local:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -714,9 +729,16 @@ Message-body: application/json
 <br />
 
 #### Discover all descriptors in one characteristic:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<hubmac>
 ```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -735,9 +757,16 @@ Message-body: application/json
 <br />
 
 #### Discover a specific service by service UUID:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>&uuid=<uuid>
 ```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/services?uuid=<uuid>
+```
+
 <details><summary>Response Example</summary>
 
 ```
@@ -756,8 +785,14 @@ Message-body: application/json
 <br />
 
 #### Discover a specific characteristic by characteristics UUID:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>&uuid=<uuid>
+```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/characteristics?uuid=<uuid>
 ```
 
 <details><summary>Response Example</summary>
@@ -778,9 +813,16 @@ Message-body: application/json
 <br />
 
 #### Discover all services, characteristics, and descriptors all at once:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<hubmac>
 ```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/services/characteristics/descriptors
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -826,9 +868,16 @@ Message-body: application/json
 ### Read/Write the Value of a Specific Characteristic
 The read/write operations are based on the handle (found in the discover result) of a specific characteristic.
 To read by the handle:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
 ```
+Local:
+```
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -846,8 +895,14 @@ Message-body: application/json
 <br />
 
 To write by the handle:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
 
 <details><summary>Response Example</summary>
@@ -871,9 +926,15 @@ handle, e.g. “37”. Now, you can use this handle in the Write API. To open th
 set the value to "0100"; to open the indication, set the value to "0200"; to close the
 notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are examples).
 
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
 ```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/handle/37/value/0100
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -888,9 +949,16 @@ OK
 
 ### Send Advertise Data
 Begin advertising data:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/advertise/start?mac=<mac>&interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
 ```
+Local:
+```
+GET http://{router ip}/advertise/start?interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
+```
+
 Here are the parameters:
 
 | Parameter | Description |
@@ -922,8 +990,14 @@ OK
 <br />
 
 Stop sending advertise data:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/advertise/stop?mac=<mac>
+```
+Local:
+```
+GET http://{router ip}/advertise/stop
 ```
 
 <details><summary>Response Example</summary>
@@ -940,9 +1014,16 @@ OK
 
 ### Get Device Connection Status
 SSE API to get the connection status of all the devices that have connected to a router:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/management/nodes/connectionstate?mac=<hubmac>
 ```
+Local:
+```
+GET http://{router ip}/management/nodes/connectionstate
+```
+
 When a device status is changed from disconnected to connected, or from connected to
 disconnected, you will get a response. For example:
 ```json
@@ -953,8 +1034,14 @@ data: {"handle":"88:C6:26:92:58:77","connectionState":"disconnected"}
 
 ### Receive Notification and Indication
 SSE API to continues receive notification and indication:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gatt/nodes?event=1
 ```
 
 <br />
