@@ -1201,6 +1201,7 @@ Pairing Status Codes:
 
 ### Pair-Input Request
 **NOTE**: This API is not needed for Just Works.
+
 AC Managed:
 ```
 POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
