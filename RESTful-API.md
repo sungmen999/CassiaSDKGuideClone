@@ -28,6 +28,11 @@ Local:
 ```
 GET http://{router ip}/cassia/info
 ```
+Container:
+```
+GET http://10.10.10.254/cassia/info
+```
+
 The return result is a JSON object.
 <details><summary><strong>Configuration Response Example</strong></summary>
 
@@ -432,6 +437,11 @@ Local:
 ```
 GET http://{router ip}/cassia/reboot
 ```
+Container:
+```
+GET http://10.10.10.254/cassia/reboot
+```
+
 <br />
 
 ## Traffic Related API
@@ -445,6 +455,10 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>
 Local:
 ```
 GET http://{router ip}/gap/nodes?event=1
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1
 ```
 
 This API is a Server-Sent Events (SSE) which will be running continuously. Please check
@@ -469,6 +483,10 @@ Local:
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
+```
 
 Customers can filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
 
@@ -479,6 +497,10 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_rssi=<rssi
 Local:
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_rssi=<rssi>
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_rssi=<rssi>
 ```
 
 In addition, customers can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
@@ -492,10 +514,17 @@ GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_name=<name
 ```
 Local:
 ```
-GET http://{router ip}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+GET http://{router ip}/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
 ```
 ```
 GET http://{router ip}/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+```
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 ```
 
 **NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
@@ -520,6 +549,10 @@ POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
 Local:
 ```
 POST http://{router ip}/gap/nodes/<node>/connection
+```
+Container:
+```
+POST http://10.10.10.254/gap/nodes/<node>/connection
 ```
 
 We have added a few parameters in release 1.2 for this API:
@@ -556,6 +589,10 @@ Local:
 ```
 DELETE http://{router ip}/gap/nodes/<node>/connection
 ```
+Container:
+```
+DELETE http://10.10.10.254/gap/nodes/<node>/connection
+```
 
 <details><summary>Response Example</summary>
 
@@ -578,6 +615,11 @@ Local:
 ```
 GET http://{router ip}/gap/nodes?connection_state=connected
 ```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?connection_state=connected
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -607,8 +649,18 @@ Message-body: application/json
 
 ### Discover GATT Services and Characteristics
 #### Discover all services:
+
+AC Managed:
 ```
 GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/services
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/services
 ```
 
 <details><summary>Response Example</summary>
@@ -666,6 +718,10 @@ Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/characteristics
 ```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/characteristics
+```
 
 <details><summary>Response Example</summary>
 
@@ -708,7 +764,11 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/charac
 ```
 Local:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
+GET http://{your AC domain}/gatt/nodes/<node>/services/<service_uuid>/characteristics
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/services/<service_uuid>/characteristics
 ```
 
 <details><summary>Response Example</summary>
@@ -738,6 +798,10 @@ Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors
 ```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors
+```
 
 <details><summary>Response Example</summary>
 
@@ -765,6 +829,10 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>&uuid=<uu
 Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/services?uuid=<uuid>
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/services?uuid=<uuid>
 ```
 
 <details><summary>Response Example</summary>
@@ -794,6 +862,10 @@ Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/characteristics?uuid=<uuid>
 ```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/characteristics?uuid=<uuid>
+```
 
 <details><summary>Response Example</summary>
 
@@ -821,6 +893,10 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descr
 Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/services/characteristics/descriptors
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/services/characteristics/descriptors
 ```
 
 <details><summary>Response Example</summary>
@@ -875,7 +951,11 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hub
 ```
 Local:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
+GET http://{your AC domain}/gatt/nodes/<node>/handle/<handle>/value
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/handle/<handle>/value
 ```
 
 <details><summary>Response Example</summary>
@@ -901,6 +981,10 @@ AC Managed:
 GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<hubmac>
 ```
 Local:
+```
+GET http://{router ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
+```
+Container:
 ```
 GET http://{router ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
@@ -934,6 +1018,10 @@ Local:
 ```
 GET http://{router ip}/gatt/nodes/<node>/handle/37/value/0100
 ```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes/<node>/handle/37/value/0100
+```
 
 <details><summary>Response Example</summary>
 
@@ -957,6 +1045,10 @@ GET http://{your AC domain}/api/advertise/start?mac=<mac>&interval=<interval>&ad
 Local:
 ```
 GET http://{router ip}/advertise/start?interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
+```
+Container:
+```
+GET http://10.10.10.254/advertise/start?interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
 ```
 
 Here are the parameters:
@@ -999,6 +1091,10 @@ Local:
 ```
 GET http://{router ip}/advertise/stop
 ```
+Container:
+```
+GET http://10.10.10.254/advertise/stop
+```
 
 <details><summary>Response Example</summary>
 
@@ -1023,6 +1119,10 @@ Local:
 ```
 GET http://{router ip}/management/nodes/connectionstate
 ```
+Container:
+```
+GET http://10.10.10.254/management/nodes/connectionstate
+```
 
 When a device status is changed from disconnected to connected, or from connected to
 disconnected, you will get a response. For example:
@@ -1042,6 +1142,10 @@ GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<hubmac>
 Local:
 ```
 GET http://{router ip}/gatt/nodes?event=1
+```
+Container:
+```
+GET http://10.10.10.254/gatt/nodes?event=1
 ```
 
 <br />
@@ -1156,6 +1260,10 @@ Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pair
 ```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
+```
 
 Body parameters:
 
@@ -1210,6 +1318,10 @@ Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pairinput
 ```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pairinput
+```
 
 Body example for Passkey Entry (application/json):
 ```json
@@ -1234,6 +1346,10 @@ Local:
 ```
 DELETE http://{router ip}/management/nodes/<node>/bond
 ```
+Container:
+```
+DELETE http://10.10.10.254/management/nodes/<node>/bond
+```
 
 <details><summary>Response Example</summary>
 
@@ -1255,6 +1371,10 @@ POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
 Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pair
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
 ```
 
 Body example (application/json):
