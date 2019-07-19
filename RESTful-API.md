@@ -1273,6 +1273,7 @@ Message-body: application/json
 
 ### Passkey Entry Example: Initiator Inputs
 Step #1
+
 AC Managed:
 ```
 POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
@@ -1298,6 +1299,7 @@ Message-body: application/json
 </details>
 
 Step #2
+
 AC Managed:
 ```
 POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
@@ -1324,6 +1326,7 @@ Message-body: application/json
 
 ### LE Legacy Pairing OOB Example
 Step #1
+
 AC Managed:
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
@@ -1349,6 +1352,7 @@ Message-body: application/json
 </details>
 
 Step #2
+
 AC Managed:
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
