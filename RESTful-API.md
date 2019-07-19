@@ -1148,9 +1148,15 @@ Here are the mapping between pair modes, APIs and typical responses:
 
 ### Pair Request
 
+AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+
 Body parameters:
 
 | Parameter | Description |
@@ -1195,8 +1201,13 @@ Pairing Status Codes:
 
 ### Pair-Input Request
 **NOTE**: This API is not needed for Just Works.
+AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
+```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pairinput
 ```
 
 Body example for Passkey Entry (application/json):
@@ -1214,9 +1225,15 @@ The response format is same as pair request API.
 <br />
 
 ### Unpair Request
+AC Managed:
 ```
-DELETE http://<your AC domain>/api/management/nodes/<node>/bond?mac=<hubmac>
+DELETE http://{your AC domain}/api/management/nodes/<node>/bond?mac=<hubmac>
 ```
+Local:
+```
+DELETE http://{router ip}/management/nodes/<node>/bond
+```
+
 <details><summary>Response Example</summary>
 
 ```
@@ -1230,9 +1247,15 @@ OK
 <br />
 
 ### Just Works Example
+AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+
 Body example (application/json):
 ```json
 { "bond": 1, "io-capability": "NoInputNoOutput"}
@@ -1250,9 +1273,15 @@ Message-body: application/json
 
 ### Passkey Entry Example: Initiator Inputs
 Step #1
+AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+
 Body example (application/json):
 ```json
 { "bond": 1, "io-capability": "KeyboardDisplay" }
@@ -1269,9 +1298,15 @@ Message-body: application/json
 </details>
 
 Step #2
+AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pairinput
+```
+
 Body example (application/json):
 ```json
 { "passkey": "123456" }
@@ -1289,9 +1324,15 @@ Message-body: application/json
 
 ### LE Legacy Pairing OOB Example
 Step #1
+AC Managed:
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+
 Body example (application/json):
 ```json
 { "bond": 1, "legacy-oob": 1 }
@@ -1308,9 +1349,15 @@ Message-body: application/json
 </details>
 
 Step #2
+AC Managed:
 ```
 POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
 ```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pairinput
+```
+
 Body example (application/json):
 ```json
 { "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
