@@ -34,7 +34,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device)
      * [Discover GATT Services and Characteristics](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#discover-gatt-services-and-characteristics)
      * [Read/Write the Value of a Specific Characteristic](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#readwrite-the-value-of-a-specific-characteristic)
-     * [Get Advertise Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-advertise-data)
+     * [Send Advertise Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#Send-advertise-data)
      * [Get Device Connection Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status)
      * [Receive Notification and Indication](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
      </details>
