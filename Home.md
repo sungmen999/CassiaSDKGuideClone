@@ -9,7 +9,7 @@ We are looking for any edit suggestions or corrections. Please contact us at: <b
 
 ## Table of Contents
 
-  __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
+__[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 <details><summary><strong>Overview</strong></summary>
 
    * [Cassia Router Overview](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-Router-Overview)
@@ -71,14 +71,14 @@ We are looking for any edit suggestions or corrections. Please contact us at: <b
    
      * [Overview of SSE Combination API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#sse-combination-api)
      * [Create Combined SSE](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#create-combined-sse)
-     * Open Scan
-     * Close Scan
-     * Open Notify
-     * Close Notify
-     * Open Connection-State Report
-     * Close Connection-State Report
-     * Open AP-State Report
-     * Close AP-State Report
+     * [Open Scan](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#open-scan)
+     * [Close Scan](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#close-scan)
+     * [Open Notify](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#open-notify)
+     * [Close Notify](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#close-notify)
+     * [Open Connection-State Report](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#open-connection-state-report)
+     * [Close Connection-State Report](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#close-connection-state-report)
+     * [Open AP-State Report](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#open-ap-state-report)
+     * [Close AP-State Report](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#close-ap-state-report)
      </details>
 </details>
 
