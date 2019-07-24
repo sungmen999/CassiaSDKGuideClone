@@ -1403,6 +1403,10 @@ Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pair
 ```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
+```
 
 Body example (application/json):
 ```json
@@ -1428,6 +1432,10 @@ POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
 Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pairinput
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pairinput
 ```
 
 Body example (application/json):
@@ -1456,6 +1464,10 @@ Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pair
 ```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
+```
 
 Body example (application/json):
 ```json
@@ -1481,6 +1493,10 @@ POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
 Local:
 ```
 POST http://{router ip}/management/nodes/<node>/pairinput
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pairinput
 ```
 
 Body example (application/json):
