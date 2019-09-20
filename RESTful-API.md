@@ -565,8 +565,7 @@ the next connecting request.
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. |
 | `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 5,000ms. The range of value is 200ms – 20000ms. |
 | `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0. |
-| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API,
-but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When customer calls service discover API, the router should read the GATT services & characteristics from the BLE device. |
+| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When customer calls service discover API, the router should read the GATT services & characteristics from the BLE device. |
 
 Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
 ```
