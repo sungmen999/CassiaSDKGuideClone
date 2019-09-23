@@ -470,7 +470,7 @@ Here are more optional parameters:
 | `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default Cassia routers will perform passive scanning. |
 | `filter_duplicates` | (Optional): 0 or 1, turn on/off to filter duplicated records. Default is 0. |
 
-### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
+### x
 This API can significantly reduce the amount of packets sent from the router to the server.
 
 **NOTE**: Multiple filters can be used at the same time. Scanned data is returned if all
@@ -541,10 +541,19 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <na
 ```
 
 Below is an example which includes name in scan response:
+<br />
+
+![Figure 7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/Screen%20Shot%202019-09-23%20at%202.57.33%20PM.png)
+
 
 Below is an example which includes UUID in advertise packet. The uuid in this advertise
 packets is F0FF. Please move the last byte (FF) forward and add the rest of the bytes(F0),
-here comes the filter_uuid= FFF0.
+here comes the filter_uuid= FFF0:
+
+<br />
+
+![Figure 8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/Screen%20Shot%202019-09-23%20at%202.57.53%20PM.png)
+
 
 ### Connect/Disconnect to a Target Device
 To use the router to connect to specific BLE devices using Cassia AC:
