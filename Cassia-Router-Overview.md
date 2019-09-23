@@ -4,7 +4,6 @@ Bluetooth range up to 1,000 feet (open space, line-of-sight), and enables remote
 multiple Bluetooth Low Energy (BLE) devices without requiring any changes to the Bluetooth
 devices.
 
-### [Two Sets of RESTful APIs](#two-sets-of-restful-apis)
 The Cassia RESTful APIs were developed to enable third-party developers and device
 manufacturers to utilize the Bluetooth routing and extended range capabilities of the Cassia
 router while using their Cloud services to connect and control multiple BLE devices per
@@ -20,6 +19,7 @@ The Cassia RESTful APIs provide the following functions:
   * Write/read data to/from the BLE device.
   * Read data as notification/indication events from the BLE device.
 
+### [Two Sets of RESTful APIs](#two-sets-of-restful-apis)
 Cassia provides two sets of RESTful APIs that enable BLE device interaction with Cassia
 routers:
   * APIs on the local router (where the application is usually on the same network as the
