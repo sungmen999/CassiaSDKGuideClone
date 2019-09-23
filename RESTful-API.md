@@ -8,10 +8,10 @@ Here are common parameters for the RESTful API:
 
 | Parameter | Description |
 |-----------|-------------|
-| `mac` |  The MAC address of a Cassia router (e.g. CC:1B:E0:E0:24:B4). |
-| `node` | The MAC address of a BLE device (e.g. EF:F3:CF:F0:8B:81). |
+| `mac` |  The mac address of a Cassia router (e.g. CC:1B:E0:E0:24:B4). |
+| `node` |  The mac address of a BLE device (e.g. EF:F3:CF:F0:8B:81). |
 | `handle` | After you find the device services, based on the device’s Bluetooth profile, you can identify its corresponding handle index in the UUID (e.g. 37). |
-| `value` | The value written into the handle. |
+| `value` | the hex value written into the handle (e.g. FF000C00). |
 | `chip` | (Optional) 0 or 1, indicates which chip of the Cassia router is used for scan and connect. By default, the router will pick up the chip automatically based on an internal algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1. |
 <br />
 
@@ -473,7 +473,8 @@ Here are more optional parameters:
 ### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
 This API can significantly reduce the amount of packets sent from the router to the server.
 
-**NOTE**: Customer can enable several filters at the same time. Only the packets which match all the filters will be sent to the customer application. Wildcard is not supported yet.
+**NOTE**: Multiple filters can be used at the same time. Scanned data is returned if all
+conditions are met. The wildcard is not supported.
 
 AC Managed:
 ```
@@ -527,7 +528,10 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uu
 GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 ```
 
-**NOTE**: In order to filter UUID or name from advertise packets, the device should include the corresponding types in advertise packets:
+**NOTE**: The structure of BLE advertise packets and scan response packets is [1 Byte Length (type
++ data) + 1 Byte Type + Data] x n. In order to filter by UUID or name, the corresponding
+type should be included in advertise packets (adData) or scan response packets
+(scanData). Below are the types:
 ```
 #define EIR_UUID16_SOME 0x02 /* 16-bit UUID, more available */
 #define EIR_UUID16_ALL 0x03 /* 16-bit UUID, all listed */
@@ -538,6 +542,12 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <na
 #define EIR_NAME_SHORT 0x08 /* shortened local name */
 #define EIR_NAME_COMPLETE 0x09 /* complete local name */
 ```
+
+Below is an example which includes name in scan response:
+
+Below is an example which includes UUID in advertise packet. The uuid in this advertise
+packets is F0FF. Please move the last byte (FF) forward and add the rest of the bytes(F0),
+here comes the filter_uuid= FFF0.
 
 ### Connect/Disconnect to a Target Device
 To use the router to connect to specific BLE devices using Cassia AC:
