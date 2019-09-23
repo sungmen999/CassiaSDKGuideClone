@@ -528,10 +528,7 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uu
 GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 ```
 
-**NOTE**: The structure of BLE advertise packets and scan response packets is [1 Byte Length (type
-+ data) + 1 Byte Type + Data] x n. In order to filter by UUID or name, the corresponding
-type should be included in advertise packets (adData) or scan response packets
-(scanData). Below are the types:
+**NOTE**: The structure of BLE advertise packets and scan response packets is [1 Byte Length (type + data) + 1 Byte Type + Data] x n. In order to filter by UUID or name, the corresponding type should be included in advertise packets (adData) or scan response packets (scanData). Below are the types:
 ```
 #define EIR_UUID16_SOME 0x02 /* 16-bit UUID, more available */
 #define EIR_UUID16_ALL 0x03 /* 16-bit UUID, all listed */
