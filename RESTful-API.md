@@ -1290,7 +1290,8 @@ Body parameters:
 | Parameter | Description |
 | ---- | ---- |
 | `bond` | Bond to the node. Default value is 1. |
-| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If Legacy OOB is needed, please set it to 1. |
+| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If
+customer wants to use Legacy OOB, please set it to 1. |
 | `io-capability` | (Optional): See below table. Default value is KeyboardDisplay. |
 
 IO Capability:
