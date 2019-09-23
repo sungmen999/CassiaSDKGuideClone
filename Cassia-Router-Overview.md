@@ -5,21 +5,35 @@ multiple Bluetooth Low Energy (BLE) devices without requiring any changes to the
 devices.
 
 ### [Two Sets of RESTful APIs](#two-sets-of-restful-apis)
+The Cassia RESTful APIs were developed to enable third-party developers and device
+manufacturers to utilize the Bluetooth routing and extended range capabilities of the Cassia
+router while using their Cloud services to connect and control multiple BLE devices per
+router simultaneously. Furthermore, the Cassia RESTful APIs are designed to integrate
+directly into your application and server using an HTTP/HTTPS-based communication
+protocol, which provides programming language flexibility (C#, Node.js, Java, and any other
+languages you prefer). This document helps you to use the Cassia RESTful APIs and its
+associated services.
+
+The Cassia RESTful APIs provide the following functions:
+  * Connect and control your BLE devices.
+  * Support three modes: Scanning, Connecting, Broadcasting.
+  * Write/read data to/from the BLE device.
+  * Read data as notification/indication events from the BLE device.
+
 Cassia provides two sets of RESTful APIs that enable BLE device interaction with Cassia
 routers:
   * APIs on the local router (where the application is usually on the same network as the
 router)
   * APIs through Cassia’s IoT Access Controller (Cassia AC).
-
-The APIs below are only available through the Cassia AC. Except for these APIs, the two set
-of RESTful APIs are the same and will give the same result. In this document, we use the
-APIs through Cassia AC as examples.
-  * [Positioning APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#positioning-api)
-  * [Obtain Cassia Router’s Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-cassia-routers-status-through-ac)
-  * [Monitor Cassia Router’s Status APIs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#monitor-cassia-routers-status-through-ac)
-  * [Obtain All Online Routers’ Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#obtain-all-online-routers-status-through-ac)
-  * [Router Auto-Selection](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#router-auto-selection-api)
-  * [SSE Combination](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#sse-combination-api)
+The below APIs are only available through the Cassia AC. Except for these APIs, the two set
+of RESTful APIs are the same and will give the same result. In this document, we use the API
+through the Cassia AC as an example.
+  * Positioning APIs (chapter 6.4)
+  * Obtain Cassia router’s status (chapter 6.2.2)
+  * Monitor Cassia router’s status APIs (chapter 6.2.3)
+  * Obtain all online routers’ status (chapter 6.2.4)
+  * Router auto-selection (chapter 6.6, introduced in firmware 1.3)
+  * SSE Combination (chapter 6.7, introduced in firmware 1.3)
 
 **NOTE**:
   * The RESTful APIs through Cassia AC includes “/api” after {your AC domain}. It is not
