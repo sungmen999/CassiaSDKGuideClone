@@ -6,6 +6,7 @@ This guide shows developers how to use the Cassia RESTful API to integrate their
 
 If you would like to verify how the SDK API works, please use:
 <br>[Cassia Bluetooth Debug Tool](http://www.bluetooth.tech/debugger).
+
 For more information about the Cassia Bluetooth Debug Tool, please visit:
 <br>[Bluetooth Debug Tool wiki page](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool).
 
