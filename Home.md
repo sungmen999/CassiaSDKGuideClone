@@ -4,6 +4,10 @@
 
 This guide shows developers how to use the Cassia RESTful API to integrate their Bluetooth devices with the Cassia IoT Access Controller (AC) and the Cassia Bluetooth routers.
 
+If you would like to verify how the SDK API works, please use the [Cassia Bluetooth Debug Tool](http://www.bluetooth.tech/debugger).
+For more information aout the Cassia Bluetooth Debug Tool, please visit:
+[https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)
+
 We are looking for any edit suggestions or corrections. Please contact us at: <br />
 [https://www.cassianetworks.com/support](https://www.cassianetworks.com/support/)
 
