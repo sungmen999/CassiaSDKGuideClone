@@ -470,6 +470,8 @@ Here are more optional parameters:
 | `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default Cassia routers will perform passive scanning. |
 | `filter_duplicates` | (Optional): 0 or 1, turn on/off to filter duplicated records. Default is 0. |
 
+
+
 ### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
 This API can significantly reduce the amount of packets sent from the router to the server.
 
