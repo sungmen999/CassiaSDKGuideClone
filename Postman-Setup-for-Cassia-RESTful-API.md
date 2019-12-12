@@ -11,6 +11,7 @@ A screen asking to create an account or sign in will appear. (It is optional to 
 
 ![Postman Initial Screen](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p1.png)
 
+
 This is an example of a plain Postman workspace after you open the application for the first time:
 
 ![Plain Postman Workspace](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p2.png)
