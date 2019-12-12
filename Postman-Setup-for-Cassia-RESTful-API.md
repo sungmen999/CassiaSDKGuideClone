@@ -31,10 +31,11 @@ This is an example of saving a Postman request into a collection called "Authori
 ![Save Request into Authorization Collection](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p4.png)
 
 <br>
+
 A new tab should appear in the workspace. Change the default "GET" request type to "POST".
 
-
 ![Request Type from GET to POST](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p5.png)
+
 
 ## Setting Up Postman for Standalone (Local) Cassia RESTful API
 This section is coming soon...
