@@ -25,6 +25,7 @@ Click on it and click on "Request".
 
 <br>
 A pop-up window may ask for you to save this request into a collection. Create a collection and save the request into it. 
+
 This is an example of saving a Postman request into a collection called "Authorization":
 
 ![Save Request into Authorization Collection](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p4.png)
