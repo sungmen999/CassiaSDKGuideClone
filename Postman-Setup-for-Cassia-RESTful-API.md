@@ -36,6 +36,30 @@ A new tab should appear in the workspace. Change the default "GET" request type 
 
 ![Request Type from GET to POST](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p5.png)
 
+<br>
+
+Then, fill in the settings like in the following screenshots:
+
+![p6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p6.png)
+
+![p7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p7.png)
+
+![p8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p8.png)
+
+![p9](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p9.png)
+
+![p10](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p10.png)
+
+![p11](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p11.png)
+
+![p12](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p12.png)
+
+![p13](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p13.png)
+
+![p14](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p14.png)
+
+![p15](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p15.png)
+
 
 ## Setting Up Postman for Standalone (Local) Cassia RESTful API
 This section is coming soon...
