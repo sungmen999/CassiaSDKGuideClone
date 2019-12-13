@@ -91,6 +91,8 @@ __[Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/B
 
 __[Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages)__
 
+__[Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Postman-Setup-for-Cassia-RESTful-API)__
+
 <details><summary><strong>Extras</strong></summary>
    
    * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
