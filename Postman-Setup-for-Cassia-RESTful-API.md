@@ -60,6 +60,7 @@ Then, fill in the settings like in the following screenshots:
 
 ![p15](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p15.png)
 
+![p16](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p16.png)
 
 ## Setting Up Postman for Standalone (Local) Cassia RESTful API
 This section is coming soon...
