@@ -40,7 +40,7 @@ A new tab should appear in the workspace. Change the default "GET" request type 
 
 Then, fill in the settings like in the following screenshots:
 
-![p6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p6.png | width=100)
+![p6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p6.png)
 
 ![p7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p7.png)
 
