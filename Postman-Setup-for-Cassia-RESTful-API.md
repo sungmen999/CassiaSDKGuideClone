@@ -60,6 +60,10 @@ Then, fill in the settings like in the following screenshots:
 
 ![p15](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p15.png)
 
+<br>
+
+Alternatively, you can set the Authorization header like so to access the AC RESTful API:
+
 ![p16](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p16.png)
 
 ## Setting Up Postman for Standalone (Local) Cassia RESTful API
