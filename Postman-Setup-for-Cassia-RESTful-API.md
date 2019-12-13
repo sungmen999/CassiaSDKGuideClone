@@ -77,6 +77,10 @@ print(encoded_id_secret.decode())
 
 ![p10](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p10.png)
 
+<br>
+
+Now, set the rest of the settings like the following screenshots:
+
 ![p11](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p11.png)
 
 ![p12](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p12.png)
