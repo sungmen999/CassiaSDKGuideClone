@@ -46,7 +46,34 @@ Then, fill in the settings like in the following screenshots:
 
 ![p8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p8.png)
 
+<br>
+
+In Postman, use Basic Auth to get an OAuth 2.0 bearer token. 
+
+This will set the HTTP Authorization header.
+
+Just enter the Developer Key and Secret in the Postman Basic Auth fields.
+
 ![p9](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p9.png)
+
+<br>
+
+Setting the Authorization header manually is also fine. 
+
+To do this, use a base64 encoding tool to generate an encoding based on the the Developer Key and Secret (key:secret).
+
+Here is an example Python script to generate the base64 encoding for Basic Auth:
+
+```python
+
+import base64
+
+id_secret = 'cassia:cassia'
+encoded_id_secret = base64.b64encode(id_secret.encode())
+
+print(encoded_id_secret.decode())
+
+```
 
 ![p10](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p10.png)
 
