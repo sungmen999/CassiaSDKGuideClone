@@ -96,5 +96,9 @@ Alternatively, you can set the Authorization header like so to access the AC RES
 
 ![p16](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/develop/images/postman_guide/p16.png)
 
+<br>
+
+<br>
+
 ## Setting Up Postman for Standalone (Local) Cassia RESTful API
 This section is coming soon...
