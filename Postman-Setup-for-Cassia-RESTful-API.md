@@ -1,4 +1,3 @@
-## What is Postman?
 ## Setting Up Postman for AC-Managed Cassia RESTful API
 ### Download Postman
 [https://www.getpostman.com/downloads](https://www.getpostman.com/downloads/)
