@@ -67,7 +67,7 @@ Here is an example Python script to generate the base64 encoding for Basic Auth:
 
 import base64
 
-id_secret = 'cassia:cassia'
+id_secret = 'tester:10b83f9a2e823c47'
 encoded_id_secret = base64.b64encode(id_secret.encode())
 
 print(encoded_id_secret.decode())
