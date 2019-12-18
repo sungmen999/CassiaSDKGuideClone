@@ -70,7 +70,8 @@ access_token parameter. For example:<br/>
 ```http://demo.cassia.pro/api/gap/nodes?event=1&mac=<router-mac>&access_token=xxx```<br/>
 Or, you can add {Authorization : 'Bearer ' + access_token } in the HTTP headers.
 
-  * Please update access_token periodically before it expires (3600 seconds). Please check [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token) for an example of updating the token every 30 minutes. The "refreshCycle = 30 * 60" can be changed to another cycle period.
+  * Please update access_token periodically before it expires (3600 seconds).
+    Please check [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token) for an example of updating the token every 30 minutes. The "refreshCycle = 30 * 60" can be changed to another cycle period.
 
 **NOTE**: Make sure to append “/api” after {your AC domain} and add “mac=<mac>” to
 identify which router is used.
