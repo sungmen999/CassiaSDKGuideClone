@@ -8,7 +8,10 @@ Server Installation Guide, and Cassia User Manual at:\
 Now you can operate your router to do certain tasks with your Bluetooth devices through the RESTful API.
 
 ### [Access Local Router](#access-local-router)
-Your application can access local Cassia routers directly (usually in the same network), instead of through Cassia AC. Below is an example of running RESTful API in a web browser to access Cassia router in local network (for debug purpose).
+Your application can access local Cassia routers directly (usually in the same network), instead of through Cassia AC. 
+Please turn on Local RESTful API in advance, according to chapter 2
+
+Below is an example of running the RESTful API in a web browser to access a Cassia router in a local network for debugging purpose.
 
 <br />
 
@@ -23,6 +26,10 @@ Your application can access local Cassia routers directly (usually in the same n
 <br />
 
 ### [Access Cassia Router through the Cassia AC](#access-cassia-router-through-the-cassia-ac)
+**NOTE**:
+  * The steps below are mandatory before using any AC RESTful API.
+  * The access_token will expire in 3600 seconds. Please update it periodically.
+
 Before starting to use RESTful API’s through the Cassia AC, you will need developer
 credentials (a Developer Key and a Developer Secret). It is not needed for a RESTful API on a
 local router. These developer credentials authorize the remote control of the Cassia
@@ -34,11 +41,8 @@ Here is a sample:
 client_id:tester, secret:198c776539c41234
 ```
 
-Then, you need to follow below steps:
-  * Do an OAuth2.0 authentication with the AC using developer credentials granted. For
-example: you have a developer ID: tester, secret: 10b83f9a2e823c47, use base64 to
-encode string "tester:10b83f9a2e823c47" and get
-"dGVzdGVyOjEwYjgzZjlhMmU4MjNjNDc="
+Then, you need to follow the steps below to get the access_token:
+  * Do an OAuth2.0 authentication with the AC using developer credentials granted. For example: you have a developer ID: tester, secret: 10b83f9a2e823c47, use base64 to encode string "tester:10b83f9a2e823c47" and get "dGVzdGVyOjEwYjgzZjlhMmU4MjNjNDc="
   * Authenticate the user identity using the following HTTP request, taking
 demo.cassia.pro as your AC server as an example.
 ```
@@ -63,8 +67,10 @@ expires_in: 3600 }
 ```
   * Now you can use access_token to access the other RESTful APIs by appending an
 access_token parameter. For example:<br/>
-```http://demo.cassia.pro/api/gap/nodes?event=1&mac=<routermac>&access_token=xxx```<br/>
-Or, you can add {Authorization : 'Bearer ' + access_token } in HTTP headers.
+```http://demo.cassia.pro/api/gap/nodes?event=1&mac=<router-mac>&access_token=xxx```<br/>
+Or, you can add {Authorization : 'Bearer ' + access_token } in the HTTP headers.
+
+  * Please update access_token periodically before it expires (3600 seconds). Please check [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token) for an example of updating the token every 30 minutes. The "refreshCycle = 30 * 60" can be changed to another cycle period.
 
 **NOTE**: Make sure to append “/api” after {your AC domain} and add “mac=<mac>” to
 identify which router is used.
