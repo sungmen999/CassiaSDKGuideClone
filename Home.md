@@ -97,5 +97,5 @@ __[Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/Cassi
    
    * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
    * [Sample Code to Get Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Get-Access-Token)
-   
+   * [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token)
 </details>
