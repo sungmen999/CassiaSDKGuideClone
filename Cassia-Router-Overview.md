@@ -101,10 +101,11 @@ connection. The SSE API is standardized as a part of HTML5 by the W3C. SSE is us
 message updates or continuous data streams to a browser client. It needs to be manually
 terminated, otherwise, it will keep on running until an error occurs.
 
-Five of the RESTful APIs are using SSE
+Six RESTful APIs are using SSE:
   - [scan](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bluetooth-devices)
   - [get device connection status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status)
   - [receive indication and notification](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
+  - [get RSSI report for BLE connections]()
   - [monitor Cassia router’s status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#monitor-cassia-routers-status-through-ac) (through AC)
   - [create combined SSE](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#create-combined-sse) (firmware 1.3 and above)
 
