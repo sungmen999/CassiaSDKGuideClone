@@ -479,6 +479,8 @@ This API can significantly reduce the amount of packets sent from the router to 
 **NOTE**: Multiple filters can be used at the same time. Scanned data is returned if all
 conditions are met. The wildcard is not supported.
 
+Users can filter the devices based on its MAC address.
+
 AC Managed:
 ```
 GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
@@ -492,7 +494,7 @@ Container:
 GET http://10.10.10.254/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
 
-Customers can filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
+Users can filter out devices based on its RSSI level, e.g. filter out devices who’s RSSI value is weaker than a certain value.
 
 AC Managed:
 ```
@@ -507,7 +509,7 @@ Container:
 GET http://10.10.10.254/gap/nodes?event=1&filter_rssi=<rssi>
 ```
 
-In addition, customers can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
+In addition, users can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
 
 AC Managed:
 ```
@@ -584,7 +586,7 @@ the next connecting request.
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. |
 | `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 5,000ms. The range of value is 200ms – 20000ms. |
 | `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0. |
-| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When customer calls service discover API, the router should read the GATT services & characteristics from the BLE device. |
+| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When a user calls the service discover API, the router should read the GATT services & characteristics from the BLE device. |
 
 Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
 ```
@@ -1293,8 +1295,7 @@ Body parameters:
 | Parameter | Description |
 | ---- | ---- |
 | `bond` | Bond to the node. Default value is 1. |
-| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If
-customer wants to use Legacy OOB, please set it to 1. |
+| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If a user wants to use Legacy OOB, please set it to 1. |
 | `io-capability` | (Optional): See below table. Default value is KeyboardDisplay. |
 
 IO Capability:
@@ -1544,8 +1545,7 @@ Message-body: application/json
 From firmware 1.3, Cassia AC can select one router automatically from a list of
 candidates, and then connect the BLE device by using this router. The selection is based
 on RSSI, router load, and router capabilities.
-If a customer wants to connect a BLE device with a specific router, or he wants to use a
-customized router selection algorithm, he should use the APIs in chapter 5.3.3.
+If users want to connect a BLE device with a specific router, or they want to use a customized router selection algorithm, they should use the APIs in [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device).
 
 **NOTE**: these APIs are only available through Cassia AC.
 
