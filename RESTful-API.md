@@ -1837,6 +1837,7 @@ Message-body: application/json
 From firmware 1.3, Cassia AC can select one router automatically from a list of
 candidates, and then connect the BLE device by using this router. The selection is based
 on RSSI, router load, and router capabilities.
+<br>
 If users want to connect a BLE device with a specific router, or they want to use a customized router selection algorithm, they should use the APIs in [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device).
 
 **NOTE**: these APIs are only available through Cassia AC.
