@@ -565,11 +565,11 @@ here comes the filter_uuid= FFF0:
 #### Enhanced Scan Filter (v2.0 and above)
 In order to improve the flexibility of scan filter, Cassia enhanced name & MAC filter and added value filter from v2.0.
 
-* filter_name
-  * Full name: same as legacy filter_name.
-  * Filter out unknown name: format is *. Filter out the adv packets without name in both ad_data and scan_data.
-  * Prefix: format is Cassia*. Filter prefix in either ad_data or scan_data.
-  * Suffix: format is *Cassia. Filter suffix in either ad_data or scan_data.
+**filter_name**
+* Full name: same as legacy filter_name.
+* Filter out unknown name: format is *. Filter out the adv packets without name in both ad_data and scan_data.
+* Prefix: format is Cassia*. Filter prefix in either ad_data or scan_data.
+* Suffix: format is *Cassia. Filter suffix in either ad_data or scan_data.
 
 Examples:
 
@@ -590,12 +590,12 @@ Container:
 ```
 GET http://10.10.10.254/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
 ```
-
+<br>
 <br>
 
-* filter_mac
-  * Full MAC: same as legacy filter_mac.
-  * Prefix: format is CC:DD:EE*. Filter the adv packets by MAC prefix.
+**filter_mac**
+* Full MAC: same as legacy filter_mac.
+* Prefix: format is CC:DD:EE*. Filter the adv packets by MAC prefix.
 
 Examples:
 
@@ -618,8 +618,10 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 ```
 
 <br>
+<br>
 
-* filter_value: filter value with data xx from offset yy
+**filter_value**
+* filter value with data xx from offset yy
 Examples:
 
 cURL (Local):
