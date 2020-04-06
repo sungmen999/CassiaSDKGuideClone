@@ -55,6 +55,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * [Send Advertise Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#Send-advertise-data)
      * [Get Device Connection Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status)
      * [Receive Notification and Indication](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
+     * [Get RSSI for BLE Connection (v2.0 and above)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-rssi-for-ble-connection-v20-and-above)
      </details>
    * <div><a href="https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#positioning-api">Positioning API</a></div>
    * <details><summary><strong>Secure Pairing API</strong></summary>
