@@ -591,6 +591,8 @@ Container:
 GET http://10.10.10.254/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
 ```
 
+<br>
+
 * filter_mac
   * Full MAC: same as legacy filter_mac.
   * Prefix: format is CC:DD:EE*. Filter the adv packets by MAC prefix.
@@ -614,6 +616,8 @@ Container:
 ```
 GET http://10.10.10.254/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 ```
+
+<br>
 
 * filter_value: filter value with data xx from offset yy
 Examples:
