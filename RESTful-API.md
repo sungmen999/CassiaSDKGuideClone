@@ -20,6 +20,10 @@ username=admin&password=admin2
 http://{router ip}/cassia/login
 ```
 
+After the POST request returns a 200 OK response, you should be able to call the /cassia/* APIs without getting a Login page HTML response.
+
+<br>
+
 ## Common Parameters
 Here are common parameters for the RESTful API:
 
