@@ -1418,16 +1418,23 @@ It will return:
 <br />
 
 ## Secure Pairing API
-Starting from 1.2 release, Cassia supports Bluetooth 4.1 Secure Simple Pairing, namely
-Just Works, Passkey Entry and Legacy OOB.
+Since the v1.2 release, Cassia supports Bluetooth 4.1 Secure Simple Pairing, namely Just Works, Passkey Entry and Legacy OOB.
 
-Here are the mapping between pair modes, APIs and typical responses:
+**(v2.0 and above)**: Starting from the v2.0 release, Cassia supports Bluetooth 4.2 Pairing, namely Just Works, Passkey Entry, Security OOB and Numeric Comparison.
 
-| Pair Mode | Step 1: API Pair Request | Step 2: API Pair-input Request |
+**NOTE**: Before the v2.0 release, users must call the connect API before calling the pair API. From the v2.0 release, the API Pair Request will set up the BLE connection automatically if the connection has not been set up.
+
+Here is the mapping between pair modes, APIs, and typical responses.
+
+**NOTE**: The 4.1 and 4.2 in the table refers to the Bluetooth versions. The "Y" and "N" means "Yes" and "No" to whether the Pair Mode is supported in a Bluetooth version.
+
+| Pair Mode | 4.1 | 4.2 | Step 1: API Pair Request | Step 2: API Pair-input Request |
 | --- | --- | --- |
-| Just Works | Return 0 for pairing failed or 1 for successful. | N/A |
-| Passkey Entry | Return 5 for using passkey entry (initiator inputs). | Return 0 for pairing failed or 1 for successful. |
-| Legacy OOB | Return 3 for using legacy OOB. | Return 0 for pairing failed or 1 for successful. |
+| Just Works | Y | Y | Returns 0 for pairing failed or 1 for successful. | N/A |
+| Passkey Entry | Y | Y | Returns 5 for using passkey entry (initiator inputs). | Returns 0 for pairing failed or 1 for successful. |
+| Legacy OOB | Y | N | Returns 3 for using legacy OOB. | Returns 0 for pairing failed or 1 for successful. |
+| Security OOB | N | Y | Returns 0 for pairing failed or 1 for successful | N/A |
+| Numeric Comparison | N | Y | Returns 7 for using numeric comparison. | Returns 0 for pairing failed or 1 for successful. |
 
 ### Pair Request
 
