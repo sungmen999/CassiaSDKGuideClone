@@ -31,12 +31,14 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
      * [Scan Bluetooth Devices](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bluetooth-devices)
      * [Filter Scanned Data based on Device MAC, RSSI, Name, and UUID](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#filter-scanned-data-based-on-device-mac-rssi-name-and-uuid)
+     * [Enhanced Scan Filter (v2.0 and above)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#enhanced-scan-filter-v20-and-above)
      * [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device)
      * [Discover GATT Services and Characteristics](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#discover-gatt-services-and-characteristics)
      * [Read/Write the Value of a Specific Characteristic](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#readwrite-the-value-of-a-specific-characteristic)
      * [Send Advertise Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#Send-advertise-data)
      * [Get Device Connection Status](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-device-connection-status)
      * [Receive Notification and Indication](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
+     * [Get RSSI for BLE Connection (v2.0 and above)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-rssi-for-ble-connection-v20-and-above)
      </details>
    * <div><a href="https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#positioning-api">Positioning API</a></div>
    * <details><summary><strong>Secure Pairing API</strong></summary>
@@ -81,6 +83,5 @@ __[Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/Cassi
    
    * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
    * [Sample Code to Get Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Get-Access-Token)
-   * [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token) 
-   
+   * [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token)
 </details>
