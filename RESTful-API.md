@@ -1455,9 +1455,16 @@ Body parameters:
 
 | Parameter | Description |
 | ---- | ---- |
-| `bond` | Bond to the node. Default value is 1. |
-| `legacy-oob` | (Optional): Default value is 0, which means not using Legacy OOB. If a user wants to use Legacy OOB, please set it to 1. |
-| `io-capability` | (Optional): See below table. Default value is KeyboardDisplay. |
+| `oob` | (Optional): 0 means no OOB, 1 means Legacy OOB, 2 means Security OOB. Default is 0. Setting oob=0 or 1 has the same function as the old parameter `legacy-oob` (still valid for backward compatibility). |
+| `legacy-oob` | (Deprecated): Default value is 0, which means not using Legacy OOB. If a user wants to use Legacy OOB, please set it to 1. **This parameter is replaced by the `oob` parameter, but this parameter is still valid for backward compatibility.** |
+| `iocapability` | (Mandatory): See the table below. Same as the old parameter `io-capability` (still valid for backward compatibility). |
+| `io-capability` | (Deprecated): See below table. Default value is KeyboardDisplay. |
+| `rand` | (Mandatory for Security OOB): Random value for pair. Provided by the device. |
+| `confirm` | (Mandatory for Security OOB): Confirm value for pair. Provided by the device. |
+| `timeout` | (Optional): Pair connection attempt timeout in ms. The default value is 5 seconds (5000). |
+| `type` | (Optional): ): The type of device (public or random). The default value is public. |
+| `bond` | (Optional): Saves the pair key in the router and device, 0 or 1. The default value is 1 (save). |
+
 
 IO Capability:
 
@@ -1476,7 +1483,7 @@ Response Parameters:
 | HTTP 500 error | Optional | Please check the [Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages) section. |
 | `pairingStatusCode` | Optional | See below table |
 | `pairingStatus` | Optional | Description of pairing status code |
-| `display` | Optional | Display for pairing status code 6 |
+| `display` | Optional | Display for pairing status code 6 and 7 |
 
 Pairing Status Codes:
 
@@ -1494,39 +1501,54 @@ Pairing Status Codes:
 <br />
 
 ### Pair-Input Request
-**NOTE**: This API is not needed for Just Works.
+**NOTE**: This API is only needed for Passkey Entry, Legacy OOB, and Numeric Comparison.
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<router-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pairinput
+POST http://{router ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
-POST http://10.10.10.254/management/nodes/<node>/pairinput
+POST http://10.10.10.254/management/nodes/<node>/pair-input
 ```
+<br>
 
 Body example for Passkey Entry (application/json):
 ```json
 { "passkey": "123456" }
 ```
+<br>
+
+Body example for Numeric Comparison (application/json):
+
+Success:
+```json
+{ "passkey": "1" }
+```
+
+Fail:
+```json
+{ "passkey": "0" }
+```
+<br>
 
 Body example for Legacy OOB (application/json):
 ```json
 { "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
 ```
 
-The response format is same as pair request API.
+The response format is same as the pair request API.
 
 <br />
 
 ### Unpair Request
 AC Managed:
 ```
-DELETE http://{your AC domain}/api/management/nodes/<node>/bond?mac=<hubmac>
+DELETE http://{your AC domain}/api/management/nodes/<node>/bond?mac=<router-mac>
 ```
 Local:
 ```
@@ -1552,7 +1574,7 @@ OK
 ### Just Works Example
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
 ```
 Local:
 ```
@@ -1565,7 +1587,7 @@ POST http://10.10.10.254/management/nodes/<node>/pair
 
 Body example (application/json):
 ```json
-{ "bond": 1, "io-capability": "NoInputNoOutput"}
+{"iocapability": "NoInputNoOutput"}
 ```
 <details><summary>Response Example</summary>
 
@@ -1573,7 +1595,7 @@ Body example (application/json):
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
-{ "pairingStatusCode": 1, "pairingStatus": "Pairing Successful" }
+{"pairingStatusCode": 1, "pairingStatus": "Pairing Successful"}
 ```
 
 </details>
@@ -1583,7 +1605,7 @@ Step #1
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
 ```
 Local:
 ```
@@ -1596,7 +1618,7 @@ POST http://10.10.10.254/management/nodes/<node>/pair
 
 Body example (application/json):
 ```json
-{ "bond": 1, "io-capability": "KeyboardDisplay" }
+{"iocapability": "KeyboardDisplay"}
 ```
 <details><summary>Response Example</summary>
 
@@ -1604,7 +1626,7 @@ Body example (application/json):
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
-{ "pairingStatusCode": 5, "pairingStatus": "Passkey Input Expected" }
+{"pairingStatusCode": 5, "pairingStatus": "Passkey Input Expected"}
 ```
 
 </details>
@@ -1613,20 +1635,20 @@ Step #2
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pairinput?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<router-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pairinput
+POST http://{router ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
-POST http://10.10.10.254/management/nodes/<node>/pairinput
+POST http://10.10.10.254/management/nodes/<node>/pair-input
 ```
 
 Body example (application/json):
 ```json
-{ "passkey": "123456" }
+{"passkey": "123456"}
 ```
 <details><summary>Response Example</summary>
 
@@ -1634,17 +1656,17 @@ Body example (application/json):
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
-{ "pairingStatusCode": 1, "pairingStatus": "Pairing Successful" }
+{"pairingStatusCode": 1, "pairingStatus": "Pairing Successful"}
 ```
 
 </details>
 
-### LE Legacy Pairing OOB Example
+### Legacy Pairing OOB Example
 Step #1
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
 ```
 Local:
 ```
@@ -1657,7 +1679,7 @@ POST http://10.10.10.254/management/nodes/<node>/pair
 
 Body example (application/json):
 ```json
-{ "bond": 1, "legacy-oob": 1 }
+{"oob": 1, "iocapability": "KeyboardDisplay"}
 ```
 <details><summary>Response Example</summary>
 
@@ -1665,7 +1687,7 @@ Body example (application/json):
 Status-Line : HTTP/1.1 200 OK/r/n
 Header : (general-header)
 Message-body: application/json
-{ "pairingStatusCode": 3, "pairingStatus": "LE Legacy Pairing OOB Expected" }
+{"pairingStatusCode": 3, "pairingStatus": "LE Legacy Pairing OOB Expected"}
 ```
 
 </details>
@@ -1674,20 +1696,81 @@ Step #2
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pairinput?mac=<hubmac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair-input?mac=<router-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pairinput
+POST http://{router ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
-POST http://10.10.10.254/management/nodes/<node>/pairinput
+POST http://10.10.10.254/management/nodes/<node>/pair-input
 ```
 
 Body example (application/json):
 ```json
-{ "tk": "0x0123456789ABCDEF0123456789ABCDEF" }
+{"tk": "0x0123456789ABCDEF0123456789ABCDEF"}
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{"pairingStatusCode": 1, "pairingStatus": "Pairing Successful"}
+```
+
+</details>
+
+### Numeric Comparison Example
+Step #1
+
+AC Managed:
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
+```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
+```
+
+Body example (application/json):
+```json
+{"iocapability":”KeyboardDisplay”}
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{"display":"425472","pairingStatus":"Numeric Comparison Expected","pairingStatusCode":7}
+```
+
+</details>
+
+Step #2
+
+AC Managed:
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair- input?mac=<router-mac>
+```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair-input
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair-input
+```
+
+Body example (application/json):
+```json
+{"passkey":"1"}
 ```
 <details><summary>Response Example</summary>
 
@@ -1699,6 +1782,46 @@ Message-body: application/json
 ```
 
 </details>
+
+### Security OOB Example
+Step #1
+
+AC Managed:
+```
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
+```
+Local:
+```
+POST http://{router ip}/management/nodes/<node>/pair
+```
+Container:
+```
+POST http://10.10.10.254/management/nodes/<node>/pair
+```
+
+Body example (application/json):
+```json
+{
+  "oob":2,
+  "timeout":20000,
+  "type":"random",
+  "rand":"e18df48c5ad68f0ee3d541e4d60f9ae5",
+  "confirm":"dbc116a241c8894a67bcbd6841a79473",
+  "bond":0,
+  "iocapability":"KeyboardDisplay"
+}
+```
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+{"pairingStatusCode":1,"pairingStatus":"Pairing Successful"}
+```
+
+</details>
+
 <br />
 
 
