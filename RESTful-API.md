@@ -532,8 +532,9 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uu
 ```
 GET http://10.10.10.254/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 ```
-f
+
 **NOTE**: The structure of BLE advertise packets and scan response packets is [1 Byte Length (type + data) + 1 Byte Type + Data] x n. In order to filter by UUID or name, the corresponding type should be included in advertise packets (adData) or scan response packets (scanData). Below are the types:
+
 ```
 #define EIR_UUID16_SOME 0x02 /* 16-bit UUID, more available */
 #define EIR_UUID16_ALL 0x03 /* 16-bit UUID, all listed */
@@ -559,7 +560,9 @@ here comes the filter_uuid= FFF0:
 
 ![Figure 8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/Screen%20Shot%202019-09-23%20at%202.57.53%20PM.png)
 
-#### Enhanced Scan Filter
+<br>
+
+#### Enhanced Scan Filter (v2.0 and above)
 In order to improve the flexibility of scan filter, Cassia enhanced name & MAC filter and added value filter from v2.0.
 
 * filter_name
@@ -568,30 +571,69 @@ In order to improve the flexibility of scan filter, Cassia enhanced name & MAC f
   * Prefix: format is Cassia*. Filter prefix in either ad_data or scan_data.
   * Suffix: format is *Cassia. Filter suffix in either ad_data or scan_data.
 
-API example
+Examples:
 
+cURL (Local):
 ```
-curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa'
+curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
 ```
 
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
+```
 
 * filter_mac
   * Full MAC: same as legacy filter_mac.
   * Prefix: format is CC:DD:EE*. Filter the adv packets by MAC prefix.
 
-API example
- 
+Examples:
+
+cURL (Local):
 ```
 curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B'
 ```
 
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
+```
+
 * filter_value: filter value with data xx from offset yy
+Examples:
 
-
-API example 
-
+cURL (Local):
 ```
 curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}'
+```
+
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
 ```
 
 Output example
@@ -600,7 +642,7 @@ Output example
 data: {"name":"(unknown)","evtType":0,"rssi":-67,"adData":"0201060302E9FE08FFEC82 0418000363","bdaddrs":[{"bdaddr":"CC:1B:E0:E8:11:6A","bdaddrType":"public"}]}
 ```
 
-Note: When using Chrome to call scan filter API, please encode “{“ and “}”, for example:
+Note: When using Chrome to call scan filter API, please encode "{" and "}", for example:
 
 ```
 http://172.16.10.99/gap/nodes?event=1&filter_value=%7B"offset":"7","data":"0302E9"%7D
