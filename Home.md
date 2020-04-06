@@ -49,6 +49,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
      * [Scan Bluetooth Devices](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#scan-bluetooth-devices)
      * [Filter Scanned Data based on Device MAC, RSSI, Name, and UUID](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#filter-scanned-data-based-on-device-mac-rssi-name-and-uuid)
+     * [Enhanced Scan Filter (v2.0 and above)](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#enhanced-scan-filter-v20-and-above)
      * [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device)
      * [Discover GATT Services and Characteristics](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#discover-gatt-services-and-characteristics)
      * [Read/Write the Value of a Specific Characteristic](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#readwrite-the-value-of-a-specific-characteristic)
