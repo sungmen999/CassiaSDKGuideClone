@@ -654,6 +654,8 @@ Note: When using Chrome to call scan filter API, please encode "{" and "}", for 
 http://172.16.10.99/gap/nodes?event=1&filter_value=%7B"offset":"7","data":"0302E9"%7D
 ```
 
+<br>
+<br>
 
 ### Connect/Disconnect to a Target Device
 To use the router to connect to specific BLE devices using Cassia AC:
