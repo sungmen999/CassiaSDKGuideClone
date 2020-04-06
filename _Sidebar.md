@@ -50,6 +50,8 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * [Just Works Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#just-works-example)
      * [Passkey Entry Example: Initiator Inputs](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#passkey-entry-example-initiator-inputs)
      * [LE Legacy Pairing OOB Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#le-legacy-pairing-oob-example)
+     * [Numeric Comparison Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#numeric-comparison-example) (v2.0 and above)
+     * [Security OOB Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#security-oob-example) (v2.0 and above)
      </details>
    * <details><summary><strong>Router Auto-Selection API</strong></summary>
    
