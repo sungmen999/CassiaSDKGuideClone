@@ -4,7 +4,8 @@
 
 This guide shows developers how to use the Cassia RESTful API to integrate their Bluetooth devices with the Cassia IoT Access Controller (AC) and the Cassia Bluetooth routers.
 
-NEWS:
+**NEWS**:
+
 v2.0 has been launched! Here are some new API features:
 * [Enhanced Scan Filter](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#enhanced-scan-filter-v20-and-above) (v2.0 and above)
 * [Get RSSI for BLE Connection](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-rssi-for-ble-connection-v20-and-above) (v2.0 and above)
