@@ -685,7 +685,7 @@ the next connecting request.
 | `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0 (don't reconnect). (After the BLE connection is reconnected, the user application needs to reconnect the up-layer connections. For example, resubscribe the BLE notifications.) **This parameter is disabled for firmware v1.4.3 and above!** |
 | `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When a user calls the service discover API, the router should read the GATT services & characteristics from the BLE device. |
 
-Here is an example for access the router from the local network (no “/api” and “mac=<mac>”):
+Here is an example for accessing the router from a local network (no "/api" and "mac=<mac>"):
 ```
 curl -X POST -H "content-type: application/json" -d '{"timeout":"1000","type":"public"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
 ```
@@ -1270,6 +1270,63 @@ Container:
 GET http://10.10.10.254/gatt/nodes?event=1
 ```
 
+<br />
+
+### Get RSSI for BLE Connection (v2.0 and above)
+Users can get the current RSSI of a BLE connection with this API.
+
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/nodes/<node>/rssi?mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gap/nodes/<node>/rssi?mac=<hubmac>
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<hubmac>
+```
+
+<details><summary>Response Example</summary>
+
+```json
+{"id":"C0:00:5B:D1:A9:20","rssi":-33}
+```
+
+</details>
+<br />
+
+If users want to get a continuous RSSI report for all the BLE connections of a router, they can use below SSE API.
+
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/rssi?mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gap/rssi?mac=<hubmac>
+```
+Container:
+```
+GET http://10.10.10.254/gap/rssi?mac=<hubmac>
+```
+
+Here are the parameters:
+
+| Parameter | Description |
+|-----------|-------------|
+| `rssi` | (Optional): Only report RSSI if the RSSI is lower than this threshold. Default is 127. |
+| `rssi_interval` | (Optional): RSSI report interval. The unit is ms. The default value is 1000. |
+| `filter_mac` | (Optional): If users only want to get a RSSI report of a particular BLE devices, they can use this parameter. The format is same as the parameter filter_mac in [Filter Scanned Data based on Device MAC, RSSI, Name, and UUID](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#filter-scanned-data-based-on-device-mac-rssi-name-and-uuid) |
+
+<details><summary>Response Example</summary>
+
+```json
+{"id":"C0:00:5B:D1:A9:20","rssi":-34}
+```
+
+</details>
 <br />
 
 ## Positioning API
