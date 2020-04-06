@@ -1498,7 +1498,7 @@ Pairing Status Codes:
 | 6 | Passkey Display Expected |
 | 7 | Numeric Comparison Expected (LE Secure Connections Pairing only) |
 
-<br />
+<br>
 
 ### Pair-Input Request
 **NOTE**: This API is only needed for Passkey Entry, Legacy OOB, and Numeric Comparison.
@@ -1600,6 +1600,8 @@ Message-body: application/json
 
 </details>
 
+<br>
+
 ### Passkey Entry Example: Initiator Inputs
 Step #1
 
@@ -1660,6 +1662,8 @@ Message-body: application/json
 ```
 
 </details>
+
+<br>
 
 ### Legacy Pairing OOB Example
 Step #1
@@ -1722,6 +1726,8 @@ Message-body: application/json
 
 </details>
 
+<br>
+
 ### Numeric Comparison Example
 Step #1
 
@@ -1782,6 +1788,8 @@ Message-body: application/json
 ```
 
 </details>
+
+<br>
 
 ### Security OOB Example
 Step #1
