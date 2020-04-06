@@ -1429,7 +1429,7 @@ Here is the mapping between pair modes, APIs, and typical responses.
 **NOTE**: The 4.1 and 4.2 in the table refers to the Bluetooth versions. The "Y" and "N" means "Yes" and "No" to whether the Pair Mode is supported in a Bluetooth version.
 
 | Pair Mode | 4.1 | 4.2 | Step 1: API Pair Request | Step 2: API Pair-input Request |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Just Works | Y | Y | Returns 0 for pairing failed or 1 for successful. | N/A |
 | Passkey Entry | Y | Y | Returns 5 for using passkey entry (initiator inputs). | Returns 0 for pairing failed or 1 for successful. |
 | Legacy OOB | Y | N | Returns 3 for using legacy OOB. | Returns 0 for pairing failed or 1 for successful. |
