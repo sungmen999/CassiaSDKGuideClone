@@ -3,6 +3,23 @@ those APIs are fully compliant with Bluetooth SIG’s Internet Working Group RES
 specification.
 
 **NOTE**: If you are accessing the RESTful API from the container, use the container static address: 10.10.10.254
+
+**NOTE**: When using the /cassia/* APIs in Standalone Router mode, you may need to log in to the router first. To do so, send a POST request with the following instructions:
+1. Make sure the request header contains:
+```
+Content-Type: application/x-www-form-urlencoded
+```
+
+2. The form data should contain the username and password of the router login. For example:
+```
+username=admin&password=admin2
+```
+
+3. Send the POST request to the login API. For example:
+```
+http://{router ip}/cassia/login
+```
+
 ## Common Parameters
 Here are common parameters for the RESTful API:
 
