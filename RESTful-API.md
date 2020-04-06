@@ -1740,7 +1740,7 @@ POST http://10.10.10.254/management/nodes/<node>/pair
 
 Body example (application/json):
 ```json
-{"iocapability":”KeyboardDisplay”}
+{"iocapability":"KeyboardDisplay"}
 ```
 <details><summary>Response Example</summary>
 
