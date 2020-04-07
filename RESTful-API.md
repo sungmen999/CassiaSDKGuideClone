@@ -789,6 +789,117 @@ Message-body: application/json
 </details>
 <br />
 
+### Batch Connect/Disconnect to a Target Device (v2.0 and above)
+To use the router to connect to specific BLE devices using Cassia AC:
+
+AC Managed:
+```
+POST http://{your AC domain}/api/gap/batch-connect
+```
+Local:
+```
+POST http://{router ip}/gap/batch-connect
+```
+Container:
+```
+POST http://10.10.10.254/gap/batch-connect
+```
+
+**NOTE**: Multiple connecting requests cannot be handled simultaneously by one router.
+User needs to handle requests in serial, which is to wait for the response and then invoke
+the next connecting request.
+
+**NOTE**: Parameters are provided via JSON (application/json) through the POST request.
+
+| Parameter | Description |
+|-----------|-------------|
+| `type`    | (Mandatory): the BLE device’s address type, either public or random. |
+| `timeout` | (Optional): timeout value for each individual connection of one device. Default value: 5000 (ms). |
+| `per_dev_timeout `    | (Optional): timeout value for single device, including retry duration. Default value: 10000 (ms).  ‘per_dev_timeout’ should be greater than ‘timeout’ |
+| `list` | (Optional): connection MAC list, format is JSON array. Example: [{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}]，could be one or multiple MACs, could add into existing multi-connect list.
+       Sample ：
+              curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/multi-connect' |
+
+Here is an example for accessing the router from a local network (no "/api" and "mac=<mac>"):
+```
+curl -X POST -H "content-type: application/json" -d '{"timeout":"1000","type":"public"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
+```
+<br>
+
+SSE returns additional connection timeout status.
+Add a new  connect timeout status into existing SSE output.
+SSE cURL example:
+```
+curl –v 'http://172.16.10.99/management/nodes/connection-state'
+```
+
+Data format：
+data: {"handle":"C0:00:5B:D1:B7:26","chipId":0,"connectionState":"connect timeout"}
+
+<br>
+
+Remove multi-connect interface and empty connection queue:
+
+cURL:
+```
+curl -v -X DELETE 'http://172.16.10.99/gap/batch-connect'
+```
+
+AC Managed:
+```
+DELETE http://{your AC domain}/api/gap/multi-connect
+```
+Local:
+```
+DELETE http://{router ip}/gap/multi-connect
+```
+Container:
+```
+DELETE http://10.10.10.254/gap/multi-connect
+```
+**NOTE**: No parameters are accepted for this API.
+
+<br />
+
+Get the device list connected to a router:
+AC Managed:
+```
+GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
+```
+Local:
+```
+GET http://{router ip}/gap/nodes?connection_state=connected
+```
+Container:
+```
+GET http://10.10.10.254/gap/nodes?connection_state=connected
+```
+
+<details><summary>Response Example</summary>
+
+```json
+Status-Line : HTTP/1.1 200 OK/r/n
+Header : (general-header)
+Message-body: application/json
+
+{
+    "nodes": [{
+        "type": "random",
+        "bdaddrs": {
+            "bdaddr": "EF:A3:E6:94:CD:2D",
+            "bdaddType": "random"
+        },
+        "chipId": 0,
+        "handle": "",
+        "name": "",
+        "connectionState": "connected",
+        "id": "EF:A3:E6:94:CD:2D"
+    }]
+}
+```
+
+</details>
+<br />
 
 ### Discover GATT Services and Characteristics
 #### Discover all services:
