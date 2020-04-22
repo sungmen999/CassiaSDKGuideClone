@@ -822,7 +822,8 @@ Here is an example using the Local (Standalone Router Mode) API (no "/api" and "
 <br>
 <br>
 
-*** Connection-State SSE returns additional connection timeout status.***
+__Connection-State SSE returns additional connection timeout status.__
+
 Get the connection timeout status through an SSE stream.
 
 SSE cURL example:
@@ -838,7 +839,8 @@ data: {"handle":"C0:00:5B:D1:B7:26","chipId":0,"connectionState":"connect timeou
 <br>
 <br>
 
-***Remove batch-connect interface and empty connection queue:***
+__Remove batch-connect interface and empty connection queue:__
+
 This API removes the batch-connection activity and empties the queue of connections.
 
 cURL:
