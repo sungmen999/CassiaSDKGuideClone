@@ -9,9 +9,10 @@ This guide shows developers how to use the Cassia RESTful API to integrate their
 
 v2.0 has been launched! Here are some new API features:
 * [Enhanced Scan Filter](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#enhanced-scan-filter-v20-and-above) (v2.0 and above)
-* [Get RSSI for BLE Connection](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-rssi-for-ble-connection-v20-and-above) (v2.0 and above)
-* [Numeric Comparison Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#numeric-comparison-example) (v2.0 and above)
-* [Security OOB Example](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#security-oob-example) (v2.0 and above)
+* [RSSI API for Current BLE Connection RSSI](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#get-rssi-for-ble-connection-v20-and-above) (v2.0 and above)
+* [Numeric Comparison Pairing](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#numeric-comparison-example) (v2.0 and above)
+* [Security OOB Pairing](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#security-oob-example) (v2.0 and above)
+* [Batch Connection API for Faster Mulitple Connection Requests](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connectdisconnect-to-a-target-device-v20-and-above)
 ---
 
 <br>
