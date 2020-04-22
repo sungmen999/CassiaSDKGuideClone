@@ -822,7 +822,7 @@ Here is an example using the Local (Standalone Router Mode) API (no "/api" and "
 <br>
 <br>
 
-__Connection-State SSE returns additional connection timeout status.__
+__Connection-State SSE returns additional connection timeout status:__
 
 Get the connection timeout status through an SSE stream.
 
