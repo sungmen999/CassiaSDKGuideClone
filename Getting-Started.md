@@ -72,5 +72,17 @@ Or, you can add {Authorization : 'Bearer ' + access_token } in the HTTP headers.
   * Please update access_token periodically before it expires (3600 seconds).<br>
     Please check [Sample Code to Update Access Token](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Sample-Code-to-Update-Access-Token) for an example of updating the token every 30 minutes. The "refreshCycle = 30 * 60" can be changed to another cycle period.
 
+  * When the access_token expires or the access_token is invald, the AC RESTful API calls using that token will return an HTTP 403 Forbidden status code. There should be a JSON response like the following if the token is expired or invalid:
+
+```json
+// 20200423141128
+// http://demo.cassia.pro/api/gap/nodes?event=1&mac=<router-mac>&access_token=<access_token>
+
+{
+  "error": "forbidden",
+  "error_description": "Token not found or expired"
+}
+```
+
 **NOTE**: Make sure to append “/api” after {your AC domain} and add “mac=<mac>” to
 identify which router is used.
