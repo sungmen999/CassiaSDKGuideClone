@@ -500,6 +500,10 @@ This API can significantly reduce the amount of packets sent from the router to 
 **NOTE**: Multiple filters can be used at the same time. Scanned data is returned if all
 conditions are met. The wildcard is not supported.
 
+**NOTE**: Multiple filter_name and filter_mac filters are allowed at the same time. The adData and scanData packets that meet one of the filters will be sent to the application.
+
+**NOTE**: Different filter types are allowed at the same time (e.g. filter_value, filter_name and filter_mac). Only the adData and scanData packets that meet all the filters will be sent to the application.
+
 Users can filter the devices based on its MAC address.
 
 AC Managed:
@@ -531,6 +535,8 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_rssi=<rssi>
 ```
 
 In addition, users can filter out devices based on service UUID and name inside the scanned packets. The service UUID may be only part of the UUID in BLE profile. What is more, filter_uuid should not include “-”.
+
+**NOTE**: filter_uuid can only filter the adData and scanData which includes BLE EIR type 0x02 to 0x07. Please search EIR_UUID16_SOME in this wiki for more information.
 
 AC Managed:
 ```
@@ -643,6 +649,9 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 
 **filter_value**
 * filter value with data xx from offset yy
+
+**NOTE**: Currently, filter_value only supports one value. This API does not accept multiple filter_value values at the same time.
+
 Examples:
 
 cURL (Local):
