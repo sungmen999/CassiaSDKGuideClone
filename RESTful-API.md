@@ -47,6 +47,8 @@ model, version, etc.
 http://{your AC domain}/api/cassia/info?mac=<hubmac>&fields=container
 ```
 
+<br>
+
 AC Managed:
 ```
 GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
