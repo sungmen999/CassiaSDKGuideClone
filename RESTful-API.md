@@ -44,14 +44,14 @@ model, version, etc.
 **NOTE**: Since v2.0.2, the container status has been removed from the default API output to avoid the problem of oversized UDP packets. To get the container information, add the parameter fields=container to the API URL like (for AC API):
 
 ```
-http://{your AC domain}/api/cassia/info?mac=<hubmac>&fields=container
+http://{your AC domain}/api/cassia/info?mac=<router-mac>&fields=container
 ```
 
 <br>
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/cassia/info?mac=<hubmac>
+GET http://{your AC domain}/api/cassia/info?mac=<router-mac>
 ```
 Local:
 ```
@@ -285,7 +285,7 @@ Message-body: application/json
 You might use the API below to obtain the status of a router, either online or offline.<br />
 **NOTE**: This API is only available through Cassia AC.
 ```
-GET http://{your AC domain}/api/cassia/hubs/<hubmac>
+GET http://{your AC domain}/api/cassia/hubs/<router-mac>
 ```
 The return result is a JSON object.
 <details><summary><strong>[Online] Status Response Example</strong></summary>
@@ -464,7 +464,7 @@ Message-body: application/json
 ### Reboot a Router Remotely
 AC Managed:
 ```
-GET http://{your AC domain}/api/cassia/reboot?mac=<hubmac>
+GET http://{your AC domain}/api/cassia/reboot?mac=<router-mac>
 ```
 Local:
 ```
@@ -483,7 +483,7 @@ To use the router to scan Bluetooth Low Energy (BLE) devices through your AC:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>
 ```
 Local:
 ```
@@ -520,7 +520,7 @@ Users can filter the devices based on its MAC address.
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_mac=<mac1>,<mac2>, … , <macX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
 Local:
 ```
@@ -535,7 +535,7 @@ Users can filter out devices based on its RSSI level, e.g. filter out devices wh
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_rssi=<rssi>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_rssi=<rssi>
 ```
 Local:
 ```
@@ -552,10 +552,10 @@ In addition, users can filter out devices based on service UUID and name inside 
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
 ```
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<hubmac>&filter_name=<name1>,<name2>, … , <nameX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_name=<name1>,<name2>, … , <nameX>
 ```
 Local:
 ```
@@ -704,7 +704,7 @@ To use the router to connect to specific BLE devices using Cassia AC:
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
+POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<router-mac>
 ```
 Local:
 ```
@@ -747,7 +747,7 @@ To disconnect:
 
 AC Managed:
 ```
-DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<hubmac>
+DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<router-mac>
 ```
 Local:
 ```
@@ -773,7 +773,7 @@ OK
 Get the device list connected to a router:
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<hubmac>
+GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<router-mac>
 ```
 Local:
 ```
@@ -892,7 +892,7 @@ DELETE http://10.10.10.254/gap/multi-connect
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<router-mac>
 ```
 Local:
 ```
@@ -952,7 +952,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<router-mac>
 ```
 Local:
 ```
@@ -1000,7 +1000,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<router-mac>
 ```
 Local:
 ```
@@ -1032,7 +1032,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<router-mac>
 ```
 Local:
 ```
@@ -1064,7 +1064,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<hubmac>&uuid=<uuid>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<router-mac>&uuid=<uuid>
 ```
 Local:
 ```
@@ -1096,7 +1096,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<hubmac>&uuid=<uuid>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<router-mac>&uuid=<uuid>
 ```
 Local:
 ```
@@ -1128,7 +1128,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<router-mac>
 ```
 Local:
 ```
@@ -1187,7 +1187,7 @@ To read by the handle:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<router-mac>
 ```
 Local:
 ```
@@ -1218,7 +1218,7 @@ To write by the handle:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<router-mac>
 ```
 Local:
 ```
@@ -1252,7 +1252,7 @@ notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are ex
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<router-mac>
 ```
 Local:
 ```
@@ -1353,7 +1353,7 @@ SSE API to get the connection status of all the devices that have connected to a
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/management/nodes/connectionstate?mac=<hubmac>
+GET http://{your AC domain}/api/management/nodes/connectionstate?mac=<router-mac>
 ```
 Local:
 ```
@@ -1377,7 +1377,7 @@ SSE API to continues receive notification and indication:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<hubmac>
+GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<router-mac>
 ```
 Local:
 ```
@@ -1395,15 +1395,15 @@ Users can get the current RSSI of a BLE connection with this API.
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes/<node>/rssi?mac=<hubmac>
+GET http://{your AC domain}/api/gap/nodes/<node>/rssi?mac=<router-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes/<node>/rssi?mac=<hubmac>
+GET http://{router ip}/gap/nodes/<node>/rssi?mac=<router-mac>
 ```
 Container:
 ```
-GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<hubmac>
+GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<router-mac>
 ```
 
 <details><summary>Response Example</summary>
@@ -1419,15 +1419,15 @@ If users want to get a continuous RSSI report for all the BLE connections of a r
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/rssi?mac=<hubmac>
+GET http://{your AC domain}/api/gap/rssi?mac=<router-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/rssi?mac=<hubmac>
+GET http://{router ip}/gap/rssi?mac=<router-mac>
 ```
 Container:
 ```
-GET http://10.10.10.254/gap/rssi?mac=<hubmac>
+GET http://10.10.10.254/gap/rssi?mac=<router-mac>
 ```
 
 Here are the parameters:
@@ -1558,7 +1558,7 @@ Here is the mapping between pair modes, APIs, and typical responses.
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<hubmac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
 ```
 Local:
 ```
