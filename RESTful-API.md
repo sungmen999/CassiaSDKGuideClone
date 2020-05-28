@@ -36,6 +36,7 @@ Here are common parameters for the RESTful API:
 | `chip` | (Optional) 0 or 1, indicates which chip of the Cassia router is used for scan and connect. By default, the router will pick up the chip automatically based on an internal algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1. |
 <br />
 
+**NOTE**: In this wiki, we will refer the router's MAC address as <router-mac>.
 ## Management API
 ### Obtain Cassia Router’s Configuration
 You can use the API below to obtain the configuration of a router, including its IP address,
