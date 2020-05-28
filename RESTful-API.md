@@ -68,7 +68,7 @@ GET http://10.10.10.254/cassia/info
 
 | Parameter | Description |
 |-----------|-------------|
-| `fields`    | (Optional): type of field to return from the router's configuration information. The field `container` returns the container status information. |
+| `fields`    | (Optional): type of field to return from the router's configuration information. The field `container` returns the container status information. Currently, only the value `container` is accepted.|
 
 The return result is a JSON object.
 <details><summary><strong>Configuration Response Example</strong></summary>
