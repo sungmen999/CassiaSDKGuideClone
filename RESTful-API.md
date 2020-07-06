@@ -774,8 +774,7 @@ OK
 </details>
 <br />
 
-Get the device list connected to a router:
-AC Managed:
+### Get the Device List Connected to a Router (AC Managed):
 ```
 GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<router-mac>
 ```
@@ -806,10 +805,13 @@ Message-body: application/json
         "handle": "",
         "name": "",
         "connectionState": "connected",
-        "id": "EF:A3:E6:94:CD:2D"
+        "id": "EF:A3:E6:94:CD:2D",
+        "pairStatus":"paired"
     }]
 }
 ```
+
+**NOTE**: The "pairStatus" value can either be "paired" (when the device has been paired with the Cassia router before) or "none" (when the device is not paired with the Cassia router).
 
 </details>
 <br />
