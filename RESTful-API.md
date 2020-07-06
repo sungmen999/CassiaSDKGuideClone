@@ -1357,15 +1357,15 @@ SSE API to get the connection status of all the devices that have connected to a
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/management/nodes/connectionstate?mac=<router-mac>
+GET http://{your AC domain}/api/management/nodes/connection-state?mac=<router-mac>
 ```
 Local:
 ```
-GET http://{router ip}/management/nodes/connectionstate
+GET http://{router ip}/management/nodes/connection-state
 ```
 Container:
 ```
-GET http://10.10.10.254/management/nodes/connectionstate
+GET http://10.10.10.254/management/nodes/connection-state
 ```
 
 When a device status is changed from disconnected to connected, or from connected to
