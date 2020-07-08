@@ -1379,7 +1379,7 @@ data: {"handle":"88:C6:26:92:58:77","connectionState":"disconnected"}
 <br />
 
 ### Receive Notification and Indication
-SSE API to continues receive notification and indication:
+SSE API to receive continuous notification and indication:
 
 AC Managed:
 ```
