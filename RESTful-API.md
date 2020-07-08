@@ -839,11 +839,11 @@ POST http://10.10.10.254/gap/batch-connect
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. |
 | `timeout` | (Optional): timeout value for each individual connection of one device. Default value: 5000 (ms). |
 | `per_dev_timeout `    | (Optional): timeout value for single device, including retry duration. Default value: 10000 (ms).  ‘per_dev_timeout’ should be greater than ‘timeout’ |
-| `list` | (Optional): connection MAC list, format is JSON array. Example: [{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}]，could be one or multiple MACs, could add into existing multi-connect list. <br> Sample ：<br> ```curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/batch-connect' ``` |
+| `list` | (Optional): connection MAC list, format is JSON array. Example: [{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}]，could be one or multiple MACs, could add into existing batch-connect list. <br> Sample ：<br> ```curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/batch-connect' ``` |
 
 Here is an example using the Local (Standalone Router Mode) API (no "/api" and "mac=<mac>"):
 ```
-              curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/multi-connect'
+              curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/batch-connect'
 ```
 
 <br>
@@ -877,15 +877,15 @@ curl -v -X DELETE 'http://172.16.10.99/gap/batch-connect'
 
 AC Managed:
 ```
-DELETE http://{your AC domain}/api/gap/multi-connect
+DELETE http://{your AC domain}/api/gap/batch-connect
 ```
 Local:
 ```
-DELETE http://{router ip}/gap/multi-connect
+DELETE http://{router ip}/gap/batch-connect
 ```
 Container:
 ```
-DELETE http://10.10.10.254/gap/multi-connect
+DELETE http://10.10.10.254/gap/batch-connect
 ```
 **NOTE**: No parameters are accepted for this API.
 
