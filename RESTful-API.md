@@ -45,7 +45,7 @@ Here are common parameters for the RESTful API:
 You can use the API below to obtain the configuration of a router, including its IP address,
 model, version, etc.
 
-**NOTE**: Since v2.0.2, the container status has been removed from the default API output to avoid the problem of oversized UDP packets. To get the container information, add the parameter fields=container to the API URL like (for AC API):
+**NOTE**: Since v2.0.2, the container status has been removed from the default cassia/info API output to avoid the problem of oversized UDP packets. The container status information is available through the fields=container parameter. The fields=container JSON output has the same JSON structure as the previous container status output structure. To get the container status information, add the parameter fields=container to the API URL like (for AC API):
 
 ```
 http://{your AC domain}/api/cassia/info?mac=<router-mac>&fields=container
