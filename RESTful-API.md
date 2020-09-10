@@ -738,7 +738,7 @@ POST http://10.10.10.254/gap/nodes/<node>/connection
 
 **NOTE**: Multiple connecting requests cannot be handled simultaneously by one router.
 User needs to handle requests in serial, which is to wait for the response and then invoke
-the next connecting request.
+the next connecting request. If connecting multiple devices is needed without setting a wait interval, please look at the [Batch Connection API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connectdisconnect-to-a-target-device-v20-and-above).
 
 
 | Parameter | Description |
