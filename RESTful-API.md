@@ -1984,7 +1984,9 @@ If users want to connect a BLE device with a specific router, or they want to us
 **NOTE**: these APIs are only available through Cassia AC.
 
 ### Router Auto-Selection
-This API will enable/disable router auto-selection function. If the flag is 1, the router
+This API will enable/disable router auto-selection function.
+
+If the flag is 1, the router
 auto-selection function will be enabled. If the flag is 0, the router auto-selection function
 will be disabled.
 
@@ -2002,10 +2004,26 @@ snapshot.
 
 ```POST http://{your AC domain}/api/aps/ap-select-switch```
 
-Body example (application/json):
+Body example #1 (application/json):
 ```json
 {"flag": 1}
 ```
+
+Body example #2 (application/json):
+```json
+{
+   "flag":1,
+   "scan_params":{
+      "filter_mac":[
+         "C7:ED:44:24:3E:55",
+         "C7:ED:44:24:3E:56",
+         "C7:ED:44:24:3E:57"
+      ],
+      "filter_rssi":"-70"
+   }
+}
+```
+
 <details><summary>Response Example</summary>
 
 ```json
@@ -2017,8 +2035,8 @@ Message-body: application/json
 </details>
 
 ### Connect a Device
-This API will automatically select one router from a list of candidates, and use it to
-connected the device.
+This API will automatically select one router from a list of candidates and use it to
+connect the device.
 ```POST http://{your AC domain}/api/aps/connections/connect```
 
 Parameters for JSON body:
