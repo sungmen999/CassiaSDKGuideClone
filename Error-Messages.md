@@ -13,7 +13,10 @@ For HTTP 500 error, the following are the common error codes:
 | `incorrect mode` | Our S Series only supports one role, either master or slave (due to the memory limit). These two roles are different, mainly reflected in the broadcast and scanning. When the router is a slave, it cannot conduct scanning; when the router is the master, it cannot send advertise which is connectable. If you set the unsupported parameters to the chip, the system will return this error. |
 | `device not connect` | Same as "device not found" error. |
 | `operation not supported` | Reserved for future use. |
-| `need pair operation` | Some devices require an operation for pairing after a successful connection. If a GATT function call happens prior to the pairing, the system will return this error. |
+| `need pair operation` | Some devices require an operation for pairing after a successful connection. If a GATT function call happens prior to the pairing, the system will return this error. <br>From v2.0.3 “Need pair operation” will be placed the following 3 error code,<br>[36] = "ATT insufficient Authentication",<br>[37] = "ATT insufficient Authorization",<br>[38] = "ATT insufficient Encryption",<br>Depending on response message from device side, router will reply one of the above error.|
+|`ATT insufficient Authentication`|The attribute requires authentication before it can be read or written|
+|`ATT insufficient Authorization`|The attribute requires authorization before it can be read or written|
+|`ATT insufficient Encryption`|The Encryption Key Size used for encrypting this link is insufficient|
 | `no resources` | The Bluetooth chip in Cassia routers can store the pair information up to 10 seconds. If you pair too many devices, the system will report this error. |
 | `Service Not Found` | Couldn't find a Characteristic inside a Service. |
 | `type not supported` | When Bypass scan was set up, the protocol type you specified is not supported by this firmware. |
