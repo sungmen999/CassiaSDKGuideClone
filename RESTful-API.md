@@ -4,20 +4,20 @@ specification.
 
 **NOTE**: If you are accessing the RESTful API from the container, use the container static address: 10.10.10.254
 
-**NOTE**: When using the /cassia/* APIs in Standalone Router mode, you may need to log in to the router first. To do so, send a POST request with the following instructions:
+**NOTE**: When using the /cassia/* APIs in Standalone Router mode, you may need to log in to the gateway first. To do so, send a POST request with the following instructions:
 1. Make sure the request header contains:
 ```
 Content-Type: application/x-www-form-urlencoded
 ```
 
-2. The form data should contain the username and password of the router login. For example:
+2. The form data should contain the username and password of the gateway login. For example:
 ```
 username=admin&password=admin2
 ```
 
 3. Send the POST request to the login API. For example:
 ```
-http://{router ip}/cassia/login
+http://{gateway ip}/cassia/login
 ```
 
 After the POST request returns a 200 OK response, you should be able to call the /cassia/* APIs without getting a Login page HTML response.
@@ -29,37 +29,37 @@ Here are common parameters for the RESTful API:
 
 | Parameter | Description |
 |-----------|-------------|
-| `mac` |  The mac address of a Cassia router (e.g. CC:1B:E0:E0:24:B4). |
+| `mac` |  The mac address of a Cassia gateway (e.g. CC:1B:E0:E0:24:B4). |
 | `node` |  The mac address of a BLE device (e.g. EF:F3:CF:F0:8B:81). |
 | `handle` | After you find the device services, based on the device’s Bluetooth profile, you can identify its corresponding handle index in the UUID (e.g. 37). |
 | `value` | the hex value written into the handle (e.g. FF000C00). |
-| `chip` | (Optional) 0 or 1, indicates which chip of the Cassia router is used for scan and connect. By default, the router will pick up the chip automatically based on an internal algorithm. S Series routers only support chip 0, X1000/E1000/C1000 supports 0 and 1. |
+| `chip` | (Optional) 0 or 1, indicates which chip of the Cassia gateway is used for scan and connect. By default, the gateway will pick up the chip automatically based on an internal algorithm. S Series gateways only support chip 0, X1000/E1000/C1000 supports 0 and 1. |
 <br />
 
-**NOTE**: In this wiki, we will refer the router's MAC address as `<router-mac>`.
+**NOTE**: In this wiki, we will refer the gateway's MAC address as `<gateway-mac>`.
 
 <br>
 
 ## Management API
 ### Obtain Cassia Router’s Configuration
-You can use the API below to obtain the configuration of a router, including its IP address,
+You can use the API below to obtain the configuration of a gateway, including its IP address,
 model, version, etc.
 
 **NOTE**: Since v2.0.2, the container status has been removed from the default cassia/info API output to avoid the problem of oversized UDP packets. The container status information is available through the fields=container parameter. The fields=container JSON output has the same JSON structure as the previous (v1.4.x and older) container status section of the cassia/info JSON output. To get the container status information, add the parameter fields=container to the API URL like (for AC API):
 
 ```
-http://{your AC domain}/api/cassia/info?mac=<router-mac>&fields=container
+http://{your AC domain}/api/cassia/info?mac=<gateway-mac>&fields=container
 ```
 
 <br>
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/cassia/info?mac=<router-mac>
+GET http://{your AC domain}/api/cassia/info?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/cassia/info
+GET http://{gateway ip}/cassia/info
 ```
 Container:
 ```
@@ -68,7 +68,7 @@ GET http://10.10.10.254/cassia/info
 
 | Parameter | Description |
 |-----------|-------------|
-| `fields`    | (Optional): type of field to return from the router's configuration information. The field `container` returns the container status information. Currently, only the value `container` is accepted.|
+| `fields`    | (Optional): type of field to return from the gateway's configuration information. The field `container` returns the container status information. Currently, only the value `container` is accepted.|
 
 The return result is a JSON object.
 <details><summary><strong>Configuration Response Example</strong></summary>
@@ -303,10 +303,10 @@ Message-body: application/json
 <br />
 
 ### Obtain Cassia Router’s Status (Through AC)
-You might use the API below to obtain the status of a router, either online or offline.<br />
+You might use the API below to obtain the status of a gateway, either online or offline.<br />
 **NOTE**: This API is only available through Cassia AC.
 ```
-GET http://{your AC domain}/api/cassia/hubs/<router-mac>
+GET http://{your AC domain}/api/cassia/hubs/<gateway-mac>
 ```
 The return result is a JSON object.
 <details><summary><strong>[Online] Status Response Example</strong></summary>
@@ -375,7 +375,7 @@ Message-body: application/json
 <br />
 
 ### Monitor Cassia Router’s Status (Through AC)
-You can use this API to monitor the status of a router continuously.
+You can use this API to monitor the status of a gateway continuously.
 
 **NOTE**: This API is a Server-Sent Events (SSE) API and is only available through Cassia AC.
 ```
@@ -485,11 +485,11 @@ Message-body: application/json
 ### Reboot a Router Remotely
 AC Managed:
 ```
-GET http://{your AC domain}/api/cassia/reboot?mac=<router-mac>
+GET http://{your AC domain}/api/cassia/reboot?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/cassia/reboot
+GET http://{gateway ip}/cassia/reboot
 ```
 Container:
 ```
@@ -500,35 +500,35 @@ GET http://10.10.10.254/cassia/reboot
 
 ## Traffic Related API
 ### Scan Bluetooth Devices
-To use the router to scan Bluetooth Low Energy (BLE) devices through your AC:
+To use the gateway to scan Bluetooth Low Energy (BLE) devices through your AC:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1
+GET http://{gateway ip}/gap/nodes?event=1
 ```
 Container:
 ```
 GET http://10.10.10.254/gap/nodes?event=1
 ```
 
-This API is a Server-Sent Events (SSE) which will be running continuously. Please check
-figure 5 for response example.
+This API is a Server-Sent Events (SSE) which will be running continuously.
 Here are more optional parameters:
 
 | Parameter | Description |
 |-----------|-------------|
-| `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default Cassia routers will perform passive scanning. |
-| `filter_duplicates` | (Optional): 0 or 1, turn on/off to filter duplicated records. Default is 0. |
+| `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default the Cassia gateways will perform passive scanning. |
+| `filter_duplicates` | (Optional): 0 or 1, 0 to turn off and 1 to turn on; filters duplicated records. Default is 0.
+>1000 (ms) timer to restart duplicate filter. |
 
 
 <br>
 
 #### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
-This API can significantly reduce the amount of packets sent from the router to the server.
+This API can significantly reduce the amount of packets sent from the gateway to the server.
 
 **NOTE**: Multiple filters can be used at the same time. Scanned data is returned if all
 conditions are met. The wildcard is not supported.
@@ -541,11 +541,11 @@ Users can filter the devices based on its MAC address.
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_mac=<mac1>,<mac2>, … , <macX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<gateway-mac>&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
+GET http://{gateway ip}/gap/nodes?event=1&filter_mac=<mac1>,<mac2>, … , <macX>
 ```
 Container:
 ```
@@ -556,11 +556,11 @@ Users can filter out devices based on its RSSI level, e.g. filter out devices wh
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_rssi=<rssi>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<gateway-mac>&filter_rssi=<rssi>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_rssi=<rssi>
+GET http://{gateway ip}/gap/nodes?event=1&filter_rssi=<rssi>
 ```
 Container:
 ```
@@ -573,17 +573,17 @@ In addition, users can filter out devices based on service UUID and name inside 
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<gateway-mac>&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
 ```
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&mac=<router-mac>&filter_name=<name1>,<name2>, … , <nameX>
+GET http://{your AC domain}/api/gap/nodes?event=1&mac=<gateway-mac>&filter_name=<name1>,<name2>, … , <nameX>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
+GET http://{gateway ip}/gap/nodes?event=1&filter_uuid=<uuid1>,<uuid2>, … , <uuidX>
 ```
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
+GET http://{gateway ip}/gap/nodes?event=1&filter_name=<name1>,<name2>, … , <nameX>
 ```
 Container:
 ```
@@ -644,7 +644,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*a
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
+GET http://{gateway ip}/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
 ```
 Container:
 ```
@@ -670,7 +670,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
+GET http://{gateway ip}/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 ```
 Container:
 ```
@@ -698,7 +698,7 @@ GET http://{your AC domain}/api/gap/nodes?event=1&filter_value=\{"offset":"7","d
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
+GET http://{gateway ip}/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
 ```
 Container:
 ```
@@ -721,22 +721,22 @@ http://172.16.10.99/gap/nodes?event=1&filter_value=%7B"offset":"7","data":"0302E
 <br>
 
 ### Connect/Disconnect to a Target Device
-To use the router to connect to specific BLE devices using Cassia AC:
+To use the gateway to connect to specific BLE devices using Cassia AC:
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<router-mac>
+POST http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/gap/nodes/<node>/connection
+POST http://{gateway ip}/gap/nodes/<node>/connection
 ```
 Container:
 ```
 POST http://10.10.10.254/gap/nodes/<node>/connection
 ```
 
-**NOTE**: Multiple connecting requests cannot be handled simultaneously by one router.
+**NOTE**: Multiple connecting requests cannot be handled simultaneously by one gateway.
 User needs to handle requests in serial, which is to wait for the response and then invoke
 the next connecting request. If connecting multiple devices is needed without setting a wait interval, please look at the [Batch Connection API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connectdisconnect-to-a-target-device-v20-and-above).
 
@@ -746,9 +746,9 @@ the next connecting request. If connecting multiple devices is needed without se
 | `type`    | (Mandatory): the BLE device’s address type, either public or random. Default is public if not specified. |
 | `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 5,000ms. The range of value is 200ms – 20000ms. |
 | `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0 (don't reconnect). (After the BLE connection is reconnected, the user application needs to reconnect the up-layer connections. For example, resubscribe the BLE notifications.) **This parameter is disabled for firmware v1.4.3 and above!** |
-| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the router should not use the cached GATT database. When a user calls the service discover API, the router should read the GATT services & characteristics from the BLE device. |
+| `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the gateway should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the gateway should not use the cached GATT database. When a user calls the service discover API, the gateway should read the GATT services & characteristics from the BLE device. |
 
-Here is an example for accessing the router from a local network (no "/api" and "mac=<mac>"):
+Here is an example for accessing the gateway from a local network (no "/api" and "mac=<mac>"):
 ```
 curl -X POST -H "content-type: application/json" -d '{"timeout":"1000","type":"public"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
 ```
@@ -768,11 +768,11 @@ To disconnect:
 
 AC Managed:
 ```
-DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<router-mac>
+DELETE http://{your AC domain}/api/gap/nodes/<node>/connection?mac=<gateway-mac>
 ```
 Local:
 ```
-DELETE http://{router ip}/gap/nodes/<node>/connection
+DELETE http://{gateway ip}/gap/nodes/<node>/connection
 ```
 Container:
 ```
@@ -793,11 +793,11 @@ OK
 
 ### Get the Device List Connected to a Router (AC Managed):
 ```
-GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<router-mac>
+GET http://{your AC domain}/api/gap/nodes?connection_state=connected&mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes?connection_state=connected
+GET http://{gateway ip}/gap/nodes?connection_state=connected
 ```
 Container:
 ```
@@ -828,13 +828,13 @@ Message-body: application/json
 }
 ```
 
-**NOTE**: The "pairStatus" value can either be "paired" (when the device has been paired with the Cassia router before) or "none" (when the device is not paired with the Cassia router).
+**NOTE**: The "pairStatus" value can either be "paired" (when the device has been paired with the Cassia gateway before) or "none" (when the device is not paired with the Cassia gateway).
 
 </details>
 <br />
 
 ### Batch Connect/Disconnect to a Target Device (v2.0 and above)
-To use the router to connect to specific BLE devices using Cassia AC:
+To use the gateway to connect to specific BLE devices using Cassia AC:
 
 AC Managed:
 ```
@@ -842,7 +842,7 @@ POST http://{your AC domain}/api/gap/batch-connect
 ```
 Local:
 ```
-POST http://{router ip}/gap/batch-connect
+POST http://{gateway ip}/gap/batch-connect
 ```
 Container:
 ```
@@ -898,7 +898,7 @@ DELETE http://{your AC domain}/api/gap/batch-connect
 ```
 Local:
 ```
-DELETE http://{router ip}/gap/batch-connect
+DELETE http://{gateway ip}/gap/batch-connect
 ```
 Container:
 ```
@@ -915,11 +915,11 @@ DELETE http://10.10.10.254/gap/batch-connect
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/services
+GET http://{gateway ip}/gatt/nodes/<node>/services
 ```
 Container:
 ```
@@ -975,11 +975,11 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/characteristics
+GET http://{gateway ip}/gatt/nodes/<node>/characteristics
 ```
 Container:
 ```
@@ -1023,7 +1023,7 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/<service_uuid>/characteristics?mac=<gateway-mac>
 ```
 Local:
 ```
@@ -1055,11 +1055,11 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors
+GET http://{gateway ip}/gatt/nodes/<node>/characteristics/<characteristic_uuid>/descriptors
 ```
 Container:
 ```
@@ -1087,11 +1087,11 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<router-mac>&uuid=<uuid>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services?mac=<gateway-mac>&uuid=<uuid>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/services?uuid=<uuid>
+GET http://{gateway ip}/gatt/nodes/<node>/services?uuid=<uuid>
 ```
 Container:
 ```
@@ -1119,11 +1119,11 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<router-mac>&uuid=<uuid>
+GET http://{your AC domain}/api/gatt/nodes/<node>/characteristics?mac=<gateway-mac>&uuid=<uuid>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/characteristics?uuid=<uuid>
+GET http://{gateway ip}/gatt/nodes/<node>/characteristics?uuid=<uuid>
 ```
 Container:
 ```
@@ -1151,11 +1151,11 @@ Message-body: application/json
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/services/characteristics/descriptors?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/services/characteristics/descriptors
+GET http://{gateway ip}/gatt/nodes/<node>/services/characteristics/descriptors
 ```
 Container:
 ```
@@ -1210,7 +1210,7 @@ To read by the handle:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<gateway-mac>
 ```
 Local:
 ```
@@ -1241,15 +1241,15 @@ To write by the handle:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value/<value>?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
+GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
 Container:
 ```
-GET http://{router ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
+GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
 
 <details><summary>Response Example</summary>
@@ -1275,11 +1275,11 @@ notification/indication, set the value to "0000" (37, 0100, 0200 and 0000 are ex
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes/<node>/handle/37/value/0100?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes/<node>/handle/37/value/0100
+GET http://{gateway ip}/gatt/nodes/<node>/handle/37/value/0100
 ```
 Container:
 ```
@@ -1307,7 +1307,7 @@ GET http://{your AC domain}/api/advertise/start?mac=<mac>&interval=<interval>&ad
 ```
 Local:
 ```
-GET http://{router ip}/advertise/start?interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
+GET http://{gateway ip}/advertise/start?interval=<interval>&ad_data=<ad_data>&resp_data=<resp_data>
 ```
 Container:
 ```
@@ -1323,7 +1323,7 @@ Here are the parameters:
 | `ad_data` | (Mandatory): advertise package, the data type is string. |
 | `resp_data` | (Mandatory): scan response package. The data type is string. When you want to send resp_data, please set ad_type=0. |
 
-| Value	| ad_type | Comments |
+| Value | ad_type | Comments |
 | -- | -- | -- |
 | 0 | ADV_IND | Connectable undirected advertising |
 | 1 | ADV_DIRECT_IND | Connectable directed advertising |
@@ -1352,7 +1352,7 @@ GET http://{your AC domain}/api/advertise/stop?mac=<mac>
 ```
 Local:
 ```
-GET http://{router ip}/advertise/stop
+GET http://{gateway ip}/advertise/stop
 ```
 Container:
 ```
@@ -1372,15 +1372,15 @@ OK
 <br />
 
 ### Get Device Connection Status
-SSE API to get the connection status of all the devices that have connected to a router:
+SSE API to get the connection status of all the devices that have connected to a gateway:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/management/nodes/connection-state?mac=<router-mac>
+GET http://{your AC domain}/api/management/nodes/connection-state?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/management/nodes/connection-state
+GET http://{gateway ip}/management/nodes/connection-state
 ```
 Container:
 ```
@@ -1400,11 +1400,11 @@ SSE API to receive continuous notification and indication:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<router-mac>
+GET http://{your AC domain}/api/gatt/nodes?event=1&mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gatt/nodes?event=1
+GET http://{gateway ip}/gatt/nodes?event=1
 ```
 Container:
 ```
@@ -1418,15 +1418,15 @@ Users can get the current RSSI of a BLE connection with this API.
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes/<node>/rssi?mac=<router-mac>
+GET http://{your AC domain}/api/gap/nodes/<node>/rssi?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/nodes/<node>/rssi?mac=<router-mac>
+GET http://{gateway ip}/gap/nodes/<node>/rssi?mac=<gateway-mac>
 ```
 Container:
 ```
-GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<router-mac>
+GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<gateway-mac>
 ```
 
 <details><summary>Response Example</summary>
@@ -1438,19 +1438,19 @@ GET http://10.10.10.254/gap/nodes/<node>/rssi?mac=<router-mac>
 </details>
 <br />
 
-If users want to get a continuous RSSI report for all the BLE connections of a router, they can use below SSE API.
+If users want to get a continuous RSSI report for all the BLE connections of a gateway, they can use below SSE API.
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/rssi?mac=<router-mac>
+GET http://{your AC domain}/api/gap/rssi?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{router ip}/gap/rssi?mac=<router-mac>
+GET http://{gateway ip}/gap/rssi?mac=<gateway-mac>
 ```
 Container:
 ```
-GET http://10.10.10.254/gap/rssi?mac=<router-mac>
+GET http://10.10.10.254/gap/rssi?mac=<gateway-mac>
 ```
 
 Here are the parameters:
@@ -1473,16 +1473,16 @@ Here are the parameters:
 ## Positioning API
 Cassia supports room-based Bluetooth location tracking. Below are the related APIs.
 
-**NOTE**: Before calling any positioning APIs, please call scan API for the related routers.
+**NOTE**: Before calling any positioning APIs, please call scan API for the related gateways.
 Positioning APIs are only available through Cassia AC.
 
-To identify the closest router a BLE device is located:
+To identify the closest gateway a BLE device is located:
 ```
 GET http://{your AC domain}/api/middleware/position/by-device/<device_mac>
 ```
 It will return {“hubMac”:”hubMac1”}, e.g. {“hubMac”:”CC:1B:E0:E0:01:47”}.
 
-To obtain the closest router list for all the BLE devices that the AC can detect:
+To obtain the closest gateway list for all the BLE devices that the AC can detect:
 ```
 GET http://{your AC domain}/api/middleware/position/by-device/*
 ```
@@ -1515,7 +1515,7 @@ It will return a list:
 </details>
 <br />
 
-To get the list of BLE devices around a Cassia router:
+To get the list of BLE devices around a Cassia gateway:
 ```
 GET http://{your AC domain}/api/middleware/position/by-ap/<hub_mac>
 ```
@@ -1533,7 +1533,7 @@ It will return:
 </details>
 <br />
 
-To get the list of BLE devices for all the routers within the AC:
+To get the list of BLE devices for all the gateways within the AC:
 ```
 GET http://{your AC domain}/api/middleware/position/by-ap/*
 ```
@@ -1581,11 +1581,11 @@ Here is the mapping between pair modes, APIs, and typical responses.
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1604,7 +1604,7 @@ Body parameters:
 | `confirm` | (Mandatory for Security OOB): Confirm value for pair. Provided by the device. |
 | `timeout` | (Optional): Pair connection attempt timeout in ms. The default value is 5 seconds (5000). |
 | `type` | (Optional): ): The type of device (public or random). The default value is public. |
-| `bond` | (Optional): Saves the pair key in the router and device, 0 or 1. The default value is 1 (save). |
+| `bond` | (Optional): Saves the pair key in the gateway and device, 0 or 1. The default value is 1 (save). |
 
 
 IO Capability:
@@ -1646,11 +1646,11 @@ Pairing Status Codes:
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<router-mac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair-input
+POST http://{gateway ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
@@ -1689,11 +1689,11 @@ The response format is same as the pair request API.
 ### Unpair Request
 AC Managed:
 ```
-DELETE http://{your AC domain}/api/management/nodes/<node>/bond?mac=<router-mac>
+DELETE http://{your AC domain}/api/management/nodes/<node>/bond?mac=<gateway-mac>
 ```
 Local:
 ```
-DELETE http://{router ip}/management/nodes/<node>/bond
+DELETE http://{gateway ip}/management/nodes/<node>/bond
 ```
 Container:
 ```
@@ -1715,11 +1715,11 @@ OK
 ### Just Works Example
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1748,11 +1748,11 @@ Step #1
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1778,11 +1778,11 @@ Step #2
 
 AC Managed:
 ```
-POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<router-mac>
+POST http://{your AC domain}/api/management/nodes/<node>/pair-input?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair-input
+POST http://{gateway ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
@@ -1811,11 +1811,11 @@ Step #1
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1841,11 +1841,11 @@ Step #2
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair-input?mac=<router-mac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair-input?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair-input
+POST http://{gateway ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
@@ -1874,11 +1874,11 @@ Step #1
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1904,11 +1904,11 @@ Step #2
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair- input?mac=<router-mac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair- input?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair-input
+POST http://{gateway ip}/management/nodes/<node>/pair-input
 ```
 Container:
 ```
@@ -1937,11 +1937,11 @@ Step #1
 
 AC Managed:
 ```
-POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<router-mac>
+POST http://<your AC domain>/api/management/nodes/<node>/pair?mac=<gateway-mac>
 ```
 Local:
 ```
-POST http://{router ip}/management/nodes/<node>/pair
+POST http://{gateway ip}/management/nodes/<node>/pair
 ```
 Container:
 ```
@@ -1975,23 +1975,23 @@ Message-body: application/json
 
 
 ## Router Auto-Selection API
-From firmware 1.3, Cassia AC can select one router automatically from a list of
-candidates, and then connect the BLE device by using this router. The selection is based
-on RSSI, router load, and router capabilities.
+From firmware 1.3, Cassia AC can select one gateway automatically from a list of
+candidates, and then connect the BLE device by using this gateway. The selection is based
+on RSSI, gateway load, and gateway capabilities.
 <br>
-If users want to connect a BLE device with a specific router, or they want to use a customized router selection algorithm, they should use the APIs in [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device).
+If users want to connect a BLE device with a specific gateway, or they want to use a customized gateway selection algorithm, they should use the APIs in [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device).
 
 **NOTE**: these APIs are only available through Cassia AC.
 
 ### Router Auto-Selection
-This API will enable/disable router auto-selection function.
+This API will enable/disable gateway auto-selection function.
 
-If the flag is 1, the router
-auto-selection function will be enabled. If the flag is 0, the router auto-selection function
+If the flag is 1, the gateway
+auto-selection function will be enabled. If the flag is 0, the gateway auto-selection function
 will be disabled.
 
-**NOTE**: This API should be called before using any other router auto-selection APIs. The
-user can also switch on/off router auto-selection function in Cassia AC settings, like below
+**NOTE**: This API should be called before using any other gateway auto-selection APIs. The
+user can also switch on/off gateway auto-selection function in Cassia AC settings, like below
 snapshot.
 
 <br />
@@ -2035,7 +2035,7 @@ Message-body: application/json
 </details>
 
 ### Connect a Device
-This API will automatically select one router from a list of candidates and use it to
+This API will automatically select one gateway from a list of candidates and use it to
 connect the device.
 ```POST http://{your AC domain}/api/aps/connections/connect```
 
@@ -2043,7 +2043,7 @@ Parameters for JSON body:
 
 | Parameter | Description |
 | ----      | ----        |
-| `aps` |  The list of routers which will be used for this auto-select connect request. The user can use one or multiple router’s MAC or * for “aps”. If the user uses *, it means all the online routers that controlled by the AC should be included. |
+| `aps` |  The list of gateways which will be used for this auto-select connect request. The user can use one or multiple gateway’s MAC or * for “aps”. If the user uses *, it means all the online gateways that controlled by the AC should be included. |
 | `devices` | Only one device MAC address can be added in "devices". |
 
 Body example (application/json):
@@ -2084,27 +2084,27 @@ OK
 </details>
 
 ## SSE Combination API
-These APIs simplify the handling of multiple routers. They also improve the scalability of
-AC in terms of the number of routers supported in given hardware resources.
+These APIs simplify the handling of multiple gateways. They also improve the scalability of
+AC in terms of the number of gateways supported in given hardware resources.
 
 **NOTE**: these APIs are only available through Cassia AC.
 
-Before firmware 1.3, if an application wants to control routers with RESTful APIs through
-AC, the application has to create three SSE tunnels for each router: one for scan data, one
+Before firmware 1.3, if an application wants to control gateways with RESTful APIs through
+AC, the application has to create three SSE tunnels for each gateway: one for scan data, one
 for notification/indication data, and one for connected device status.
 
 From firmware 1.3, the application only needs to create one SSE tunnel with AC. This SSE
 tunnel can receive scan data, notification/indication data, and connected device status
-for all routers controlled by this AC.
+for all gateways controlled by this AC.
 
 ### Create Combined SSE
 This API will create one combined SSE connection with AC. This SSE connection can
 receive scan data, notification/indication data, and connected device status for all the
-routers controlled by this AC.
+gateways controlled by this AC.
 
 ```GET http://{your AC domain}/api/aps/events```
 
-When invoke this API, AC will return a message immediately which include all router’s
+When invoke this API, AC will return a message immediately which include all gateway’s
 information, for example:
 <details><summary>Response Example</summary>
 
@@ -2182,7 +2182,7 @@ data:
 
 </details>
 
-If notification is open (default configuration), this SSE tunnel will return the notification messages to user application when any router has notification messages to AC.
+If notification is open (default configuration), this SSE tunnel will return the notification messages to user application when any gateway has notification messages to AC.
 
 <details><summary>Notification Message Example</summary>
 
@@ -2210,7 +2210,7 @@ data: {"handle":"CA:79:F5:B6:1F:04","connectionState":"connected","dataType":"co
 
 </details>
 
-If ap-state is open (default configuration), this SSE tunnel will return the ap-state information when router’s status is changed between online and offline. For example:
+If ap-state is open (default configuration), this SSE tunnel will return the ap-state information when gateway’s status is changed between online and offline. For example:
 
 <details><summary>AP-State Information Example</summary>
 
@@ -2228,7 +2228,7 @@ data:
 </details>
 
 ### Open Scan
-This API will open router scanning for all the routers in the router list. The SSE tunnel will receive scan data.
+This API will open gateway scanning for all the gateways in the gateway list. The SSE tunnel will receive scan data.
 
 ```POST http://{your AC domain}/api/aps/scan/open```
 
@@ -2252,7 +2252,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 |--|--|
-| `aps` | (Mandatory): one or multiple router’s MAC address |
+| `aps` | (Mandatory): one or multiple gateway’s MAC address |
 | `chip` | (Optional): 0 or 1. It means which chip to scan |
 | `active` | (Optional): 0 or 1. 0 means enable passive scanning; 1 means enable active scanning |
 | `filter_name` | (Optional): filter for device name |
@@ -2269,7 +2269,7 @@ OK
 ```
 
 ### Close Scan
-This API will close the router scanning for all the routers in the router list. The user application will not receive scan data anymore.
+This API will close the gateway scanning for all the gateways in the gateway list. The user application will not receive scan data anymore.
 
 ```POST http://{your AC domain}/api/aps/scan/close```
 
@@ -2277,7 +2277,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | One or multiple router’s MAC address |
+| `aps` | One or multiple gateway’s MAC address |
 
 Body example (application/json):
 
@@ -2307,7 +2307,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | One or multiple router’s MAC address |
+| `aps` | One or multiple gateway’s MAC address |
 
 Body example (application/json):
 
@@ -2338,7 +2338,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | One or multiple router’s MAC address |
+| `aps` | One or multiple gateway’s MAC address |
 
 Body example (application/json):
 
@@ -2369,7 +2369,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| `aps` | One or multiple router’s MAC address |
+| `aps` | One or multiple gateway’s MAC address |
 
 Body example (application/json):
 
@@ -2400,7 +2400,7 @@ Parameters for JSON Body:
 
 | Parameter | Description |
 | -- | -- |
-| aps | One or multiple router’s MAC address |
+| aps | One or multiple gateway’s MAC address |
 
 Body example (application/json):
 ```json
@@ -2422,7 +2422,7 @@ OK
 ```
 
 ### Open AP-State Report
-This API will open the ap-state monitoring for all routers on SSE tunnel. The data of ap-state will be sent to the user application on this SSE tunnel when the router state changed between online and offline.
+This API will open the ap-state monitoring for all gateways on SSE tunnel. The data of ap-state will be sent to the user application on this SSE tunnel when the gateway state changed between online and offline.
 
 ```GET http://{your AC domain}/api/aps/ap-state/open```
 
@@ -2436,7 +2436,7 @@ OK
 ```
 
 ### Close AP-State Report
-This API will close the ap-state monitoring for all routers on SSE tunnel. The data of ap-state will not be sent to the user application on this SSE tunnel anymore.
+This API will close the ap-state monitoring for all gateways on SSE tunnel. The data of ap-state will not be sent to the user application on this SSE tunnel anymore.
 
 ```GET http://{your AC domain}/api/aps/ap-state/close```
 
