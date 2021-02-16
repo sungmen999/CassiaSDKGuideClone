@@ -521,8 +521,7 @@ Here are more optional parameters:
 | Parameter | Description |
 |-----------|-------------|
 | `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default the Cassia gateways will perform passive scanning. |
-| `filter_duplicates` | (Optional): 0 or 1, 0 to turn off and 1 to turn on; filters duplicated records. Default is 0.
->1000 (ms) timer to restart duplicate filter. |
+| `filter_duplicates` | (Optional): 0 or 1, 0 to turn off and 1 to turn on; filters duplicated records. Default is 0. >1000 (ms) timer to restart duplicate filter. |
 
 
 <br>
