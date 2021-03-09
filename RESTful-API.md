@@ -522,6 +522,7 @@ Here are more optional parameters:
 |-----------|-------------|
 | `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default the Cassia gateways will perform passive scanning. |
 | `filter_duplicates` | (Optional): 0 or 1, 0 to turn off and 1 to turn on; filters duplicated records. Default is 0. >1000 (ms) timer to restart duplicate filter. |
+| `timestamp` |  (Optional): 0 or 1， default is 0， 1 adds a timestamp in the scan data, for example: data: {"name":"CASSIA-BEACON-335",**"timestamp":"2021-03-08 10:07:17.723 CST"**,"evtType":0,"rssi":-69,"adData":"02010612094341535349412D424541434F4E2D333335","bdaddrs":[{"bdaddr":"CC:DD:EE:03:00:23","bdaddrType":"random"}]} |
 
 
 <br>
