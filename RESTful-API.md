@@ -854,7 +854,7 @@ POST http://10.10.10.254/gap/batch-connect
 | Parameter | Description |
 |-----------|-------------|
 | `timeout` | (Optional): timeout value for each individual connection of one device. Range is 20 ms - 20000 ms. Default value: 5000 (ms). |
-| `per_dev_timeout `    | (Optional): timeout value for single device, including retry duration. Default value: 10000 (ms).  ‘per_dev_timeout’ should be greater than ‘timeout’ |
+| `per_dev_timeout ` | (Optional): timeout value for a single device, including retry duration. Default value: 'timemout' * 2 (twice the 'timeout' value in ms). 'per_dev_timeout' should be greater than or equal to 'timeout'. |
 | `list` | (Optional): connection MAC list, format is JSON array. Example: [{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}]，could be one or multiple MACs, could add into existing batch-connect list. <br> Sample ：<br> ```curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/batch-connect' ``` |
 
 Here is an example using the Local (Standalone Router Mode) API (no "/api" and "mac=<mac>"):
