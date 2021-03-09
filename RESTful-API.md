@@ -1325,7 +1325,7 @@ Here are the parameters:
 
 | Parameter | Description |
 |-----------|-------------|
-| `interval` | (Mandatory): advertising interval in ms. Default value 500ms. |
+| `interval` | (Mandatory): advertising interval in ms. Range is 20 ms - 10000 ms. Default value 500 ms. |
 | `ad_type` | (Optional): advertising type (see below table). Default value 3. |
 | `ad_data` | (Mandatory): advertise package, the data type is string. |
 | `resp_data` | (Mandatory): scan response package. The data type is string. When you want to send resp_data, please set ad_type=0. |
