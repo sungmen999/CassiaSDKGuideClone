@@ -1256,7 +1256,7 @@ GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 |-----------|-------------|
 | `noresponse` | (Optional): 0 or 1, 1 allows writing to the handle without a response. Default value is 0. |
 
-Example using Local API:
+Example using Local API:<br>
 ```GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>?noresponse=1```
 
 <details><summary>Response Example</summary>
