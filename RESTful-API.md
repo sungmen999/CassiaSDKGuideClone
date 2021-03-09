@@ -744,7 +744,7 @@ the next connecting request. If connecting multiple devices is needed without se
 | Parameter | Description |
 |-----------|-------------|
 | `type`    | (Optional): the BLE device’s address type, either public or random. Default is public if not specified. |
-| `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 5,000ms. The range of value is 200ms – 20000ms. |
+| `timeout` | (Optional): in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 5,000ms. The range of value is 200 ms - 20000 ms. |
 | `auto`    | (Optional): 0 or 1, indicates whether or not the BLE device will be automatically reconnected after it is disconnected unexpectedly. Return value: 200 for success, 500 for error. The default value is 0 (don't reconnect). (After the BLE connection is reconnected, the user application needs to reconnect the up-layer connections. For example, resubscribe the BLE notifications.) **This parameter is disabled for firmware v1.4.3 and above!** |
 | `discovergatt` | (Optional): 0 or 1 (default) ❖ Value 1 indicates the gateway should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated. ❖ Value 0 indicates the gateway should not use the cached GATT database. When a user calls the service discover API, the gateway should read the GATT services & characteristics from the BLE device. |
 
@@ -853,8 +853,7 @@ POST http://10.10.10.254/gap/batch-connect
 
 | Parameter | Description |
 |-----------|-------------|
-| `type`    | (Mandatory): the BLE device’s address type, either public or random. |
-| `timeout` | (Optional): timeout value for each individual connection of one device. Default value: 5000 (ms). |
+| `timeout` | (Optional): timeout value for each individual connection of one device. Range is 20 ms - 20000 ms. Default value: 5000 (ms). |
 | `per_dev_timeout `    | (Optional): timeout value for single device, including retry duration. Default value: 10000 (ms).  ‘per_dev_timeout’ should be greater than ‘timeout’ |
 | `list` | (Optional): connection MAC list, format is JSON array. Example: [{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}]，could be one or multiple MACs, could add into existing batch-connect list. <br> Sample ：<br> ```curl -v -X POST -H "content-type: application/json" -d '{"list":[{"type":"public","addr":"C0:00:5B:D1:B7:25"},{"type":"public","addr":"C0:00:5B:D1:AF:F0"}], "timeout":"5000"}' 'http://172.16.10.99/gap/batch-connect' ``` |
 
