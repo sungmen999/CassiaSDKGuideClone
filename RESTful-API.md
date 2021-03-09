@@ -1259,7 +1259,7 @@ GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 Example using Local API:<br>
 ```GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>?noresponse=1```
 
-<details><summary>Response Example</summary>
+<details><summary>Response Example (if `noresponse` is not set to 1)</summary>
 
 ```json
 Status-Line : HTTP/1.1 200 OK/r/n
