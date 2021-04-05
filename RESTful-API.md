@@ -750,7 +750,7 @@ the next connecting request. If connecting multiple devices is needed without se
 
 Here is an example for accessing the gateway from a local network (no "/api" and "mac=<mac>"):
 ```
-curl -X POST -H "content-type: application/json" -d '{"timeout":"1000","type":"public"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
+curl -X POST -H "content-type: application/json" -d '{"timeout":"10000","type":"public"}' 'http://172.16.10.6/gap/nodes/CC:1B:E0:E8:09:2B/connection'
 ```
 <details><summary>Response Example</summary>
 
