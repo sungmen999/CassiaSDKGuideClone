@@ -640,7 +640,7 @@ curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&filter_name=Cassia*,36NOTES,*aaa
+GET http://{your AC domain}/api/gap/nodes?mac=<gateway-mac>&access_token=<access-token>&active=1&event=1&chip=0&filter_name=Cassia*,36NOTES,*aaa
 ```
 Local:
 ```
@@ -666,7 +666,7 @@ curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
+GET http://{your AC domain}/api/gap/nodes?mac=<gateway-mac>&access_token=<access-token>&active=1&event=1&chip=0&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 ```
 Local:
 ```
@@ -694,7 +694,7 @@ curl -v 'http://172.16.10.99/gap/nodes?event=1&filter_value=\{"offset":"7","data
 
 AC Managed:
 ```
-GET http://{your AC domain}/api/gap/nodes?event=1&filter_value=\{"offset":"7","data":"0302E9"\}
+GET http://{your AC domain}/api/gap/nodes?mac=<gateway-mac>&access_token=<access-token>&active=1&event=1&chip=0&filter_value=\{"offset":"7","data":"0302E9"\}
 ```
 Local:
 ```
