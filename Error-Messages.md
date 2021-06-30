@@ -22,3 +22,6 @@ For HTTP 500 error, the following are the common error codes:
 | `type not supported` | When Bypass scan was set up, the protocol type you specified is not supported by this firmware. |
 | `please set bypass params first` | Bypass mode is enabled, but no bypass parameters have been set. |
 | `failure` | An error for all other failures not specified yet. |
+| `device not scan`| Added in v2.x, can not scan the device until connection timeout reached |
+| `host disconnect`| manually disconnect device, will report in connection-state SSE reason field|
+| `authenticate miss key`| crypt data failed using and existing key, will report in connection-state SSE reason field|
