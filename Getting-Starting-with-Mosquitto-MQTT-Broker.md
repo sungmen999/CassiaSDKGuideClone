@@ -51,7 +51,7 @@ The terminal should show something like this:
 
 # Setting up the MQTT Client
 ## MacOS localhost
-For an easy to evaluate the Cassia Gateways MQTT Bypass feature, you can set up the MQTT client locally.
+For an easy way to evaluate the Cassia Gateways MQTT Bypass feature, you can set up the MQTT client locally.
 From the terminal, just run the following command:
 
 ```
