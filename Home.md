@@ -112,6 +112,8 @@ __[Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-M
 
 __[Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Postman-Setup-for-Cassia-RESTful-API)__
 
+__[Getting Started with Mosquitto MQTT Broker](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Starting-with-Mosquitto-MQTT-Broker)__
+
 <details><summary><strong>Extras</strong></summary>
    
    * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
