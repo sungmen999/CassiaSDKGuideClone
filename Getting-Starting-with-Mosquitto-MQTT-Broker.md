@@ -110,7 +110,7 @@ In the MQTT Client terminal window, there should be a continuous stream of data 
 
 # Closing Notes
 This guide is just to get you started with the Mosquitto MQTT broker.
-To learn more about what you can do with the Mosquitto MQTT broker, please visit this website: [https://mosquitto.org/](https://mosquitto.org/)
+To learn more about what you can do with the Mosquitto MQTT broker, please visit this website: [https://mosquitto.org](https://mosquitto.org)
 
 Please feel free to reach out to [Cassia Support](https://www.cassianetworks.com/support) for any questions.
 
