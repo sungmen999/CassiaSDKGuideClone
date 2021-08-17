@@ -1,4 +1,4 @@
-# Setting up the MQTT Broker Server
+# Setting up the MQTT Broker Server Locally
 ## MacOS
 ### Installing via Homebrew
 
@@ -49,7 +49,7 @@ The terminal should show something like this:
 ```
 
 
-# Setting up the MQTT Client
+# Setting up the MQTT Client Locally
 ## MacOS localhost
 For an easy way to evaluate the Cassia Gateways MQTT Bypass feature, you can set up the MQTT client locally.
 From the terminal, just run the following command:
@@ -89,6 +89,7 @@ testing
 
 # Configuring the Cassia Gateway to use the Mosquitto MQTT Broker
 ## Configuring the Cassia Gateway MQTT Bypass Feature
+NOTE: The hostname
 ### Standalone Gateway Mode
 ![Standalone MQTT Bypass 1](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/mqtt_bypass_local_1.png)
 ![Standalone MQTT Bypass 2](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/mqtt_bypass_local_2.png)
