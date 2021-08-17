@@ -89,7 +89,9 @@ testing
 
 # Configuring the Cassia Gateway to use the Mosquitto MQTT Broker
 ## Configuring the Cassia Gateway MQTT Bypass Feature
-NOTE: The hostname
+
+NOTE: The Host is the MQTT Broker server IP address.
+
 ### Standalone Gateway Mode
 ![Standalone MQTT Bypass 1](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/mqtt_bypass_local_1.png)
 ![Standalone MQTT Bypass 2](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/mqtt_bypass_local_2.png)
