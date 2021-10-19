@@ -86,3 +86,37 @@ Or, you can add {Authorization : 'Bearer ' + access_token } in the HTTP headers.
 
 **NOTE**: Make sure to append “/api” after {your AC domain} and add “mac=<mac>” to
 identify which router is used.
+
+### [Enable OAuth Token for Local Router](#local-router-oauth)
+You can turn on OAuth2 token Authentication on Router's Web Page.
+
+It's almost the same as oauth2 token used on AC except the url to get token is "oauth2/token"(without api part)
+* How to obtain oauth token:
+```
+POST oauth2/token HTTP/1.1
+Host: demo.cassia.pro
+Authorization: Basic dGVzdGVyOjEwYjgzZjlhMmU4MjNjNDc=
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+```
+
+* you can use "curl" command for test(use "--user" option, it will encode Authorization Header for you):
+```
+curl --user '{username}:{password}' -d 'grant_type=client_credentials' http://{router's ip}/oauth2/token
+```
+* If everything goes well, you will get a response like this, which includes access_token:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+{ token_type: 'bearer',
+access_token:
+'2b6ced831413685ec33204abc2a9a476310a852f53a763b72c854fd7708499f1bc0b362
+6bfcfef2a2cfe0519356c9d7cb1b514243cb29f60e76b92d4a64ea8bd',
+expires_in: 3600 }
+```
+
+* Now you can use access_token to access the other RESTful APIs by appending an
+access_token parameter in url query(access_token=xxx) or add Header in request (Authorization : Bearer xxx)
