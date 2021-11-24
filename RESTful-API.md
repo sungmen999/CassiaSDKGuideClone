@@ -1991,21 +1991,28 @@ If users want to connect a BLE device with a specific gateway, or they want to u
 **NOTE**: these APIs are only available through Cassia AC.
 
 ### Router Auto-Selection
-This API will enable/disable gateway auto-selection function.
+This API will enable/disable the gateway auto-selection function.
 
-If the flag is 1, the gateway
-auto-selection function will be enabled. If the flag is 0, the gateway auto-selection function
-will be disabled.
+If the flag is 1, the gateway auto-selection function will be enabled. If the flag is 0, the gateway auto-selection function will be disabled.
 
-**NOTE**: This API should be called before using any other gateway auto-selection APIs. The
-user can also switch on/off gateway auto-selection function in Cassia AC settings, like below
-snapshot.
+For the gateway auto-selection function, scanning will be turned on in the AC automatically. By specifying scan_params when calling this API, you can filter scanned data based on device MAC, RSSI, name, and UUID. This is passive scanning, so it can only filter advertisement data packets from devices.
+
+The scan_params include the following options:
+
+| Parameter | Description |
+| ----      | ----        |
+| `filter_mac` | (Optional): Device MAC address list. Advertisement data from only these devices will be sent to the AC. |
+| `filter_rssi` | (Optional): RSSI value. Filters out devices with an RSSI value weaker than the defined value. |
+
+For a more comprehensive and detailed description of scan filter parameters, please refer to this section: [Filter Scanned Data based on Device MAC, RSSI, Name, and UUID](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#filter-scanned-data-based-on-device-mac-rssi-name-and-uuid)
+
+**NOTE**: This API should be called before using any other gateway auto-selection APIs. You can also switch on/off the gateway auto-selection function in Cassia AC settings (as shown in the screenshot below).
 
 <br />
 
-![Figure 6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f6.png)
+![Figure 6](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f6_11_23_2021.png)
 
-**Figure 6: Router auto-selection configuration in AC**
+**Figure 6: Gateway auto-selection configuration in AC**
 
 <br />
 
