@@ -33,7 +33,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      * [Filter Scanned Data based on Device MAC, RSSI, Name, and UUID](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#filter-scanned-data-based-on-device-mac-rssi-name-and-uuid)
      * [Enhanced Scan Filter](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#enhanced-scan-filter-v20-and-above) (v2.0 and above)
      * [Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#connectdisconnect-to-a-target-device)
-     * [Batch Connect/Disconnect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connectdisconnect-to-a-target-device-v20-and-above) (v2.0 and above)
+     * [Batch Connect to a Target Device](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connect-to-a-target-device-v20-and-above) (v2.0 and above)
      * [Discover GATT Services and Characteristics](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#discover-gatt-services-and-characteristics)
      * [Read/Write the Value of a Specific Characteristic](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#readwrite-the-value-of-a-specific-characteristic)
      * [Send Advertise Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#Send-advertise-data)
