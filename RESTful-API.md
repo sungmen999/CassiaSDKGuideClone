@@ -738,7 +738,7 @@ POST http://10.10.10.254/gap/nodes/<node>/connection
 
 **NOTE**: Multiple connecting requests cannot be handled simultaneously by one gateway.
 User needs to handle requests in serial, which is to wait for the response and then invoke
-the next connecting request. If connecting multiple devices is needed without setting a wait interval, please look at the [Batch Connection API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connectdisconnect-to-a-target-device-v20-and-above).
+the next connecting request. If connecting multiple devices is needed without setting a wait interval, please look at the [Batch Connection API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#batch-connect-to-a-target-device-v20-and-above).
 
 
 | Parameter | Description |
@@ -833,7 +833,7 @@ Message-body: application/json
 </details>
 <br />
 
-### Batch Connect/Disconnect to a Target Device (v2.0 and above)
+### Batch Connect to a Target Device (v2.0 and above)
 To use the gateway to connect to specific BLE devices using Cassia AC:
 
 AC Managed:
