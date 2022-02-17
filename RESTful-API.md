@@ -4,6 +4,8 @@ specification.
 
 **NOTE**: If you are accessing the RESTful API from the container, use the container static address: 10.10.10.254
 
+**NOTE**: SSE streams are limited to about 20-30 per gateway. If too many SSE streams are opened at a given time, you may receive a 500 error due to not having enough resources on the gateway system. It's strongly recommended to close the SSE connection (by closing the stream explicitly). Sometimes, libraries have a close call like .close() to explicitly close a stream. Others may close the stream automatically after exiting the SSE handler.
+
 **NOTE**: When using the /cassia/* APIs in Standalone Router mode, you may need to log in to the gateway first. To do so, send a POST request with the following instructions:
 1. Make sure the request header contains:
 ```
