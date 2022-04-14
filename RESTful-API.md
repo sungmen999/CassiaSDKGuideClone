@@ -2274,6 +2274,9 @@ Parameters for JSON Body:
 | `filter_name` | (Optional): filter for device name |
 | `filter_mac` | (Optional): filter for device MAC |
 | `filter_uuid` | (Optional): filter for device UUID |
+| `filter_rssi` | (Optional): filter for device RSSI |
+| `filter_duplicates` | (Optional): filter for duplicates devices |
+| `filter_value` | (Optional): filter value with data xx from offset yy |
 
 Response example:
 
