@@ -1215,7 +1215,7 @@ GET http://{your AC domain}/api/gatt/nodes/<node>/handle/<handle>/value?mac=<gat
 ```
 Local:
 ```
-GET http://{your AC domain}/gatt/nodes/<node>/handle/<handle>/value
+GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value
 ```
 Container:
 ```
@@ -1250,7 +1250,7 @@ GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
 Container:
 ```
-GET http://{gateway ip}/gatt/nodes/<node>/handle/<handle>/value/<value>
+GET http://10.10.10.254/gatt/nodes/<node>/handle/<handle>/value/<value>
 ```
 
 
