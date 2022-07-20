@@ -25,7 +25,7 @@ of raw data flowing in the Notify List window.
 
 <br />
 
-![Figure 8](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f8.png)
+(Example image is still being worked on.)
 
 **Figure 8: Cassia Bluetooth Debug Tool Example**
 
