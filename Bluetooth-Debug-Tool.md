@@ -7,7 +7,7 @@ AC. This tool is available at: [http://www.bluetooth.tech/nativeHubControl/index
 
 ![Figure 7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/debug_toolv1.png)
 
-**Figure 7: Cassia Bluetooth Debug Tool**
+**Figure 1: Cassia Bluetooth Debug Tool**
 
 <br />
 
@@ -27,7 +27,7 @@ of raw data flowing in the Notify List window.
 
 (Example image is still being worked on.)
 
-**Figure 8: Cassia Bluetooth Debug Tool Example**
+**Figure 2: Cassia Bluetooth Debug Tool Example**
 
 <br />
 
