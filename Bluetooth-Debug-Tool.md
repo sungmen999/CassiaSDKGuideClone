@@ -1,7 +1,7 @@
 We integrated Cassia the RESTful API into a Bluetooth debug tool with a visual interface. After a
 RESTful API call, the debug tool will show the response messages. It will help developers to
 integrate business applications and Bluetooth devices with the Cassia Bluetooth router and
-AC. This tool is available at: [http://www.bluetooth.tech/nativeHubControl/index.html](http://www.bluetooth.tech/nativeHubControl/index.html)
+AC. This tool is available at: [http://www.bluetooth.tech/debugger](http://www.bluetooth.tech/debugger)
 
 <br />
 
