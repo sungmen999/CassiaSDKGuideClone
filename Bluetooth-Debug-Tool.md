@@ -7,11 +7,12 @@ There is a new beta version of the Bluetooth Debug Tool (v2) available here:
 [Cassia Bluetooth Debug Tool v2](http://www.bluetooth.tech/debugger2/dist)
 
 ```diff
-- **WARNING:**
+- **WARNING:** -
 - Starting with the v2.0.3 release, CORS is disabled by default on AC and Router.
 - When using this Bluetooth Debug Tool, please set ‘Access Control Allow Origin’ in the console setting.
+- Please refer to [Debugger2-Troubleshooting](http://www.bluetooth.tech/debugger2/dist/Debugger2-Troubleshooting.pdf) for detailed instructions. 
+- If using Chrome version>=94, please copy this link and open it in Chrome chrome://flags/#block-insecure-private-network-requests is set to Disabled.
 ``` 
-Starting with the v2.0.3 release, CORS is disabled by default on AC and Router. When using this Bluetooth Debug Tool, please set ‘Access Control Allow Origin’ in the console setting. Please refer to [Debugger2-Troubleshooting](http://www.bluetooth.tech/debugger2/dist/Debugger2-Troubleshooting.pdf) for detailed instructions. If using Chrome version>=94, please copy this link and open it in Chrome chrome://flags/#block-insecure-private-network-requests is set to Disabled.
 
 <br />
 
