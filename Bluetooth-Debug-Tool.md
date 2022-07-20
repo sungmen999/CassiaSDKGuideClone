@@ -5,7 +5,7 @@ AC. This tool is available at: [http://www.bluetooth.tech/nativeHubControl/index
 
 <br />
 
-![Figure 7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/f7.jpg)
+![Figure 7](https://github.com/CassiaNetworks/CassiaSDKGuideResources/blob/master/images/debug_toolv1.png)
 
 **Figure 7: Cassia Bluetooth Debug Tool**
 
