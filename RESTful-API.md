@@ -2061,6 +2061,11 @@ Parameters for JSON body:
 | ----      | ----        |
 | `aps` |  The list of gateways which will be used for this auto-select connect request. The user can use one or multiple gateway’s MAC or * for “aps”. If the user uses *, it means all the online gateways that controlled by the AC should be included. |
 | `devices` | Only one device MAC address can be added in "devices". |
+| `timeout (Optional)` | in ms, the connection request will timeout if it can’t be finished within this time. The default timeout is 10,000ms. The range of value is 1000ms - 20000ms. |
+| `random (Optional)` | 0 (default) or 1, set it to 1 to use the roaming function. |
+| `rssi (Optional)` | If this threshold is set, when this device is connected, the router checks the device's RSSI every 1000ms(default, this interval can be set using the "rssi_interval" parameter ), if device’s RSSI is lower than the value set by this parameter for 5 consecutive times, the device will be disconnected. |
+| `rssi_interval(Optional)` | set the interval to check whether the device's RSSI is lower than the threshold( set by “rssi” parameter) when it is connected, default is 1000ms. |
+| `discovergatt(Optional)` | 0 or 1 (default) ? Value 1 indicates the router should use the cached GATT database which was discovered during previous connection. It will save time for service discover API, but maybe the information is not updated.  Value 0 indicates the router should not use the cached GATT database. When a user calls the service discover API, the router should read the GATT services & characteristics from the BLE device. |
 
 Body example (application/json):
 ```json
