@@ -528,6 +528,25 @@ Here are more optional parameters:
 | `beacon` | (Optional): 0 or 1, default is 0, 1 add beacon data in the scan data, for example: data: {"name":"(unknown)","beacon":{"type":"iBeacon","UUID":"B9407F30-F5F8-466E-AFF9-25556B57FE6D","minor":10,"major":73,"txPower":-58},"evtType":0,"rssi":-17,"adData":"0201061AFF4C000215B9407F30F5F8466EAFF925556B57FE6D0049000AC5","bdaddrs":[{"bdaddr":"CC:1B:EF:E2:31:C2","bdaddrType":"public"}]}. iBeacon,  Eddystone-EID, Eddystone-UID, Eddystone-TLM, Eddystone-URL are supported. |
 
 
+scan filter | notes | gateway scan support | AC combine SSE support | AC auto selection support
+-- | -- | -- | -- | --
+filter_uuid |   | 1.3 | 1.4.3 | 2.0.3
+filter_rssi |   | 1.3 | 1.4.3 | 2.0.3
+filter_mac | exact match | 1.3 | 1.4.3 | 2.0.3
+  | prefix | 2.0.3 | 2.0.3 | 2.0.3
+filter_name | exact match | 1.3 | 1.4.3 | 2.0.3
+  | prefix,suffix | 2.0.3 | 2.0.3 | 2.0.3
+filter_value | w/ offset | 2.0.3 | 2.0.3 | 2.0.3
+  | w/o offset | 2.1.1 | 2.1.1 | 2.1.1
+  | multiple values | 2.1.1 | 2.1.1 | 2.1.1
+filter_duplicates | =1 | 1.3 | 2.1.1 | 2.0.3
+  | >1000ms | 2.0.3 | 2.1.1 | 2.0.3
+timestamp |   | 2.0.3 | 2.1.1 |  
+connectable |   | 2.1.1 | 2.1.1 | 2.1.1
+report_interval |   | 2.1.0 | 2.1.1 | 2.1.0
+beacon |   | 2.1.1 |   |  
+ibeacon/eddystone |   | 2.1.1 |   |  
+
 <br>
 
 #### Filter Scanned Data based on Device MAC, RSSI, Name, and UUID
