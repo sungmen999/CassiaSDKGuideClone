@@ -10,8 +10,7 @@ For HTTP 500 error, the following are the common error codes:
 | `operation timeout` | Each operation has a time-out value, especially those timeconsuming operations, such as connection. When connecting to a device that does not exist, the operation will timeout after the 20s. |
 | `chip is not ready` | This error will be reported when sending commands to the chip fails. |
 | `chip is busy` | The Connect and Pair API are mutually exclusive. If calling a connect request before the previous connect request finishes, the system will return "chip is busy". |
-| `incorrect mode` | Our S Series only supports one role, either master or slave (due to the memory limit). These two roles are different, mainly reflected in the broadcast and scanning. When the router is a slave, it cannot conduct scanning; when the router is the master, it cannot send advertise which is connectable. If you set the unsupported parameters to the chip, the system will return this error. |
-| `device not connect` | Same as "device not found" error. |
+| `incorrect mode` | If calling a connection request is called before the previous connection request for the same device is completed.|
 | `operation not supported` | Reserved for future use. |
 | `need pair operation` | Some devices require an operation for pairing after a successful connection. If a GATT function call happens prior to the pairing, the system will return this error. <br>From v2.0.3 “Need pair operation” will be placed the following 3 error code,<br>"ATT insufficient Authentication",<br>"ATT insufficient Authorization",<br>"ATT insufficient Encryption",<br>Depending on response message from device side, router will reply one of the above error.|
 |`ATT insufficient Authentication`|The attribute requires authentication before it can be read or written|
