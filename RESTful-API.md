@@ -705,7 +705,7 @@ GET http://10.10.10.254/gap/nodes?event=1&filter_mac=CC:DD:EE*,CC:1B:E0:E8:0B:4B
 **filter_value**
 * filter value with data xx from offset yy
 
-**NOTE**: Currently, filter_value only supports one value. This API does not accept multiple filter_value values at the same time.
+**NOTE**: multiple filter_value are supported from 2.1.1, i.e. [{"offset":"1","data":"1EFF06"},{"offset":"1","data":"020106"}]
 
 Examples:
 
