@@ -2,7 +2,7 @@
 
 After BLE link is established, PHY can be updated to 1M, 2M, CODED for transmitting and/or receiving with the following API. 
 
-## URL：`/gap/nodes/\<node\>/phy`
+## URL：`/gap/nodes/<node>/phy`
 
 ## Input Parameters:
 
@@ -110,7 +110,7 @@ Stop advertising: 
 
 # 3.1 Establish Connection with 2M or CODED PHY
 
-## URL: `/gap/nodes/\<node\>/connection`
+## URL: `/gap/nodes/<node>/connection`
 ## Method: POST
 ## Input Parameters:
 | Parameter | Description |
