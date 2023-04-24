@@ -8,9 +8,9 @@ After BLE link is established, PHY can be updated to 1M, 2M, CODED for transmitt
 
 | Parameter | Description |
 |-----------|-------------|
-|`Tx`| 			Requested PHY type for transmitting, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
-|`Rx`| 			Requested PHY type for receiving, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
-|coded_option*|	When requested PHY type is CODED, can be set to 0, 1, 2 for Tx.(0: auto negotiation; 1: S2,  2: S8) |
+|`tx`| 			Requested PHY type for transmitting, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
+|`rx`| 			Requested PHY type for receiving, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
+|`coded_option`*|	When requested PHY type is CODED, can be set to 0, 1, 2 for Tx.(0: auto negotiation; 1: S2,  2: S8) |
 * coded_option for Rx is decided by the device.
 
 ## Return Value: 
@@ -84,7 +84,9 @@ Event Type (evtType) is 0 ~ 4
 |`properties`|advertising type flag，(Connectable、Scannable、Directed、High_Duty、Legacy、Omit_address、TxPower)，default value is 0 (no scannable no connectable)|
 |`channelmap`|advertising channel, default value is 7 (channel 37,38,39)|
 |`interval`|advertising interval, default value is 1000ms |
-|`ad_data`|adv data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional.  |     		|scan_data|scan response data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional |	|primary_phy|1M or CODED|
+|`ad_data`|adv data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional.  |     		
+|`scan_data`|scan response data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional |	
+|`primary_phy`|1M or CODED|
 |`secondary_phy`|1M or CODED, default is 1M.|
 |`random_address`|mandatory, random MAC address|
 |`tx_power`|optional, default is 127. Range from -127 ! 127.|
@@ -127,11 +129,22 @@ curl -v -X POST -H "content-type: application/json" -d '{"phy":"CODED","type":"r
 ```
 
 A new parameter 'secondary_phy' is added for connection API to make connection with specific PHY only. 1. scan extended adv packet with primary phy: 1M and secondary phy: 2M, and make connection on 2M only. 
-```curl -v -X POST -H "content-type: application/json" -d '{"phy":"1M","type":"random","secondary_phy":"2M"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0' ```
+
+```shell
+curl -v -X POST -H "content-type: application/json" -d '{"phy":"1M","type":"random","secondary_phy":"2M"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0' 
+```
+
 2. scan extended adv packet with primary phy: CODED and secondary phy: 1M, and make connection on 1M only.
- ```curl -v -X POST -H "content-type: application/json" -d '{"phy":"CODED","type":"random","secondary_phy":"1M"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0' ```
+ 
+```shell
+curl -v -X POST -H "content-type: application/json" -d '{"phy":"CODED","type":"random","secondary_phy":"1M"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0' 
+```
+
 3. scan extended adv packet with primary phy: CODED and secondary phy: CODED, and make connection on CODED only. 
-` curl -v -X POST -H "content-type: application/json" -d '{"phy":"CODED","type":"random","secondary_phy":"CODED"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0'`
+
+```shell
+curl -v -X POST -H "content-type: application/json" -d '{"phy":"CODED","type":"random","secondary_phy":"CODED"}' 'http://127.0.0.1/gap/nodes/07:6A:80:BD:31:37/connection?chip=0'
+```
 
 # 3.2 Connection List
 
