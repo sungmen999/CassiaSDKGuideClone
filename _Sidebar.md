@@ -76,6 +76,9 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
      </details>
 </details>
 
+
+__[BLE 5 Interface Specification](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-BLE-5-Features-Interface-Specification(Version-1.0))__
+
 __[Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)__
 
 __[Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages)__
