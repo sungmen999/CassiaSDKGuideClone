@@ -2,14 +2,14 @@
 
 After BLE link is established, PHY can be updated to 1M, 2M, CODED for transmitting and/or receiving with the following API. 
 
-## URL：/gap/nodes/\<node\>/phy
+## URL：`/gap/nodes/\<node\>/phy`
 
 ## Input Parameters:
 
 | Parameter | Description |
 |-----------|-------------|
-|Tx| 			Requested PHY type for transmitting, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
-|Rx| 			Requested PHY type for receiving, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
+|`Tx`| 			Requested PHY type for transmitting, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
+|`Rx`| 			Requested PHY type for receiving, can be set to 1M, 2M, CODED, or any combination of comma separated values.|
 |coded_option*|	When requested PHY type is CODED, can be set to 0, 1, 2 for Tx.(0: auto negotiation; 1: S2,  2: S8) |
 * coded_option for Rx is decided by the device.
 
@@ -48,12 +48,12 @@ example 4：
 
 # 2.1 Extended Advertising Feature - Scan
 
-## URL: /gap/nodes/?active=1&event=1&chip=0&phy=1M,2M,CODED
+## URL: `/gap/nodes/?active=1&event=1&chip=0&phy=1M,2M,CODED`
 
 ## Input Parameters:
 | Parameter | Description |
 |-----------|-------------|
-|phy| Requested PHY type, can be set to 1M, 2M or CODED, or any combination of comma separated values.|
+|`phy`| Requested PHY type, can be set to 1M, 2M or CODED, or any combination of comma separated values.|
 
 ## Data received:
 
@@ -74,20 +74,20 @@ Event Type (evtType) is 0 ~ 4
 
 # 2.2 Extended Advertising Feature - Advertising
  Start advertising: 
-## URL: /advertise/ext/start 
+## URL: `/advertise/ext/start `
 ## Method: POST 
 ## Input Parameters:
 | Parameter | Description |
 |-----------|-------------|
-|chip| BLE chip, optional, default value 0 |
-|instance_id|instance id, optional, range 0-1, to use existing id,default value is 0xff，to create new id.
-|properties|advertising type flag，(Connectable、Scannable、Directed、High_Duty、Legacy、Omit_address、TxPower)，default value is 0 (no scannable no connectable)|
-|channelmap|advertising channel, default value is 7 (channel 37,38,39)|
-|interval|advertising interval, default value is 1000ms |
-|ad_data|adv data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional.  |     		|scan_data|scan response data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional |	|primary_phy|1M or CODED|
-|secondary_phy|1M or CODED, default is 1M.|
-|random_address|mandatory, random MAC address|
-|tx_power|optional, default is 127. Range from -127 ! 127.|
+|`chip`| BLE chip, optional, default value 0 |
+|`instance_id`|instance id, optional, range 0-1, to use existing id,default value is 0xff，to create new id.
+|`properties`|advertising type flag，(Connectable、Scannable、Directed、High_Duty、Legacy、Omit_address、TxPower)，default value is 0 (no scannable no connectable)|
+|`channelmap`|advertising channel, default value is 7 (channel 37,38,39)|
+|`interval`|advertising interval, default value is 1000ms |
+|`ad_data`|adv data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional.  |     		|scan_data|scan response data, maximum length 31 bytes in 2.2.0 (251 bytes in future), optional |	|primary_phy|1M or CODED|
+|`secondary_phy`|1M or CODED, default is 1M.|
+|`random_address`|mandatory, random MAC address|
+|`tx_power`|optional, default is 127. Range from -127 ! 127.|
 
 ##  Return Value：
 200 + OK or 500 + error description  
@@ -97,26 +97,26 @@ curl -v -X POST -H "content-type: application/json" -d '{"ad_data":"0201
 ```
 
 Stop advertising: 
-## URL: /advertise/ext/stop 
+## URL: `/advertise/ext/stop `
 ## Method: GET 
 ## Input Parameter：
 | Parameter | Description |
 |-----------|-------------|
-|chip|BLE chip, default is 0|
-|instance_id|instance ID (0-7), 0xFF is to stop all. mandatory|
+|`chip`|BLE chip, default is 0|
+|`instance_id`|instance ID (0-7), 0xFF is to stop all. mandatory|
 
 ##  Return Value：
 200 + OK or 500 + error description
 
 # 3.1 Establish Connection with 2M or CODED PHY
 
-## URL: /gap/nodes/:node/connection
+## URL: `/gap/nodes/\<node\>/connection`
 ## Method: POST
 ## Input Parameters:
 | Parameter | Description |
 |-----------|-------------|
-|phy|Requested PHY type, can be set to 1M or CODED, or any combination of comma separated values. Default is 1M.|
-|secondary_phy(optional)| make connection with PHY type only.|
+|`phy`|Requested PHY type, can be set to 1M or CODED, or any combination of comma separated values. Default is 1M.|
+|`secondary_phy`|optional,make connection with PHY type only.|
 
 ## Data received:
 No change on receiving data.
@@ -135,7 +135,7 @@ A new parameter 'secondary_phy' is added for connection API to make conn
 
 # 3.2 Connection List
 
-## URL: /gap/nodes
+## URL: `/gap/nodes`
 ## Method: GET
 ## Data received:
 add tx_phy and rx_phy on receiving data.
