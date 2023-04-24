@@ -77,7 +77,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 </details>
 
 
-__[BLE 5 Interface Specification](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Cassia-BLE-5-Features-Interface-Specification)__
+__[BLE 5 Interface Specification](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/BLE-5-Interface-Specification-For-X2000)__
 
 __[Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)__
 
