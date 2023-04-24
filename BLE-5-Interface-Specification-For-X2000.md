@@ -18,7 +18,7 @@ Actual PHY type decided by device
 
 ## Example:
 1.  After successfully establish BLE link by calling connection API with the default 1M PHY, 
-    (POST http://{router ip}/gap/nodes/<node>/connection), 
+    (POST http://{router ip}/gap/nodes/\<node\>/connection), 
     update PHY to long range mode with S=8
 ```shell
 curl -v -X POST -H "content-type: application/json" -d '{"tx":"CODED","coded_option":"2"}' 'http://127.0.0.1/gap/nodes/00:12:6F:5B:17:2F/phy'
@@ -35,16 +35,16 @@ curl -v -X POST -H "content-type: application/json" -d '{"tx":"2M,1M","rx":"1M"}
 curl -v  'http://127.0.0.1/gap/nodes/00:12:6F:5B:17:2F/phy' 
 ```
 example 1：
-`{""tx_op"":""S2"",""tx_phy"":""CODED"",""id"":""CC:1B:E0:E2:34:83"",""rx_phy"":""CODED"",""rx_op"":""S2""}`
+`{"tx_op":"S2","tx_phy":"CODED","id":"CC:1B:E0:E2:34:83","rx_phy":"CODED","rx_op":"S2"}`
 
 example 2：
-`{""tx_op"":""S2"",""tx_phy"":""CODED"",""id"":""CC:1B:E0:E2:32:B7"",""rx_phy"":""CODED"",""rx_op"":""S2""}`
+`{"tx_op":"S2","tx_phy":"CODED","id":"CC:1B:E0:E2:32:B7","rx_phy":"CODED","rx_op":"S2"}`
 
 example 3：
-`{""tx_op"":""S2"",""tx_phy"":""CODED"",""id"":""CC:1B:E0:E2:34:83"",""rx_phy"":""CODED"",""rx_op"":""S8""}`
+`{"tx_op":"S2","tx_phy":"CODED","id":"CC:1B:E0:E2:34:83","rx_phy":"CODED","rx_op":"S8"}`
 
 example 4：
-`{""tx_op"":""S8"",""tx_phy"":""CODED"",""id"":""CC:1B:E0:E2:32:B7"",""rx_phy"":""CODED"",""rx_op"":""S2""}`
+`{"tx_op":"S8","tx_phy":"CODED","id":"CC:1B:E0:E2:32:B7","rx_phy":"CODED","rx_op":"S2"}`
 
 # 2.1 Extended Advertising Feature - Scan
 
