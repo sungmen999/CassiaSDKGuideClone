@@ -487,15 +487,15 @@ Message-body: application/json
 ### Reboot a Router Remotely
 AC Managed:
 ```
-GET http://{your AC domain}/api/cassia/reboot?mac=<gateway-mac>
+POST http://{your AC domain}/api/cassia/reboot?mac=<gateway-mac>
 ```
 Local:
 ```
-GET http://{gateway ip}/cassia/reboot
+POST http://{gateway ip}/cassia/reboot
 ```
 Container:
 ```
-GET http://10.10.10.254/cassia/reboot
+POST http://10.10.10.254/cassia/reboot
 ```
 
 <br />
