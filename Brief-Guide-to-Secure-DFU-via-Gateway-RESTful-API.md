@@ -113,11 +113,12 @@ This document briefly describes the main process of performing DFU on BLE device
 ```
 - Example data explanation
 
-    |UUID| Handle | Required properties |
+    |UUID| Handle | Characteristic name | Required properties |
     |-------| ------- | ------- | ------- | 
     |8ec90001-f315-4f60-9fb8-838830daea50| 15 |  DFU Control Point | Write, Notify |
     |00002902-0000-1000-8000-00805f9b34fb| 16 | DFU Control Point CCCD |  |
     |8ec90002-f315-4f60-9fb8-838830daea50| 13 | DFU Packet | WriteWithoutResponse, Notify |
+
 
 ### 4. Script Usage
 
