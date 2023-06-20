@@ -112,6 +112,7 @@ This document briefly describes the main process of performing DFU on BLE device
 ]
 ```
 - Example data explanation
+
     |UUID| Handle | Required properties |
     |-------| ------- | ------- | ------- | 
     |8ec90001-f315-4f60-9fb8-838830daea50| 15 |  DFU Control Point | Write, Notify |
