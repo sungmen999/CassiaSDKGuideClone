@@ -116,7 +116,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 
 __[Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages)__
 
-<details><summary><strong>Advanced RESTful API</strong></summary>
+<details><summary><strong>Device Integrating</strong></summary>
 
 * [Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Postman-Setup-for-Cassia-RESTful-API)
 * [Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)
