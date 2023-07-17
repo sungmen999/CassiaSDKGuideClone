@@ -1,5 +1,4 @@
 <h1 align="center">Bluetooth Device Integration Guide<br> Getting Started</h1>
-<hr style="height: 1px;" />
 
 This document briefly introduces the basic usage of Integrating devices through the gateway API through examples. For ease of understanding, we limit the scenario to a debugging scenario where one gateway corresponds to one BLE device.
 
@@ -39,7 +38,6 @@ This document briefly introduces the basic usage of Integrating devices through 
   * [8.5 Sample Code](#85-sample-code)
   * [8.6 Sample Video](#86-sample-video)
 * [9. Actual Business Scenarios](#9-actual-business-scenarios)
-<hr style="height: 1px;" />
 
 ### 1. Bluetooth Debugging Tools
 The HTTP API of the gateway has encapsulated Bluetooth debugging tools to facilitate users to quickly use the gateway API to debug Bluetooth devices via the UI.
