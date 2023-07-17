@@ -257,7 +257,7 @@ Running result
 ```
 
 #### 6.5 Sample Video
-https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/0a68e301-1899-4a36-80e9-e266326d9e09
+https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/ee703c76-0303-4632-a086-dd08465de3bd
 
 ### 7. Sending Instructions to the Device
 We use sending messages to the test device as an example, [Alert Notification Service](https://github.com/AcaciaNetworks/ble-test-peripheral-android#24-alert-notification-service)
@@ -523,7 +523,7 @@ function disconnect(deviceMac) {
 ```
 
 #### 7.6 Sample Video
-https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/ee703c76-0303-4632-a086-dd08465de3bd
+https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/97d32efe-eb7c-4fbc-a926-d4bfa124ab41
 
 ### 8. Long Connection to Get Device Data
 We use the real-time heart rate acquisition of the test device as an example, [Heart Rate Service](https://github.com/AcaciaNetworks/ble-test-peripheral-android#22-heart-rate-service)
@@ -800,7 +800,7 @@ function getHandleByUuid(services, uuid, isCCCD=false) {
 ```
 
 #### 8.6 Sample Video
-https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/97d32efe-eb7c-4fbc-a926-d4bfa124ab41
+https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/0a68e301-1899-4a36-80e9-e266326d9e09
 
 
 ### 9.Real Business Scenarios
