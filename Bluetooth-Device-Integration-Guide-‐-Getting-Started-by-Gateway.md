@@ -6,7 +6,7 @@ This document briefly introduces the basic usage of Integrating devices through 
 |-------| ------- | ------- |
 |v0.1.0| Basic functions | 2023-07-12 |
 |v0.1.1| <ul><li>Add article index</li><li>Adjust Debugger video position</li></ul> | 2023-07-13 |
-|v0.1.2| <ul><li>Add English version</li><li>Adjust Debugger section position</li><li>Fix the timing diagram for long connections</li><li>Use **`Central`** **`Peripheral`** Device</li></ul> | 2023-07-17 |
+|v0.1.2| <ul><li>Add English version</li><li>Use default directory links for the Github version</li><li>Adjust Debugger section position</li><li>Fix the timing diagram for long connections</li><li>Use **`Central`** **`Peripheral`** Device</li></ul> | 2023-07-17 |
 
 <!--
 ### Table of Contents
