@@ -86,7 +86,7 @@ __[Home](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki)__
 __[Error Messages](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Error-Messages)__
 
 <details><summary><strong>Device Integrating</strong></summary>
-
+* [Getting Started by Gateway](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Device-Integration-Guide-%E2%80%90-Getting-Started-by-Gateway)
 * [Postman Setup for Cassia RESTful API](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Postman-Setup-for-Cassia-RESTful-API)
 * [Bluetooth Debug Tool](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Bluetooth-Debug-Tool)
 
