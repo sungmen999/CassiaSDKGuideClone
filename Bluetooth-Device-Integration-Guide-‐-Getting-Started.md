@@ -6,8 +6,9 @@ This document briefly introduces the basic usage of Integrating devices through 
 |-------| ------- | ------- |
 |v0.1.0| Basic functions | 2023-07-12 |
 |v0.1.1| <ul><li>Add article index</li><li>Adjust Debugger video position</li></ul> | 2023-07-13 |
-|v0.1.2| <ul><li>Adjust Debugger section position</li></ul> | 2023-07-17 |
+|v0.1.2| <ul><li>Adjust Debugger section position</li><li>Fix the timing diagram for long connections</li></ul> | 2023-07-17 |
 
+<!--
 ### Table of Contents
 
 * [1. Bluetooth Debugging Tools](#1-bluetooth-debugging-tools)
@@ -38,6 +39,7 @@ This document briefly introduces the basic usage of Integrating devices through 
   * [8.5 Sample Code](#85-sample-code)
   * [8.6 Sample Video](#86-sample-video)
 * [9. Actual Business Scenarios](#9-actual-business-scenarios)
+-->
 
 ### 1. Bluetooth Debugging Tools
 The HTTP API of the gateway has encapsulated Bluetooth debugging tools to facilitate users to quickly use the gateway API to debug Bluetooth devices via the UI.
@@ -70,8 +72,7 @@ The main API interactions generally involved are as follows:
 ### 4. Slave Device BLE Protocol
 https://github.com/AcaciaNetworks/ble-test-peripheral-android
 
-![](https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/d7a00598-f706-425d-a088-68747e44d3fa)
-
+<img src="https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/d7a00598-f706-425d-a088-68747e44d3fa" alt="Image" style="width: 50%;height:50%;">
 
 ### 5. Application Scenario Description
 Device integration generally falls into the following basic application scenarios, including the commonly used main APIs, which can be quickly familiarized through examples.
@@ -169,7 +170,6 @@ let temperature = buf.readUInt16BE(29) / 100
 ```
 
 #### 6.4 Sample Code
-
 ```
 # Need NodeJS >= v8.0.0
 # yarn add eventsource@1.0.7
