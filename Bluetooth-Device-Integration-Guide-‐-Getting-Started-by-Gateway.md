@@ -6,7 +6,7 @@ This document briefly introduces the basic usage of Integrating devices through 
 |-------| ------- | ------- |
 |v0.1.0| Basic functions | 2023-07-12 |
 |v0.1.1| <ul><li>Add article index</li><li>Adjust Debugger video position</li></ul> | 2023-07-13 |
-|v0.1.2| <ul><li>Adjust Debugger section position</li><li>Fix the timing diagram for long connections</li></ul> | 2023-07-17 |
+|v0.1.2| <ul><li>Adjust Debugger section position</li><li>Fix the timing diagram for long connections</li><li>Use **`Central`** **`Peripheral`** Device</li></ul> | 2023-07-17 |
 
 <!--
 ### Table of Contents
@@ -51,7 +51,7 @@ https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/fb8f1d1d-4425-4
 
 
 ### 2. Using the Device
-|| Master Device (Gateway) | Slave Device (Device) |
+|| Central Device (Gateway) | Peripheral Device (Device) |
 |-------| ------- | ------- |
 |Device Type| Bluetooth Gateway | Android Phone |
 |Application or Product Model| E1000 | [BLE Peripheral Simulator](https://github.com/AcaciaNetworks/ble-test-peripheral-android) |
@@ -69,7 +69,7 @@ The main API interactions generally involved are as follows:
 ![](https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/c9367942-59bc-46c4-9993-bcb4835dafaf)
 
 
-### 4. Slave Device BLE Protocol
+### 4. Peripheral Device BLE Protocol
 https://github.com/AcaciaNetworks/ble-test-peripheral-android
 
 <img src="https://github.com/CassiaNetworks/CassiaSDKGuide/assets/49749395/d7a00598-f706-425d-a088-68747e44d3fa" alt="Image" style="width: 50%;height:50%;">
