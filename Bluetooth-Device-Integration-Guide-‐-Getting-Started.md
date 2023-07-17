@@ -1,4 +1,4 @@
-<h1 align="center">Bluetooth Device Integration Guide<br> Getting Started</h1>
+<h1 align="center">Bluetooth Device Integration Guide<br> Getting Started by Gateway</h1>
 
 This document briefly introduces the basic usage of Integrating devices through the gateway API through examples. For ease of understanding, we limit the scenario to a debugging scenario where one gateway corresponds to one BLE device.
 
