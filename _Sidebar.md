@@ -100,5 +100,7 @@ __[Sample Code](https://github.com/CassiaNetworks/CassiaSDKGuide)__
    
    * [Getting Started with Mosquitto MQTT Broker](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Getting-Starting-with-Mosquitto-MQTT-Broker)
    * [Migrate from C1000-2B Firmware to X1000](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/Migrate-from-C1000-2B-Firmware-to-X1000)
+   * [TI SensorTag CC2650STK Container App Example (Python3) - Scan, Pair, Connect, and Read](https://github.com/CassiaNetworks/TI-SensorTag-CC2650-Python-Container-App)
+   * [TI SensorTag CC2650STK Local App Example (Python 3) - Scan, Connect, Write, and Notify](https://github.com/CassiaNetworks/TI-SensorTag-CC2650-Python-Local-App-Notifications)
 
 </details>
