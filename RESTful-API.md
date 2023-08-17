@@ -26,6 +26,8 @@ After the POST request returns a 200 OK response, you should be able to call the
 
 <br>
 
+**NOTE**: Starting from version 2.1.1, logins have adopted a front-end encryption method. In case you need to call this login API, please consult Cassia technical support for more details.
+
 ## Common Parameters
 Here are common parameters for the RESTful API:
 
