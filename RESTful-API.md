@@ -526,6 +526,8 @@ Here are more optional parameters:
 |-----------|-------------|
 | `active`  | (Optional): 0 or 1, 0 indicates passive scanning and 1 active scanning. If you don't specify, by default the Cassia gateways will perform passive scanning. |
 | `filter_duplicates` | (Optional): 0 or 1, 0 to turn off and 1 to turn on; filters duplicated records. Default is 0. >1000 (ms) timer to restart duplicate filter. |
+| `connectable` | (Optional): filter connectable device, which the evtType of scan data is equal 0 or 4. |
+| `report_interval` | (Optional): report scan data based on interval. the value of interval should equal or greater than 1000 (ms). |
 | `timestamp` |  (Optional): 0 or 1， default is 0， 1 adds a timestamp in the scan data, for example: data: {"name":"CASSIA-BEACON-335",**"timestamp":"2021-03-08 10:07:17.723 CST"**,"evtType":0,"rssi":-69,"adData":"02010612094341535349412D424541434F4E2D333335","bdaddrs":[{"bdaddr":"CC:DD:EE:03:00:23","bdaddrType":"random"}]} |
 | `beacon` | (Optional): 0 or 1, default is 0, 1 add beacon data in the scan data, for example: data: {"name":"(unknown)","beacon":{"type":"iBeacon","UUID":"B9407F30-F5F8-466E-AFF9-25556B57FE6D","minor":10,"major":73,"txPower":-58},"evtType":0,"rssi":-17,"adData":"0201061AFF4C000215B9407F30F5F8466EAFF925556B57FE6D0049000AC5","bdaddrs":[{"bdaddr":"CC:1B:EF:E2:31:C2","bdaddrType":"public"}]}. iBeacon,  Eddystone-EID, Eddystone-UID, Eddystone-TLM, Eddystone-URL are supported. |
 
