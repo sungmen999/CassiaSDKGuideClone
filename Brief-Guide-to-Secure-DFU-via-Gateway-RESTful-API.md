@@ -4,6 +4,7 @@ This document briefly describes the main process of performing DFU on BLE device
 |-------| ------- | ------- |
 |v0.1.0| Basic Features	 | June 16, 2023 |
 |v0.1.1| <ul><li>Typo Fix</li></ul> | June 17, 2023 |
+|v0.1.2| <ul><li>Fix Set Receipt Notification Error</li></ul> | January 17, 2024 |
 
 > - This document briefly describes the main process of performing DFU on BLE devices using the Nordic SDK through the BLE gateway's RESTful API.
 > - The basic successful main process of DFU has been handled, and no additional processing has been done for the exception process for the time being
@@ -291,7 +292,7 @@ Use the gateway API to scan and discover devices
 - Wait Response in [Notification Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
   ```
   {
-      "value": "600601000200000000000000000000",
+      "value": "600201",
       "handle": 15,
       "id": "EB:2E:AF:D8:49:DC",
       "dataType": "notification"
@@ -300,7 +301,7 @@ Use the gateway API to scan and discover devices
   - Example data explanation
     |Example Data| Example data explanation |
     |-------| ------- |
-    |600601000200000000000000000000| <ul><li>60: DFU Request Response</li><li>06: [Set Receipt Notification](https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_dfu_transport.html?cp=9_1_3_5_2_0_2#lib_dfu_transport_op_receipt_notif_set)</li><li>01: Success</li><li>00200000: max_size</li><li>00000000: offset</li><li>00000000: crc32</li></ul> |
+    |600201| <ul><li>60: DFU Request Response</li><li>06: [Set Receipt Notification](https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_dfu_transport.html?cp=9_1_3_5_2_0_2#lib_dfu_transport_op_receipt_notif_set)</li><li>01: Success</li></ul> |
     |handle 15| DFU Control Point Handle |
     |EB:2E:AF:D8:49:DC| Device MAC |
 
@@ -478,7 +479,7 @@ Use the gateway API to scan and discover devices
 - Wait Response in [Notification Data](https://github.com/CassiaNetworks/CassiaSDKGuide/wiki/RESTful-API#receive-notification-and-indication)
   ```
   {
-      "value": "600601000200000000000000000000",
+      "value": "600201",
       "handle": 15,
       "id": "EB:2E:AF:D8:49:DC",
       "dataType": "notification"
@@ -487,7 +488,7 @@ Use the gateway API to scan and discover devices
   - Example data explanation
     |Example Data| Example data explanation |
     |-------| ------- |
-    |600601000200000000000000000000| <ul><li>60: DFU Request Response</li><li>06: [Set Receipt Notification](https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_dfu_transport.html?cp=9_1_3_5_2_0_2#lib_dfu_transport_op_receipt_notif_set)</li><li>01: Success</li><li>00200000: max_size</li><li>00000000: offset</li><li>00000000: crc32</li></ul> |
+    |600201| <ul><li>60: DFU Request Response</li><li>02: [Set Receipt Notification](https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_dfu_transport.html?cp=9_1_3_5_2_0_2#lib_dfu_transport_op_receipt_notif_set)</li><li>01: Success</li></ul> |
     |handle 15| DFU Control Point Handle |
     |EB:2E:AF:D8:49:DC| Device MAC |
 
